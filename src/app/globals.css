@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --md-sys-color-primary: #0071E3;
+  --md-sys-color-surface: #FFFFFF;
+  --md-sys-color-surface-container: #F5F5F7;
+  --md-sys-color-on-surface: #1D1D1F;
+  --md-sys-color-on-surface-variant: #6E6E73;
+  --md-sys-color-outline: #D2D2D7;
+  --md-sys-color-success: #30D158;
+  --md-sys-color-warning: #FF9F0A;
+  --md-sys-color-error: #FF3B30;
+}
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  background: var(--md-sys-color-surface);
+  border-radius: 16px;
+  border: 1px solid var(--md-sys-color-outline);
+  padding: 24px;
+}
+
+.metric-card {
+  background: var(--md-sys-color-surface);
+  border-radius: 12px;
+  border: 1px solid var(--md-sys-color-outline);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metric-card { transition: none; }
+}
