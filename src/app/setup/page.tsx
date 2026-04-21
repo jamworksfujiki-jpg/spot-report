@@ -61,14 +61,30 @@ export default function SetupPage() {
       {/* Step 1 */}
       <StepCard
         num={1}
-        title="Google Cloud に新規プロジェクト作成"
+        title="Google Cloud プロジェクトを用意"
         time="1分"
-        action={{ url: "https://console.cloud.google.com/projectcreate", label: "Google Cloudを開く" }}
+        action={{ url: "https://console.cloud.google.com/", label: "Google Cloudを開く" }}
       >
-        <ol className="text-[13px] text-[#1D1D1F] space-y-1.5 list-decimal list-inside">
-          <li>プロジェクト名に <Code>spot-report-ga4</Code> と入力（組織や場所は初期値のままでOK）</li>
-          <li>右下の <b>「作成」</b> を押して完了</li>
-        </ol>
+        <div className="text-[13px] text-[#1D1D1F] space-y-2">
+          <p><b>GCPプロジェクト（＝APIを使うための「入れ物」）が1つ必要</b>です。以下どちらか一方だけ実施してください。</p>
+
+          <div className="px-3 py-2.5 bg-[#E5F7EB] border border-[#A8E5BD] rounded-lg">
+            <p className="font-semibold text-[#0F7B32] mb-1">パターンA：既にGCPプロジェクトを持っている場合</p>
+            <p className="text-[12px]">上のリンクからGoogle Cloud Consoleを開き、画面上部のプロジェクト選択ドロップダウンに<b>既存のプロジェクト名</b>があればそれを使います。<b>何もせずステップ2へ</b>。</p>
+          </div>
+
+          <div className="px-3 py-2.5 bg-[#FFF4E5] border border-[#FFD599] rounded-lg">
+            <p className="font-semibold text-[#B25A00] mb-1">パターンB：プロジェクトがまだ無い（初めてGCPを使う）場合</p>
+            <ol className="text-[12px] space-y-1 list-decimal list-inside mt-1">
+              <li><a href="https://console.cloud.google.com/projectcreate" target="_blank" rel="noopener" className="text-[#0071E3] hover:underline font-semibold">「プロジェクト作成画面」を開く</a></li>
+              <li>プロジェクト名に <Code>spot-report-ga4</Code> と入力</li>
+              <li>組織・場所は初期値のままでOK → <b>「作成」</b>を押す</li>
+              <li>右上の通知で作成完了を確認（30秒程度）</li>
+            </ol>
+          </div>
+
+          <p className="text-[11px] text-[#6E6E73] mt-1">※ どちらの場合も<b>次のステップ2でそのプロジェクトを選んで使います</b>ので、プロジェクト名だけ覚えておいてください。</p>
+        </div>
       </StepCard>
 
       {/* Step 2 */}
@@ -80,9 +96,12 @@ export default function SetupPage() {
       >
         <ol className="text-[13px] text-[#1D1D1F] space-y-1.5 list-decimal list-inside">
           <li>上のリンクを開く</li>
-          <li>画面上部のプロジェクト選択で <Code>spot-report-ga4</Code> を選択</li>
+          <li>画面上部のプロジェクト選択で<b>ステップ1のプロジェクト</b>を選ぶ</li>
           <li>青いボタン <b>「有効にする」</b> を押す（数秒で切替わります）</li>
         </ol>
+        <div className="mt-3 px-3 py-2 bg-[#E5F7EB] border border-[#A8E5BD] rounded-lg text-[12px] text-[#1D1D1F]">
+          💡 既にAPIが有効化済みの場合は「管理」ボタンが表示されます。そのまま次へ。
+        </div>
       </StepCard>
 
       {/* Step 3 */}
@@ -93,7 +112,7 @@ export default function SetupPage() {
         action={{ url: "https://console.cloud.google.com/iam-admin/serviceaccounts", label: "サービスアカウント画面を開く" }}
       >
         <ol className="text-[13px] text-[#1D1D1F] space-y-2 list-decimal list-inside">
-          <li>画面上部のプロジェクト選択で <Code>spot-report-ga4</Code> を選択</li>
+          <li>ステップ1で選んだ<b>同じプロジェクト</b>が選択されていることを確認</li>
           <li>上部 <b>「＋ サービスアカウントを作成」</b> を押す</li>
           <li>
             名前に <Code>spot-report-reader</Code> を入力 → <b>「作成して続行」</b>
