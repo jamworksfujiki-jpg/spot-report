@@ -1,0 +1,91 @@
+{
+  "customerId": "989-421-6094",
+  "period": "過去30日",
+  "scrapedAt": "2026-04-23T03:44:45.417Z",
+  "total": 10,
+  "totalAllConversions": 24,
+  "totalPrimaryConversions": 0,
+  "hasAllConversionsColumn": true,
+  "items": [
+    {
+      "name": "【始めの社労士くん】2フォーム入力開始",
+      "category": "メイン",
+      "source": "ウェブサイト",
+      "allConversions": 6,
+      "primaryConversions": 0,
+      "value": 600
+    },
+    {
+      "name": "【新規適用届】1フォーム入力開始",
+      "category": "メイン",
+      "source": "ウェブサイト",
+      "allConversions": 4,
+      "primaryConversions": 0,
+      "value": 400
+    },
+    {
+      "name": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
+      "category": "メイン",
+      "source": "ウェブサイト",
+      "allConversions": 4,
+      "primaryConversions": 0,
+      "value": 40
+    },
+    {
+      "name": "【新規適用届】2サンクスページ到達",
+      "category": "メイン",
+      "source": "ウェブサイト",
+      "allConversions": 3,
+      "primaryConversions": 0,
+      "value": 3000
+    },
+    {
+      "name": "【始めの社労士くん】1問い合わせページ遷移",
+      "category": "メイン",
+      "source": "ウェブサイト",
+      "allConversions": 2,
+      "primaryConversions": 0,
+      "value": 20
+    },
+    {
+      "name": "【freee365】3サンクスページ到達",
+      "category": "メイン",
+      "source": "ウェブサイト",
+      "allConversions": 2,
+      "primaryConversions": 0,
+      "value": 2000
+    },
+    {
+      "name": "【freee365】1問い合わせフォーム遷移",
+      "category": "メイン",
+      "source": "ウェブサイト",
+      "allConversions": 1,
+      "primaryConversions": 0,
+      "value": 10
+    },
+    {
+      "name": "【freee365】2フォーム入力開始",
+      "category": "メイン",
+      "source": "ウェブサイト",
+      "allConversions": 1,
+      "primaryConversions": 0,
+      "value": 100
+    },
+    {
+      "name": "【産休育休応援キャンペーン】2フォーム入力開始",
+      "category": "メイン",
+      "source": "ウェブサイト",
+      "allConversions": 1,
+      "primaryConversions": 0,
+      "value": 100
+    },
+    {
+      "name": "【始めの社労士くん】3サンクスページ到達",
+      "category": "メイン",
+      "source": "ウェブサイト",
+      "allConversions": 0,
+      "primaryConversions": 0,
+      "value": 0
+    }
+  ]
+}

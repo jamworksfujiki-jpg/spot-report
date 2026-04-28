@@ -15,7 +15,26 @@ const TABS = [
 
 export default function Home() {
   const [active, setActive] = useState("summary");
+  const [refreshKey, setRefreshKey] = useState(0);
+  const [refreshing, setRefreshing] = useState(false);
   const today = new Date().toLocaleDateString("ja-JP", { year: "numeric", month: "long", day: "numeric", weekday: "short" });
+
+  async function refresh() {
+    setRefreshing(true);
+    // Pre-warm all APIs with cache-busting so Next.js server returns fresh JSON to the remounted children
+    try {
+      const bust = `?t=${Date.now()}`;
+      await Promise.all([
+        fetch(`/api/ads${bust}`, { cache: "no-store" }),
+        fetch(`/api/ga4${bust}`, { cache: "no-store" }),
+        fetch(`/api/instagram${bust}`, { cache: "no-store" }),
+      ]);
+    } catch {
+      /* ignore */
+    }
+    setRefreshKey((k) => k + 1);
+    setRefreshing(false);
+  }
 
   return (
     <div className="max-w-[1400px] mx-auto px-6 py-8">
@@ -26,11 +45,18 @@ export default function Home() {
             <p className="mt-1 text-[14px] text-[#6E6E73]">Google広告 / GA4 / Instagram ・ {today}</p>
           </div>
           <div className="flex items-center gap-2">
-            <button className="px-4 py-2 text-sm font-medium rounded-full bg-white border border-[#D2D2D7] text-[#1D1D1F] hover:bg-[#F5F5F7] min-h-[44px]">
+            <button
+              onClick={() => window.print()}
+              className="px-4 py-2 text-sm font-medium rounded-full bg-white border border-[#D2D2D7] text-[#1D1D1F] hover:bg-[#F5F5F7] min-h-[44px]"
+            >
               📥 PDFでダウンロード
             </button>
-            <button className="px-4 py-2 text-sm font-medium rounded-full bg-[#0071E3] text-white hover:bg-[#0051A3] min-h-[44px]">
-              🔄 最新データ取得
+            <button
+              onClick={refresh}
+              disabled={refreshing}
+              className="px-4 py-2 text-sm font-medium rounded-full bg-[#0071E3] text-white hover:bg-[#0051A3] min-h-[44px] disabled:opacity-60 disabled:cursor-wait"
+            >
+              {refreshing ? "🔄 更新中…" : "🔄 最新データ取得"}
             </button>
           </div>
         </div>
@@ -39,7 +65,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main>
+      <main key={refreshKey}>
         {active === "summary" && <ExecutiveSummary />}
         {active === "ads" && <GoogleAdsView />}
         {active === "ga4" && <Ga4View />}
@@ -47,7 +73,7 @@ export default function Home() {
       </main>
 
       <footer className="mt-16 pt-8 border-t border-[#D2D2D7] text-center text-xs text-[#6E6E73]">
-        <p>※ 一部データはAPI接続準備中のためモック表示中 / GA4 Data API OAuth認証後にライブ接続されます</p>
+        <p>Google広告・GA4・Instagramすべて実データ / 毎朝07:00にWindowsタスクスケジューラで自動更新</p>
       </footer>
     </div>
   );

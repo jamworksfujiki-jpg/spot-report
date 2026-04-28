@@ -1,0 +1,1500 @@
+{
+  "customerId": "989-421-6094",
+  "accountName": "スポット社労士くん",
+  "period": {
+    "from": "2026-03-24",
+    "to": "2026-04-22"
+  },
+  "days": 30,
+  "totals": {
+    "cost": 117301,
+    "clicks": 1259,
+    "conversions": 162.98,
+    "searchImpressions": 3707,
+    "searchClicks": 335,
+    "cpc": 93,
+    "cpa": 720,
+    "searchCtr": 9.04
+  },
+  "campaigns": [
+    {
+      "name": "04. 産休育休応援キャンペーン",
+      "group": "",
+      "status": "有効",
+      "cost": 38376,
+      "conversions": 58,
+      "cpa": 662
+    },
+    {
+      "name": "01.新規適用届",
+      "group": "",
+      "status": "有効",
+      "cost": 36676,
+      "conversions": 33.98,
+      "cpa": 1079
+    },
+    {
+      "name": "02.はじめの社労士くん",
+      "group": "",
+      "status": "有効",
+      "cost": 33361,
+      "conversions": 49,
+      "cpa": 681
+    },
+    {
+      "name": "05. 伴走くんDisplay",
+      "group": "",
+      "status": "有効",
+      "cost": 8888,
+      "conversions": 22,
+      "cpa": 404
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-03-24",
+      "clicks": 59,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 6471
+    },
+    {
+      "date": "2026-03-25",
+      "clicks": 28,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 5783
+    },
+    {
+      "date": "2026-03-26",
+      "clicks": 35,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 4407
+    },
+    {
+      "date": "2026-03-27",
+      "clicks": 51,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 4400
+    },
+    {
+      "date": "2026-03-28",
+      "clicks": 29,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 2731
+    },
+    {
+      "date": "2026-03-29",
+      "clicks": 25,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3624
+    },
+    {
+      "date": "2026-03-30",
+      "clicks": 50,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 4511
+    },
+    {
+      "date": "2026-03-31",
+      "clicks": 31,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 2295
+    },
+    {
+      "date": "2026-04-01",
+      "clicks": 65,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 4868
+    },
+    {
+      "date": "2026-04-02",
+      "clicks": 65,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3884
+    },
+    {
+      "date": "2026-04-03",
+      "clicks": 43,
+      "conversionsPrimary": 1,
+      "conversionsSecondary": 0,
+      "conversions": 1,
+      "cost": 3728
+    },
+    {
+      "date": "2026-04-04",
+      "clicks": 29,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 1730
+    },
+    {
+      "date": "2026-04-05",
+      "clicks": 50,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3337
+    },
+    {
+      "date": "2026-04-06",
+      "clicks": 69,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 5085
+    },
+    {
+      "date": "2026-04-07",
+      "clicks": 40,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3907
+    },
+    {
+      "date": "2026-04-08",
+      "clicks": 32,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3697
+    },
+    {
+      "date": "2026-04-09",
+      "clicks": 56,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 4202
+    },
+    {
+      "date": "2026-04-10",
+      "clicks": 53,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3932
+    },
+    {
+      "date": "2026-04-11",
+      "clicks": 48,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 2166
+    },
+    {
+      "date": "2026-04-12",
+      "clicks": 34,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3700
+    },
+    {
+      "date": "2026-04-13",
+      "clicks": 20,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 5430
+    },
+    {
+      "date": "2026-04-14",
+      "clicks": 43,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 4435
+    },
+    {
+      "date": "2026-04-15",
+      "clicks": 48,
+      "conversionsPrimary": 1,
+      "conversionsSecondary": 0,
+      "conversions": 1,
+      "cost": 4095
+    },
+    {
+      "date": "2026-04-16",
+      "clicks": 48,
+      "conversionsPrimary": 1,
+      "conversionsSecondary": 0,
+      "conversions": 1,
+      "cost": 4281
+    },
+    {
+      "date": "2026-04-17",
+      "clicks": 38,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3247
+    },
+    {
+      "date": "2026-04-18",
+      "clicks": 35,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3257
+    },
+    {
+      "date": "2026-04-19",
+      "clicks": 35,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3565
+    },
+    {
+      "date": "2026-04-20",
+      "clicks": 30,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3638
+    },
+    {
+      "date": "2026-04-21",
+      "clicks": 38,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3494
+    },
+    {
+      "date": "2026-04-22",
+      "clicks": 32,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 3402
+    }
+  ],
+  "devices": [
+    {
+      "device": "パソコン",
+      "cost": 21893,
+      "clicks": 116,
+      "conversions": 47
+    },
+    {
+      "device": "モバイル",
+      "cost": 93147,
+      "clicks": 1051,
+      "conversions": 114.98
+    },
+    {
+      "device": "タブレット",
+      "cost": 2261,
+      "clicks": 92,
+      "conversions": 1
+    },
+    {
+      "device": "テレビ画面",
+      "cost": 0,
+      "clicks": 0,
+      "conversions": 0
+    }
+  ],
+  "searchTerms": [
+    {
+      "term": "社会 保険 加入 手続き",
+      "cost": 8697,
+      "clicks": 20,
+      "impressions": 414,
+      "conversions": 0
+    },
+    {
+      "term": "産休 いつから",
+      "cost": 3210,
+      "clicks": 49,
+      "impressions": 382,
+      "conversions": 0
+    },
+    {
+      "term": "育児 休業 給付 金",
+      "cost": 947,
+      "clicks": 15,
+      "impressions": 239,
+      "conversions": 0
+    },
+    {
+      "term": "育休 手当",
+      "cost": 786,
+      "clicks": 10,
+      "impressions": 153,
+      "conversions": 0
+    },
+    {
+      "term": "育休 手当 計算",
+      "cost": 1041,
+      "clicks": 20,
+      "impressions": 151,
+      "conversions": 0
+    },
+    {
+      "term": "スポット 社労士 くん",
+      "cost": 1144,
+      "clicks": 7,
+      "impressions": 128,
+      "conversions": 0
+    },
+    {
+      "term": "産休 給料",
+      "cost": 1090,
+      "clicks": 20,
+      "impressions": 122,
+      "conversions": 0
+    },
+    {
+      "term": "産休 手当",
+      "cost": 461,
+      "clicks": 11,
+      "impressions": 70,
+      "conversions": 0
+    },
+    {
+      "term": "産休 手当 計算",
+      "cost": 866,
+      "clicks": 16,
+      "impressions": 70,
+      "conversions": 0
+    },
+    {
+      "term": "育児 休業 給付 金 計算",
+      "cost": 1003,
+      "clicks": 11,
+      "impressions": 64,
+      "conversions": 0
+    },
+    {
+      "term": "会社 設立 社会 保険 手続き",
+      "cost": 921,
+      "clicks": 5,
+      "impressions": 62,
+      "conversions": 0
+    },
+    {
+      "term": "産休 計算",
+      "cost": 762,
+      "clicks": 11,
+      "impressions": 54,
+      "conversions": 0
+    },
+    {
+      "term": "個人 事業 主 社会 保険",
+      "cost": 697,
+      "clicks": 6,
+      "impressions": 51,
+      "conversions": 0
+    },
+    {
+      "term": "スポット 社労士",
+      "cost": 894,
+      "clicks": 3,
+      "impressions": 49,
+      "conversions": 0
+    },
+    {
+      "term": "出産 手当 金 と は",
+      "cost": 171,
+      "clicks": 2,
+      "impressions": 47,
+      "conversions": 0
+    },
+    {
+      "term": "人 を 雇う 手続き",
+      "cost": 464,
+      "clicks": 5,
+      "impressions": 45,
+      "conversions": 0
+    },
+    {
+      "term": "社会 保険 加入 方法",
+      "cost": 276,
+      "clicks": 1,
+      "impressions": 45,
+      "conversions": 0
+    },
+    {
+      "term": "出産 手当 金 計算",
+      "cost": 485,
+      "clicks": 6,
+      "impressions": 43,
+      "conversions": 0
+    },
+    {
+      "term": "従業 員 雇用 手続き",
+      "cost": 692,
+      "clicks": 5,
+      "impressions": 42,
+      "conversions": 0
+    },
+    {
+      "term": "出生 後 休業 支援 給付 金",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 41,
+      "conversions": 0
+    },
+    {
+      "term": "育休 期間",
+      "cost": 158,
+      "clicks": 3,
+      "impressions": 41,
+      "conversions": 0
+    },
+    {
+      "term": "産休 育休 手当",
+      "cost": 64,
+      "clicks": 2,
+      "impressions": 40,
+      "conversions": 0
+    },
+    {
+      "term": "出産 手当 金",
+      "cost": 116,
+      "clicks": 2,
+      "impressions": 37,
+      "conversions": 0
+    },
+    {
+      "term": "産休 手当 と は",
+      "cost": 165,
+      "clicks": 3,
+      "impressions": 35,
+      "conversions": 0
+    },
+    {
+      "term": "育児 休業",
+      "cost": 107,
+      "clicks": 2,
+      "impressions": 35,
+      "conversions": 0
+    },
+    {
+      "term": "産前 産後 休暇",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 34,
+      "conversions": 0
+    },
+    {
+      "term": "社労士",
+      "cost": 205,
+      "clicks": 1,
+      "impressions": 33,
+      "conversions": 0
+    },
+    {
+      "term": "育児 休暇",
+      "cost": 98,
+      "clicks": 3,
+      "impressions": 32,
+      "conversions": 0
+    },
+    {
+      "term": "産前 産後 休暇 手当",
+      "cost": 123,
+      "clicks": 2,
+      "impressions": 30,
+      "conversions": 0
+    },
+    {
+      "term": "パパ 育休 給付 金",
+      "cost": 314,
+      "clicks": 3,
+      "impressions": 29,
+      "conversions": 0
+    },
+    {
+      "term": "育休",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 28,
+      "conversions": 0
+    },
+    {
+      "term": "法人 設立 社会 保険 手続き",
+      "cost": 236,
+      "clicks": 1,
+      "impressions": 27,
+      "conversions": 0
+    },
+    {
+      "term": "出生 後 休業 支援 給付 金 と は",
+      "cost": 243,
+      "clicks": 1,
+      "impressions": 25,
+      "conversions": 0
+    },
+    {
+      "term": "従業 員 を 雇っ た 時 の 手続き",
+      "cost": 153,
+      "clicks": 1,
+      "impressions": 25,
+      "conversions": 0
+    },
+    {
+      "term": "法人 社会 保険 加入",
+      "cost": 743,
+      "clicks": 2,
+      "impressions": 25,
+      "conversions": 0
+    },
+    {
+      "term": "育休 手当 いつまで",
+      "cost": 273,
+      "clicks": 1,
+      "impressions": 25,
+      "conversions": 0
+    },
+    {
+      "term": "産休",
+      "cost": 148,
+      "clicks": 4,
+      "impressions": 24,
+      "conversions": 0
+    },
+    {
+      "term": "社員 雇用 手続き",
+      "cost": 266,
+      "clicks": 3,
+      "impressions": 24,
+      "conversions": 0
+    },
+    {
+      "term": "産休 育休 手当 計算",
+      "cost": 163,
+      "clicks": 4,
+      "impressions": 23,
+      "conversions": 0
+    },
+    {
+      "term": "産休 育休 給与",
+      "cost": 20,
+      "clicks": 1,
+      "impressions": 23,
+      "conversions": 0
+    },
+    {
+      "term": "育休 給付 金",
+      "cost": 28,
+      "clicks": 1,
+      "impressions": 23,
+      "conversions": 0
+    },
+    {
+      "term": "育休 給料",
+      "cost": 191,
+      "clicks": 2,
+      "impressions": 23,
+      "conversions": 0
+    },
+    {
+      "term": "従業 員 雇う 手続き",
+      "cost": 444,
+      "clicks": 4,
+      "impressions": 20,
+      "conversions": 0
+    },
+    {
+      "term": "産休 育休 計算",
+      "cost": 72,
+      "clicks": 1,
+      "impressions": 20,
+      "conversions": 0
+    },
+    {
+      "term": "育児 休暇 給料",
+      "cost": 18,
+      "clicks": 1,
+      "impressions": 20,
+      "conversions": 0
+    },
+    {
+      "term": "育児 休業 給付 金 いつ",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 19,
+      "conversions": 0
+    },
+    {
+      "term": "育休 中 給与",
+      "cost": 110,
+      "clicks": 2,
+      "impressions": 18,
+      "conversions": 0
+    },
+    {
+      "term": "スポット 社労士 くん 社会 保険 労務 士 法人",
+      "cost": 291,
+      "clicks": 3,
+      "impressions": 17,
+      "conversions": 0
+    },
+    {
+      "term": "社会 保険 加入 会社",
+      "cost": 441,
+      "clicks": 1,
+      "impressions": 17,
+      "conversions": 0
+    },
+    {
+      "term": "社会 保険 加入 法人",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 17,
+      "conversions": 0
+    },
+    {
+      "term": "育休 手当 条件",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 17,
+      "conversions": 0
+    },
+    {
+      "term": "個人 事業 主 社会 保険 加入",
+      "cost": 362,
+      "clicks": 2,
+      "impressions": 16,
+      "conversions": 0
+    },
+    {
+      "term": "産後 パパ 育休",
+      "cost": 185,
+      "clicks": 2,
+      "impressions": 16,
+      "conversions": 0
+    },
+    {
+      "term": "産後 パパ 育休 給付 金",
+      "cost": 122,
+      "clicks": 1,
+      "impressions": 16,
+      "conversions": 0
+    },
+    {
+      "term": "社会 保険 法人",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 16,
+      "conversions": 0
+    },
+    {
+      "term": "社保 加入 手続き",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 16,
+      "conversions": 0
+    },
+    {
+      "term": "会社 設立 社会 保険",
+      "cost": 398,
+      "clicks": 2,
+      "impressions": 15,
+      "conversions": 0
+    },
+    {
+      "term": "時短 勤務 給付 金",
+      "cost": 138,
+      "clicks": 1,
+      "impressions": 15,
+      "conversions": 0
+    },
+    {
+      "term": "産休 育休 期間",
+      "cost": 60,
+      "clicks": 1,
+      "impressions": 15,
+      "conversions": 0
+    },
+    {
+      "term": "社会 保険 労務 士",
+      "cost": 124,
+      "clicks": 1,
+      "impressions": 15,
+      "conversions": 0
+    },
+    {
+      "term": "会社 設立 社会 保険 加入 手続き",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 14,
+      "conversions": 0
+    },
+    {
+      "term": "個人 事業 主 が 従業 員 を 雇う",
+      "cost": 394,
+      "clicks": 3,
+      "impressions": 14,
+      "conversions": 0
+    },
+    {
+      "term": "健康 保険 の 加入 手続き",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 14,
+      "conversions": 0
+    },
+    {
+      "term": "従業 員 を 雇う 手続き",
+      "cost": 42,
+      "clicks": 1,
+      "impressions": 14,
+      "conversions": 0
+    },
+    {
+      "term": "法人 社会 保険",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 14,
+      "conversions": 0
+    },
+    {
+      "term": "産休 いつから 計算",
+      "cost": 76,
+      "clicks": 4,
+      "impressions": 14,
+      "conversions": 0
+    },
+    {
+      "term": "産後 パパ 育休 給付 金 シミュレーション",
+      "cost": 351,
+      "clicks": 4,
+      "impressions": 14,
+      "conversions": 0
+    },
+    {
+      "term": "社会 保険 会社",
+      "cost": 815,
+      "clicks": 1,
+      "impressions": 14,
+      "conversions": 0
+    },
+    {
+      "term": "社会 保険 新規 加入",
+      "cost": 670,
+      "clicks": 2,
+      "impressions": 14,
+      "conversions": 0
+    },
+    {
+      "term": "会社 社会 保険",
+      "cost": 226,
+      "clicks": 1,
+      "impressions": 13,
+      "conversions": 0
+    },
+    {
+      "term": "出産 もらえる お金",
+      "cost": 1163,
+      "clicks": 4,
+      "impressions": 13,
+      "conversions": 0
+    },
+    {
+      "term": "出産 もらえる お金 一覧 2026",
+      "cost": 181,
+      "clicks": 2,
+      "impressions": 13,
+      "conversions": 0
+    },
+    {
+      "term": "妊娠 したら もらえる お金",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 13,
+      "conversions": 0
+    },
+    {
+      "term": "新しく 人 を 雇う 手続き",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 13,
+      "conversions": 0
+    },
+    {
+      "term": "産休 は いつから",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 13,
+      "conversions": 0
+    },
+    {
+      "term": "産休 中 給与",
+      "cost": 68,
+      "clicks": 2,
+      "impressions": 13,
+      "conversions": 0
+    },
+    {
+      "term": "産前 産後 休暇 計算",
+      "cost": 105,
+      "clicks": 2,
+      "impressions": 13,
+      "conversions": 0
+    },
+    {
+      "term": "社会 保険 新規 適用",
+      "cost": 288,
+      "clicks": 1,
+      "impressions": 13,
+      "conversions": 0
+    },
+    {
+      "term": "パパ 育休",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 12,
+      "conversions": 0
+    },
+    {
+      "term": "両立 支援 等 助成 金",
+      "cost": 87,
+      "clicks": 1,
+      "impressions": 12,
+      "conversions": 0
+    },
+    {
+      "term": "会社 の 社会 保険",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 12,
+      "conversions": 0
+    },
+    {
+      "term": "会社 設立 保険 手続き",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 12,
+      "conversions": 0
+    },
+    {
+      "term": "健康 保険 加入 手続き",
+      "cost": 885,
+      "clicks": 1,
+      "impressions": 12,
+      "conversions": 0
+    },
+    {
+      "term": "従業 員 雇う 手続き 個人 事業 主",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 12,
+      "conversions": 0
+    },
+    {
+      "term": "社会 保険 新規 加入 手続き",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 12,
+      "conversions": 0
+    },
+    {
+      "term": "育休 手当 いつ 入る",
+      "cost": 284,
+      "clicks": 2,
+      "impressions": 12,
+      "conversions": 0
+    },
+    {
+      "term": "育児 休暇 給付 金",
+      "cost": 125,
+      "clicks": 2,
+      "impressions": 12,
+      "conversions": 0
+    },
+    {
+      "term": "育児 休業 給付 金 条件",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 12,
+      "conversions": 0
+    },
+    {
+      "term": "人 を 雇う 時に 必要 な 手続き",
+      "cost": 698,
+      "clicks": 3,
+      "impressions": 11,
+      "conversions": 0
+    },
+    {
+      "term": "出産 で もらえる お金",
+      "cost": 36,
+      "clicks": 1,
+      "impressions": 11,
+      "conversions": 0
+    },
+    {
+      "term": "産休 中 の 給料",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 11,
+      "conversions": 0
+    },
+    {
+      "term": "産休 期間",
+      "cost": 80,
+      "clicks": 1,
+      "impressions": 11,
+      "conversions": 0
+    },
+    {
+      "term": "社員 を 雇う 手続き",
+      "cost": 152,
+      "clicks": 2,
+      "impressions": 11,
+      "conversions": 0
+    },
+    {
+      "term": "育休 手当 いつから",
+      "cost": 39,
+      "clicks": 1,
+      "impressions": 11,
+      "conversions": 0
+    },
+    {
+      "term": "パパママ 育休 プラス",
+      "cost": 193,
+      "clicks": 2,
+      "impressions": 10,
+      "conversions": 0
+    },
+    {
+      "term": "妊娠 出産 もらえる お金",
+      "cost": 66,
+      "clicks": 1,
+      "impressions": 10,
+      "conversions": 0
+    },
+    {
+      "term": "従業 員 を 雇う に は",
+      "cost": 103,
+      "clicks": 1,
+      "impressions": 10,
+      "conversions": 0
+    },
+    {
+      "term": "新規 雇用 手続き",
+      "cost": 0,
+      "clicks": 0,
+      "impressions": 10,
+      "conversions": 0
+    },
+    {
+      "term": "法人 健康 保険",
+      "cost": 322,
+      "clicks": 1,
+      "impressions": 10,
+      "conversions": 0
+    },
+    {
+      "term": "法人 社会 保険 加入 方法",
+      "cost": 504,
+      "clicks": 2,
+      "impressions": 10,
+      "conversions": 0
+    }
+  ],
+  "biddedKeywords": [
+    {
+      "keyword": "産休 給与 計算",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 24695,
+      "clicks": 427,
+      "ctr": 6.68
+    },
+    {
+      "keyword": "従業員 雇う 手続き",
+      "matchType": "フレーズ一致",
+      "status": "削除済み",
+      "cost": 12266,
+      "clicks": 102,
+      "ctr": 13.73
+    },
+    {
+      "keyword": "社会保険 新規加入",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 10651,
+      "clicks": 30,
+      "ctr": 5.63
+    },
+    {
+      "keyword": "社会保険 新規適用",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 3431,
+      "clicks": 16,
+      "ctr": 7.24
+    },
+    {
+      "keyword": "社会保険 法人設立",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 3229,
+      "clicks": 13,
+      "ctr": 7.51
+    },
+    {
+      "keyword": "社会保険 会社 安い",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 2932,
+      "clicks": 6,
+      "ctr": 17.14
+    },
+    {
+      "keyword": "助成金 出産",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 2899,
+      "clicks": 29,
+      "ctr": 9.76
+    },
+    {
+      "keyword": "社会保険 会社設立",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 2876,
+      "clicks": 13,
+      "ctr": 9.03
+    },
+    {
+      "keyword": "社会保険 法人 社労士",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 2786,
+      "clicks": 7,
+      "ctr": 12.07
+    },
+    {
+      "keyword": "社員 雇用 手続き",
+      "matchType": "フレーズ一致",
+      "status": "削除済み",
+      "cost": 2725,
+      "clicks": 20,
+      "ctr": 8.93
+    },
+    {
+      "keyword": "産休 育休 給付",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 2701,
+      "clicks": 23,
+      "ctr": 5.05
+    },
+    {
+      "keyword": "社会保険加入 法人",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 2570,
+      "clicks": 7,
+      "ctr": 7.78
+    },
+    {
+      "keyword": "従業員 雇用 手続き",
+      "matchType": "フレーズ一致",
+      "status": "削除済み",
+      "cost": 2212,
+      "clicks": 18,
+      "ctr": 13.64
+    },
+    {
+      "keyword": "社会保険 新規加入",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 2047,
+      "clicks": 4,
+      "ctr": 4.26
+    },
+    {
+      "keyword": "育休手当 計算",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 1604,
+      "clicks": 29,
+      "ctr": 10.62
+    },
+    {
+      "keyword": "健康保険 法人設立",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 1563,
+      "clicks": 3,
+      "ctr": 16.67
+    },
+    {
+      "keyword": "社員 雇う 手続き",
+      "matchType": "フレーズ一致",
+      "status": "削除済み",
+      "cost": 1499,
+      "clicks": 13,
+      "ctr": 11.93
+    },
+    {
+      "keyword": "健康保険 新規加入",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 1420,
+      "clicks": 4,
+      "ctr": 4.71
+    },
+    {
+      "keyword": "社会保険 会社 社労士",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 1337,
+      "clicks": 6,
+      "ctr": 10.17
+    },
+    {
+      "keyword": "社会保険 会社 安い",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 1213,
+      "clicks": 4,
+      "ctr": 36.36
+    },
+    {
+      "keyword": "社会保険 会社",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 1041,
+      "clicks": 2,
+      "ctr": 6.9
+    },
+    {
+      "keyword": "社会保険加入 会社",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 1022,
+      "clicks": 6,
+      "ctr": 13.04
+    },
+    {
+      "keyword": "育休手当",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 1010,
+      "clicks": 19,
+      "ctr": 5.19
+    },
+    {
+      "keyword": "産休 計算",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 993,
+      "clicks": 23,
+      "ctr": 17.56
+    },
+    {
+      "keyword": "社会保険 会社設立",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 988,
+      "clicks": 4,
+      "ctr": 10.26
+    },
+    {
+      "keyword": "社会保険 会社",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 987,
+      "clicks": 4,
+      "ctr": 21.05
+    },
+    {
+      "keyword": "健康保険 新規加入",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 953,
+      "clicks": 9,
+      "ctr": 6.98
+    },
+    {
+      "keyword": "育休 助成金",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 878,
+      "clicks": 14,
+      "ctr": 18.42
+    },
+    {
+      "keyword": "産休 手当 計算",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 873,
+      "clicks": 17,
+      "ctr": 16.04
+    },
+    {
+      "keyword": "社会保険 新規適用 社労士",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 778,
+      "clicks": 6,
+      "ctr": 8.33
+    },
+    {
+      "keyword": "社会保険 新規適用",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 756,
+      "clicks": 2,
+      "ctr": 11.11
+    },
+    {
+      "keyword": "初めて 雇う 手続き",
+      "matchType": "フレーズ一致",
+      "status": "削除済み",
+      "cost": 695,
+      "clicks": 4,
+      "ctr": 9.76
+    },
+    {
+      "keyword": "育休 お金",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 686,
+      "clicks": 22,
+      "ctr": 3.39
+    },
+    {
+      "keyword": "社会保険 会社設立",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 600,
+      "clicks": 3,
+      "ctr": 13.64
+    },
+    {
+      "keyword": "社会保険 新規加入",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 544,
+      "clicks": 2,
+      "ctr": 50
+    },
+    {
+      "keyword": "従業員 雇う 手続き",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 510,
+      "clicks": 4,
+      "ctr": 10
+    },
+    {
+      "keyword": "社員 雇用 手続き",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 477,
+      "clicks": 4,
+      "ctr": 23.53
+    },
+    {
+      "keyword": "従業員 採用 手続き",
+      "matchType": "フレーズ一致",
+      "status": "削除済み",
+      "cost": 464,
+      "clicks": 4,
+      "ctr": 9.3
+    },
+    {
+      "keyword": "社会保険加入 会社",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 441,
+      "clicks": 1,
+      "ctr": 7.14
+    },
+    {
+      "keyword": "正社員 雇用 手続き",
+      "matchType": "フレーズ一致",
+      "status": "削除済み",
+      "cost": 415,
+      "clicks": 2,
+      "ctr": 11.76
+    },
+    {
+      "keyword": "社会保険 新規適用 社労士",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 410,
+      "clicks": 1,
+      "ctr": 14.29
+    },
+    {
+      "keyword": "健康保険 会社設立",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 402,
+      "clicks": 1,
+      "ctr": 8.33
+    },
+    {
+      "keyword": "社会保険 会社",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 335,
+      "clicks": 2,
+      "ctr": 4.88
+    },
+    {
+      "keyword": "社会保険 届出 社労士",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 329,
+      "clicks": 4,
+      "ctr": 7.84
+    },
+    {
+      "keyword": "健康保険 法人",
+      "matchType": "完全一致",
+      "status": "削除済み",
+      "cost": 322,
+      "clicks": 1,
+      "ctr": 2.22
+    },
+    {
+      "keyword": "初めて 雇う 手続き",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 292,
+      "clicks": 2,
+      "ctr": 8.33
+    },
+    {
+      "keyword": "社員 採用 手続き",
+      "matchType": "フレーズ一致",
+      "status": "削除済み",
+      "cost": 289,
+      "clicks": 3,
+      "ctr": 7.14
+    },
+    {
+      "keyword": "助成金 妊娠",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 288,
+      "clicks": 6,
+      "ctr": 7.59
+    },
+    {
+      "keyword": "社員 採用 手続き",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 282,
+      "clicks": 3,
+      "ctr": 9.68
+    },
+    {
+      "keyword": "従業員 雇用 手続き",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 278,
+      "clicks": 2,
+      "ctr": 8.33
+    }
+  ],
+  "network": [
+    {
+      "name": "Google 検索",
+      "clicks": 826,
+      "cost": 104245,
+      "cpc": 126
+    },
+    {
+      "name": "検索パートナー",
+      "clicks": 161,
+      "cost": 3121,
+      "cpc": 19
+    },
+    {
+      "name": "ディスプレイ ネットワーク",
+      "clicks": 272,
+      "cost": 9936,
+      "cpc": 37
+    }
+  ],
+  "gender": [
+    {
+      "label": "男性",
+      "impressions": 7921,
+      "share": 47.85
+    },
+    {
+      "label": "女性",
+      "impressions": 9343,
+      "share": 56.44
+    }
+  ],
+  "age": [
+    {
+      "label": "18～24 歳",
+      "impressions": 1523,
+      "share": 9.2
+    },
+    {
+      "label": "25～34 歳",
+      "impressions": 4309,
+      "share": 26.03
+    },
+    {
+      "label": "35～44 歳",
+      "impressions": 3810,
+      "share": 23.02
+    },
+    {
+      "label": "45～54 歳",
+      "impressions": 3035,
+      "share": 18.33
+    },
+    {
+      "label": "55～64 歳",
+      "impressions": 2056,
+      "share": 12.42
+    },
+    {
+      "label": "65 才以上",
+      "impressions": 1879,
+      "share": 11.35
+    }
+  ],
+  "consistency": {
+    "clicksMatch": true,
+    "costMatch": false,
+    "netClicks": 1259,
+    "netCost": 117302,
+    "cmpCost": 117301,
+    "cmpCv": 162.98,
+    "tlClicks": 1259
+  },
+  "source": "playwright-overview-zip",
+  "scrapedAt": "2026-04-23T03:42:18.313Z"
+}

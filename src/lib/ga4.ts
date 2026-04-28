@@ -116,7 +116,7 @@ export async function fetchGa4Report(propertyId: string, from: string, to: strin
       avgTimeSec: Math.round(Number(r.metricValues?.[1]?.value ?? 0)),
       bounceRate: Math.round(Number(r.metricValues?.[2]?.value ?? 0) * 1000) / 10,
     }))
-    .filter((a) => /^\/\d+\/?$/.test(a.path) || a.path.includes("/column/") || a.path === "/")
+    .filter((a) => /^\/\d+\/?$/.test(a.path) || a.path.includes("/column/"))
     .slice(0, 20);
 
   const totalUsers = (sourcesRes[0].rows ?? []).reduce((s, r) => s + Number(r.metricValues?.[0]?.value ?? 0), 0) || 1;

@@ -1,118 +1,108 @@
 "use client";
-import { instagramOverview as d } from "@/lib/mock-data";
+import { useEffect, useState } from "react";
 import { fmt } from "@/lib/utils";
 import { MetricCard } from "./MetricCard";
 import { SectionHeader } from "./SectionHeader";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend, BarChart, Bar, PieChart, Pie, Cell } from "recharts";
 
-const PIE_COLORS = ["#FF375F", "#0071E3", "#BF5AF2", "#30D158", "#FF9F0A", "#64D2FF"];
+type IgPost = { url: string; caption: string; postedAt?: string | null };
+type IgData = {
+  username: string;
+  displayName: string;
+  followers: number | null;
+  following: number | null;
+  postsCount: number | null;
+  recentPosts: IgPost[];
+  scrapedAt: string;
+};
 
 export function InstagramView() {
+  const [data, setData] = useState<IgData | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch("/api/instagram")
+      .then((r) => r.json())
+      .then((json) => {
+        if (json.connected) setData(json.data);
+        else setError(json.message ?? "not connected");
+      })
+      .catch((e) => setError(String(e)));
+  }, []);
+
+  if (error) {
+    return (
+      <div className="card text-[#6E6E73] text-sm">
+        Instagramデータの取得に失敗しました: {error}
+      </div>
+    );
+  }
+
+  if (!data) {
+    return <div className="card text-[#6E6E73] text-sm">読み込み中...</div>;
+  }
+
+  const scrapedDate = new Date(data.scrapedAt).toLocaleString("ja-JP", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return (
     <div className="space-y-8">
       <div className="flex items-baseline justify-between flex-wrap gap-2">
         <SectionHeader
-          title={`Instagram @${d.username}`}
-          sub={`${d.displayName}・${d.period.from} 〜 ${d.period.to}`}
+          title={`Instagram @${data.username}`}
+          sub={`${data.displayName}・取得日時: ${scrapedDate}`}
         />
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[12px] font-medium rounded-full bg-[#FFF4E5] text-[#B25A00] border border-[#FFD599]">
-          ⚠ Graph API接続準備中
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[12px] font-medium rounded-full bg-[#E8F5E9] text-[#1B5E20] border border-[#A5D6A7]">
+          ✓ 実データ（Playwright）
         </span>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        <MetricCard label="フォロワー" value={fmt.num(d.followers)} delta="+32" deltaTone="positive" sub="過去30日" />
-        <MetricCard label="リーチ" value={fmt.num(d.totals.reach)} delta="+14.8%" deltaTone="positive" />
-        <MetricCard label="インプレッション" value={fmt.num(d.totals.impressions)} delta="+18.2%" deltaTone="positive" />
-        <MetricCard label="プロフィール訪問" value={fmt.num(d.totals.profileVisits)} delta="+22.1%" deltaTone="positive" />
-        <MetricCard label="サイト誘導" value={fmt.num(d.totals.websiteClicks)} delta="+11.4%" deltaTone="positive" />
-        <MetricCard label="エンゲージ率" value={fmt.pct(d.totals.engagementRate)} delta="+0.6pt" deltaTone="positive" />
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <MetricCard label="フォロワー" value={fmt.num(data.followers ?? 0)} sub="現在" />
+        <MetricCard label="フォロー中" value={fmt.num(data.following ?? 0)} sub="現在" />
+        <MetricCard label="投稿数" value={fmt.num(data.postsCount ?? 0)} sub="累計" />
+        <MetricCard label="取得件数" value={String(data.recentPosts.length)} sub="最近の投稿" />
       </div>
 
       <div className="card">
-        <SectionHeader title="日次トレンド" />
-        <div className="h-80">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={d.timeline}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#F0F0F0" />
-              <XAxis dataKey="date" tickFormatter={fmt.shortDate} stroke="#6E6E73" fontSize={11} />
-              <YAxis stroke="#6E6E73" fontSize={11} />
-              <Tooltip contentStyle={{ borderRadius: 12, border: "1px solid #D2D2D7", fontSize: 12 }} labelFormatter={(l: unknown) => fmt.shortDate(String(l))} />
-              <Legend wrapperStyle={{ fontSize: 12 }} />
-              <Line type="monotone" dataKey="reach" stroke="#FF375F" strokeWidth={2} name="リーチ" dot={false} />
-              <Line type="monotone" dataKey="impressions" stroke="#0071E3" strokeWidth={2} name="インプレッション" dot={false} />
-              <Line type="monotone" dataKey="engagements" stroke="#30D158" strokeWidth={2} name="エンゲージメント" dot={false} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-
-      <div className="grid lg:grid-cols-2 gap-6">
-        <div className="card">
-          <SectionHeader title="年代別オーディエンス" />
-          <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={d.demographics.age}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#F0F0F0" />
-                <XAxis dataKey="bucket" stroke="#6E6E73" fontSize={11} />
-                <YAxis stroke="#6E6E73" fontSize={11} unit="%" />
-                <Tooltip contentStyle={{ borderRadius: 12, border: "1px solid #D2D2D7", fontSize: 12 }} formatter={(v: unknown) => `${Number(v).toFixed(1)}%`} />
-                <Bar dataKey="share" fill="#FF375F" radius={[6, 6, 0, 0]} name="構成比" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-
-        <div className="card">
-          <SectionHeader title="性別比率" />
-          <div className="h-64">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie data={d.demographics.gender} dataKey="share" nameKey="type" cx="50%" cy="50%" outerRadius={80} label={(e: any) => `${e.type} ${e.share.toFixed(1)}%`}>
-                  {d.demographics.gender.map((_, i) => <Cell key={i} fill={PIE_COLORS[i]} />)}
-                </Pie>
-                <Tooltip contentStyle={{ borderRadius: 12, border: "1px solid #D2D2D7", fontSize: 12 }} />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid lg:grid-cols-2 gap-6">
-        <div className="card">
-          <SectionHeader title="主要都市" sub="フォロワー居住地TOP6" />
-          <div className="space-y-2">
-            {d.demographics.topCities.map((c) => (
-              <div key={c.city} className="flex items-center gap-3">
-                <span className="text-sm font-medium w-16 text-[#1D1D1F]">{c.city}</span>
-                <div className="flex-1 h-2 bg-[#F0F0F0] rounded-full overflow-hidden">
-                  <div className="h-full bg-[#FF375F]" style={{ width: `${c.share * 3}%` }} />
-                </div>
-                <span className="text-sm tabular-nums font-semibold w-12 text-right">{fmt.pct(c.share)}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="card">
-          <SectionHeader title="投稿ランキング（反響順）" />
-          <div className="space-y-3">
-            {d.topPosts.map((p, i) => (
-              <div key={i} className="flex items-start gap-3 py-2 border-b border-[#F0F0F0] last:border-0">
+        <SectionHeader title="最近の投稿" sub={`${data.recentPosts.length}件`} />
+        <div className="space-y-2">
+          {data.recentPosts.map((p, i) => {
+            const dateLabel = p.postedAt ? new Date(p.postedAt).toLocaleDateString("ja-JP", { year: "numeric", month: "2-digit", day: "2-digit" }) : null;
+            return (
+              <a
+                key={i}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 py-3 border-b border-[#F0F0F0] last:border-0 hover:bg-[#F9F9FB] transition-colors"
+              >
                 <span className="text-[#6E6E73] font-semibold w-6 shrink-0">{i + 1}</span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-[#1D1D1F] truncate">{p.caption}</p>
-                  <div className="flex items-center gap-3 text-xs text-[#6E6E73] mt-1">
-                    <span>❤ {p.likes}</span>
-                    <span>💬 {p.comments}</span>
-                    <span>🔖 {p.saves}</span>
-                    <span>👁 {fmt.num(p.reach)}</span>
-                    <span className="ml-auto font-semibold text-[#30D158]">{fmt.pct(p.engagementRate)}</span>
+                  <p className="text-sm text-[#1D1D1F] line-clamp-2">{p.caption || "（キャプションなし）"}</p>
+                  <div className="flex items-center gap-3 mt-1">
+                    {dateLabel && <span className="text-xs text-[#6E6E73]">{dateLabel}</span>}
+                    <span className="text-xs text-[#0071E3] truncate">{p.url.replace("https://www.instagram.com/", "")}</span>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="card bg-[#F9F9FB]">
+        <div className="text-xs text-[#6E6E73]">
+          <p className="font-semibold mb-1">📋 データについて</p>
+          <ul className="space-y-1 list-disc list-inside">
+            <li>Playwrightでスクレイピングした実データです</li>
+            <li>リーチ/インプレッション/デモグラはInstagram Graph API接続後に追加します</li>
+            <li>キャプションはグリッド画像のalt属性から取得しています</li>
+          </ul>
         </div>
       </div>
     </div>
