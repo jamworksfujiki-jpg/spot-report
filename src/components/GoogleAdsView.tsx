@@ -51,15 +51,17 @@ type AdsData = {
   } | null;
 };
 
-export function GoogleAdsView() {
-  const [data, setData] = useState<AdsData | null>(null);
+type GoogleAdsViewProps = { range?: { from: string; to: string } };
+
+export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
+  const [raw, setRaw] = useState<AdsData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("/api/ads")
       .then((r) => r.json())
       .then((j) => {
-        if (j.connected) setData(j.data);
+        if (j.connected) setRaw(j.data);
         else setError(j.message ?? "not connected");
       })
       .catch((e) => setError(String(e)));
@@ -68,7 +70,38 @@ export function GoogleAdsView() {
   if (error) {
     return <div className="card text-[#6E6E73] text-sm">Google広告データの取得に失敗しました: {error}</div>;
   }
-  if (!data) return <div className="card text-[#6E6E73] text-sm">読み込み中...</div>;
+  if (!raw) return <div className="card text-[#6E6E73] text-sm">読み込み中...</div>;
+
+  // Filter the 30-day timeline to the requested range and recompute totals.
+  const filtered = (() => {
+    if (!range?.from || !range?.to) return raw;
+    const inRange = raw.timeline.filter((d) => d.date >= range.from && d.date <= range.to);
+    if (inRange.length === 0 || inRange.length === raw.timeline.length) return raw;
+    const totalCost = inRange.reduce((s, d) => s + (d.cost || 0), 0);
+    const totalClicks = inRange.reduce((s, d) => s + (d.clicks || 0), 0);
+    const totalCv = inRange.reduce(
+      (s, d) => s + (d.conversions ?? d.conversionsPrimary ?? 0),
+      0,
+    );
+    const days = inRange.length;
+    const cpc = totalClicks > 0 ? Math.round(totalCost / totalClicks) : 0;
+    const cpa = totalCv > 0 ? Math.round(totalCost / totalCv) : 0;
+    return {
+      ...raw,
+      timeline: inRange,
+      days,
+      period: { from: range.from, to: range.to },
+      totals: {
+        ...raw.totals,
+        cost: totalCost,
+        clicks: totalClicks,
+        conversions: totalCv,
+        cpc,
+        cpa,
+      },
+    };
+  })();
+  const data = filtered;
 
   const scrapedDate = new Date(data.scrapedAt).toLocaleString("ja-JP", {
     year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit",

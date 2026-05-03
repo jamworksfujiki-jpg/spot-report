@@ -12,8 +12,19 @@ const TTL_MS = 60 * 60 * 1000; // 1 hour
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const propertyId = searchParams.get("propertyId") ?? GA4_PROPERTIES[0].id;
+  const fromParam = searchParams.get("from");
+  const toParam = searchParams.get("to");
   const days = Number(searchParams.get("days") ?? "28");
-  const cacheKey = `${propertyId}:${days}`;
+
+  let from: string;
+  let to: string;
+  if (fromParam && toParam && /^\d{4}-\d{2}-\d{2}$/.test(fromParam) && /^\d{4}-\d{2}-\d{2}$/.test(toParam)) {
+    from = fromParam;
+    to = toParam;
+  } else {
+    ({ from, to } = lastNDays(days));
+  }
+  const cacheKey = `${propertyId}:${from}:${to}`;
 
   const cached = memo.get(cacheKey);
   if (cached && Date.now() - cached.at < TTL_MS) {
@@ -21,8 +32,6 @@ export async function GET(req: NextRequest) {
       headers: { "x-cache": "HIT", "cache-control": "public, s-maxage=3600, stale-while-revalidate=86400" },
     });
   }
-
-  const { from, to } = lastNDays(days);
 
   try {
     const report = await fetchGa4Report(propertyId, from, to);

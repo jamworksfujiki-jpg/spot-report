@@ -45,16 +45,49 @@ function sumField(rows: TimelineDay[], key: keyof TimelineDay): number {
   return rows.reduce((s, r) => s + (Number(r[key]) || 0), 0);
 }
 
-export function ExecutiveSummary() {
-  const [ads, setAds] = useState<AdsData | null>(null);
+type ExecutiveSummaryProps = { range?: { from: string; to: string } };
+
+export function ExecutiveSummary({ range }: ExecutiveSummaryProps = {}) {
+  const [adsRaw, setAdsRaw] = useState<AdsData | null>(null);
   const [ig, setIg] = useState<IgData | null>(null);
   const [ga4, setGa4] = useState<Ga4Report | null>(null);
 
   useEffect(() => {
-    fetch("/api/ads").then(r => r.json()).then(j => j.connected && setAds(j.data)).catch(() => {});
+    fetch("/api/ads").then(r => r.json()).then(j => j.connected && setAdsRaw(j.data)).catch(() => {});
     fetch("/api/instagram").then(r => r.json()).then(j => j.connected && setIg(j.data)).catch(() => {});
-    fetch("/api/ga4").then(r => r.json()).then(j => j.connected && setGa4(j.report)).catch(() => {});
   }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (range?.from && range?.to) {
+      params.set("from", range.from);
+      params.set("to", range.to);
+    }
+    fetch(`/api/ga4${params.toString() ? "?" + params.toString() : ""}`)
+      .then(r => r.json())
+      .then(j => j.connected && setGa4(j.report))
+      .catch(() => {});
+  }, [range?.from, range?.to]);
+
+  // Filter ads timeline to range and recompute totals (mirrors GoogleAdsView)
+  const ads: AdsData | null = (() => {
+    if (!adsRaw) return null;
+    if (!range?.from || !range?.to) return adsRaw;
+    const inRange = adsRaw.timeline.filter((d) => d.date >= range.from && d.date <= range.to);
+    if (inRange.length === 0 || inRange.length === adsRaw.timeline.length) return adsRaw;
+    const cost = inRange.reduce((s, d) => s + (d.cost || 0), 0);
+    const clicks = inRange.reduce((s, d) => s + (d.clicks || 0), 0);
+    const conversions = inRange.reduce((s, d) => s + ((d as TimelineDay).conversions || 0), 0);
+    const cpa = conversions > 0 ? Math.round(cost / conversions) : 0;
+    const cpc = clicks > 0 ? Math.round(cost / clicks) : 0;
+    return {
+      ...adsRaw,
+      days: inRange.length,
+      period: { from: range.from, to: range.to },
+      timeline: inRange,
+      totals: { ...adsRaw.totals, cost, clicks, conversions, cpa, cpc },
+    };
+  })();
 
   if (!ads && !ig && !ga4) {
     return <div className="card text-[#6E6E73] text-sm">読み込み中...</div>;
@@ -67,7 +100,7 @@ export function ExecutiveSummary() {
   const costDelta = adsPrev && adsCurr ? pctDelta(adsCurr.cost, adsPrev.cost) : null;
   const cvDelta = adsPrev && adsCurr ? pctDelta(adsCurr.cv, adsPrev.cv) : null;
 
-  const newestScrape = [ads?.scrapedAt, ig?.scrapedAt].filter(Boolean).sort().pop();
+  const newestScrape = [adsRaw?.scrapedAt, ig?.scrapedAt].filter(Boolean).sort().pop();
   const scrapedLabel = newestScrape ? new Date(newestScrape).toLocaleString("ja-JP", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }) : "—";
 
   return (

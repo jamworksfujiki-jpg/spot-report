@@ -5,6 +5,7 @@ import { ExecutiveSummary } from "@/components/ExecutiveSummary";
 import { GoogleAdsView } from "@/components/GoogleAdsView";
 import { Ga4View } from "@/components/Ga4View";
 import { InstagramView } from "@/components/InstagramView";
+import { DateRangePicker, lastNDaysRange, type DateRange } from "@/components/DateRangePicker";
 
 const TABS = [
   { id: "summary", label: "サマリー", icon: "📊" },
@@ -17,6 +18,7 @@ export default function Home() {
   const [active, setActive] = useState("summary");
   const [refreshKey, setRefreshKey] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
+  const [range, setRange] = useState<DateRange>(() => lastNDaysRange(30));
   const today = new Date().toLocaleDateString("ja-JP", { year: "numeric", month: "long", day: "numeric", weekday: "short" });
 
   async function refresh() {
@@ -63,12 +65,15 @@ export default function Home() {
         <div className="mt-6">
           <Tabs tabs={TABS} active={active} onChange={setActive} />
         </div>
+        <div className="mt-4">
+          <DateRangePicker value={range} onChange={setRange} />
+        </div>
       </header>
 
       <main key={refreshKey}>
-        {active === "summary" && <ExecutiveSummary />}
-        {active === "ads" && <GoogleAdsView />}
-        {active === "ga4" && <Ga4View />}
+        {active === "summary" && <ExecutiveSummary range={range} />}
+        {active === "ads" && <GoogleAdsView range={range} />}
+        {active === "ga4" && <Ga4View range={range} />}
         {active === "instagram" && <InstagramView />}
       </main>
 

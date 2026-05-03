@@ -25,7 +25,9 @@ type Ga4Data = {
   live: boolean;
 };
 
-export function Ga4View() {
+type Ga4ViewProps = { range?: { from: string; to: string } };
+
+export function Ga4View({ range }: Ga4ViewProps = {}) {
   const [propertyId, setPropertyId] = useState(mockProps[0].id);
   const [data, setData] = useState<Ga4Data>({ ...mock, live: false });
   const [loading, setLoading] = useState(false);
@@ -35,7 +37,14 @@ export function Ga4View() {
     let cancelled = false;
     setLoading(true);
     setConnectionMsg(null);
-    fetch(`/api/ga4?propertyId=${propertyId}&days=28`)
+    const params = new URLSearchParams({ propertyId });
+    if (range?.from && range?.to) {
+      params.set("from", range.from);
+      params.set("to", range.to);
+    } else {
+      params.set("days", "28");
+    }
+    fetch(`/api/ga4?${params.toString()}`)
       .then((r) => r.json())
       .then((res) => {
         if (cancelled) return;
@@ -55,7 +64,7 @@ export function Ga4View() {
     return () => {
       cancelled = true;
     };
-  }, [propertyId]);
+  }, [propertyId, range?.from, range?.to]);
 
   const d = data;
   const isLive = d.live;
