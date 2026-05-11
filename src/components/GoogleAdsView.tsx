@@ -53,9 +53,12 @@ type AdsData = {
 
 type GoogleAdsViewProps = { range?: { from: string; to: string } };
 
+const isThanksAction = (name: string) => /サンクス|thanks|完了|送信完了/i.test(name);
+
 export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
   const [raw, setRaw] = useState<AdsData | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [thanksOnly, setThanksOnly] = useState(false);
 
   useEffect(() => {
     fetch("/api/ads")
@@ -124,31 +127,79 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        <MetricCard label="費用" value={fmt.yen(data.totals.cost)} sub={`${data.days}日間`} />
-        <MetricCard label="クリック数" value={fmt.num(data.totals.clicks)} sub={`${data.days}日間`} />
-        <MetricCard label="コンバージョン" value={data.totals.conversions.toFixed(2)} sub={`${data.days}日間`} />
-        <MetricCard label="CPA" value={fmt.yen(data.totals.cpa)} sub="平均" />
-        <MetricCard label="CPC" value={fmt.yen(data.totals.cpc)} sub="平均" />
-        <MetricCard label="検索CTR" value={fmt.pct(data.totals.searchCtr, 2)} sub="検索キーワードのみ" />
-      </div>
+      {(() => {
+        const thanksItems = data.cvActions?.items.filter((a) => isThanksAction(a.name)) || [];
+        const thanksTotal = thanksItems.reduce((s, a) => s + a.allConversions, 0);
+        const thanksCpa = thanksTotal > 0 ? Math.round(data.totals.cost / thanksTotal) : 0;
+        return (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+            <MetricCard label="費用" value={fmt.yen(data.totals.cost)} sub={`${data.days}日間`} />
+            <MetricCard label="クリック数" value={fmt.num(data.totals.clicks)} sub={`${data.days}日間`} />
+            <MetricCard label="コンバージョン" value={data.totals.conversions.toFixed(2)} sub={`${data.days}日間（全種別）`} />
+            <MetricCard
+              label="実質CV"
+              value={thanksTotal.toFixed(2)}
+              sub={`サンクス到達のみ・${thanksItems.length}種類`}
+            />
+            <MetricCard label="CPA" value={fmt.yen(data.totals.cpa)} sub="全CV基準" />
+            <MetricCard label="実質CPA" value={fmt.yen(thanksCpa)} sub="サンクス到達基準" />
+            <MetricCard label="検索CTR" value={fmt.pct(data.totals.searchCtr, 2)} sub="検索キーワードのみ" />
+          </div>
+        );
+      })()}
 
-      {data.cvActions && data.cvActions.items.length > 0 && (
+      {data.cvActions && data.cvActions.items.length > 0 && (() => {
+        const allItems = data.cvActions!.items;
+        const thanksItems = allItems.filter((a) => isThanksAction(a.name));
+        const displayItems = thanksOnly ? thanksItems : allItems;
+        const displayTotal = displayItems.reduce((s, a) => s + a.allConversions, 0);
+        return (
         <div className="card">
           <SectionHeader
             title="コンバージョン種類別 内訳"
-            sub={`${data.cvActions.period || "過去30日"}・全${data.cvActions.total}種類・合計 ${data.cvActions.totalAllConversions.toFixed(2)} CV（すべてのコンバージョン）／ 主要CV合計 ${data.cvActions.totalPrimaryConversions.toFixed(2)}`}
+            sub={`${data.cvActions!.period || "過去30日"}・全${data.cvActions!.total}種類・合計 ${data.cvActions!.totalAllConversions.toFixed(2)} CV（すべてのコンバージョン）／ サンクス到達のみ合計 ${thanksItems.reduce((s, a) => s + a.allConversions, 0).toFixed(2)}`}
           />
+          <div className="flex items-center gap-2 mb-4 -mt-2">
+            <button
+              type="button"
+              onClick={() => setThanksOnly(false)}
+              className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                !thanksOnly
+                  ? "bg-[#1D1D1F] text-white"
+                  : "bg-[#F0F0F0] text-[#6E6E73] hover:bg-[#E5E5E7]"
+              }`}
+            >
+              全て表示（{allItems.length}）
+            </button>
+            <button
+              type="button"
+              onClick={() => setThanksOnly(true)}
+              className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                thanksOnly
+                  ? "bg-[#1B5E20] text-white"
+                  : "bg-[#F0F0F0] text-[#6E6E73] hover:bg-[#E5E5E7]"
+              }`}
+            >
+              サンクス到達のみ（{thanksItems.length}）
+            </button>
+            <span className="text-[11px] text-[#6E6E73] ml-1">
+              ※ 名前に「サンクス」を含むアクションを実質CVとして抽出
+            </span>
+          </div>
           <div className="space-y-3 mb-4">
-            {data.cvActions.items.map((a) => {
-              const pct = data.cvActions!.totalAllConversions > 0
-                ? (a.allConversions / data.cvActions!.totalAllConversions) * 100
-                : 0;
+            {displayItems.map((a) => {
+              const isThanks = isThanksAction(a.name);
+              const pct = displayTotal > 0 ? (a.allConversions / displayTotal) * 100 : 0;
               return (
                 <div key={a.name}>
                   <div className="flex items-baseline justify-between mb-1 gap-3">
                     <div className="flex items-baseline gap-2 min-w-0">
                       <span className="text-sm font-medium text-[#1D1D1F] truncate">{a.name}</span>
+                      {isThanks && (
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#E8F5E9] text-[#1B5E20] font-medium shrink-0">
+                          実質CV
+                        </span>
+                      )}
                       {a.category && (
                         <span className="text-[11px] text-[#6E6E73] shrink-0">{a.category}</span>
                       )}
@@ -163,11 +214,17 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
                     </div>
                   </div>
                   <div className="h-2 bg-[#F0F0F0] rounded-full overflow-hidden">
-                    <div className="h-full bg-[#30D158] rounded-full" style={{ width: `${Math.min(pct, 100)}%` }} />
+                    <div
+                      className={`h-full rounded-full ${isThanks ? "bg-[#1B5E20]" : "bg-[#30D158]"}`}
+                      style={{ width: `${Math.min(pct, 100)}%` }}
+                    />
                   </div>
                 </div>
               );
             })}
+            {displayItems.length === 0 && (
+              <p className="text-sm text-[#6E6E73] py-4 text-center">該当するアクションがありません</p>
+            )}
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
@@ -181,9 +238,14 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
                 </tr>
               </thead>
               <tbody>
-                {data.cvActions.items.map((a) => (
-                  <tr key={`t-${a.name}`} className="border-b border-[#F0F0F0]">
-                    <td className="py-2 font-medium text-[#1D1D1F]">{a.name}</td>
+                {displayItems.map((a) => (
+                  <tr key={`t-${a.name}`} className={`border-b border-[#F0F0F0] ${isThanksAction(a.name) ? "bg-[#F1F8E9]" : ""}`}>
+                    <td className="py-2 font-medium text-[#1D1D1F]">
+                      {a.name}
+                      {isThanksAction(a.name) && (
+                        <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded bg-[#E8F5E9] text-[#1B5E20] font-medium">実質CV</span>
+                      )}
+                    </td>
                     <td className="py-2 text-[#6E6E73]">{a.category || "-"}</td>
                     <td className="py-2 text-[#6E6E73]">{a.source || "-"}</td>
                     <td className="py-2 text-right tabular-nums">{a.allConversions.toFixed(2)}</td>
@@ -194,10 +256,11 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
             </table>
           </div>
           <p className="mt-3 text-[11px] text-[#6E6E73]">
-            ※「すべてのコンバージョン」は全CV種別の合計、「主要CV」は主要アクションに設定されたものだけ。フォーム到達・電話など種類ごとの寄与を把握できます。
+            ※「すべてのコンバージョン」は全CV種別の合計、「主要CV」は主要アクションに設定されたものだけ。「実質CV」は名前に「サンクス」を含むサンクスページ到達アクション（申込完了相当）。
           </p>
         </div>
-      )}
+      );
+      })()}
 
       <div className="card">
         <SectionHeader title="日次トレンド" sub="クリック数・費用の推移（過去30日）" />
