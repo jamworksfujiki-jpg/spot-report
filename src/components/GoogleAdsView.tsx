@@ -76,10 +76,16 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
   if (!raw) return <div className="card text-[#6E6E73] text-sm">読み込み中...</div>;
 
   // Filter the 30-day timeline to the requested range and recompute totals.
+  // 注意: Google広告は「遅れて届く固定30日スクレイプ」。プリセット(過去7日等)は
+  // 今日(JST)基準で算出されるため、スクレイプ窓と重ならないことがある。
+  // その場合に全30日合計へフォールバックすると「過去7日 > 過去14日」のような
+  // 矛盾が起きるので、重なりゼロは raw に化けさせず「データなし」を返す。
+  const OUT_OF_RANGE = "__out_of_range__" as const;
   const filtered = (() => {
     if (!range?.from || !range?.to) return raw;
     const inRange = raw.timeline.filter((d) => d.date >= range.from && d.date <= range.to);
-    if (inRange.length === 0 || inRange.length === raw.timeline.length) return raw;
+    if (inRange.length === raw.timeline.length) return raw; // 全期間一致＝フルデータ
+    if (inRange.length === 0) return OUT_OF_RANGE;          // スクレイプ窓外＝データなし
     const totalCost = inRange.reduce((s, d) => s + (d.cost || 0), 0);
     const totalClicks = inRange.reduce((s, d) => s + (d.clicks || 0), 0);
     const totalCv = inRange.reduce(
@@ -104,6 +110,25 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
       },
     };
   })();
+
+  if (filtered === OUT_OF_RANGE) {
+    return (
+      <div className="card text-sm text-[#6E6E73] space-y-1.5">
+        <div className="text-[#1D1D1F] font-medium">
+          選択期間（{range?.from} 〜 {range?.to}）に Google広告データがありません
+        </div>
+        <div className="text-[12px]">
+          Google広告は直近約30日の固定スクレイプです。データ期間は{" "}
+          <span className="font-medium text-[#1D1D1F]">{raw.period.from} 〜 {raw.period.to}</span>
+          （取得:{" "}
+          {new Date(raw.scrapedAt).toLocaleString("ja-JP", {
+            year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit",
+          })}
+          ）。この範囲内で期間を選択してください。
+        </div>
+      </div>
+    );
+  }
   const data = filtered;
 
   const scrapedDate = new Date(data.scrapedAt).toLocaleString("ja-JP", {
