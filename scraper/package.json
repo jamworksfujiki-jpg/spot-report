@@ -1,0 +1,19 @@
+{
+  "name": "spot-report-scraper",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Google Ads / Instagram データ取得スクリプト群（ローカル Windows タスクスケジューラ運用）",
+  "scripts": {
+    "login:ads": "node login-ads.mjs",
+    "login:ig": "node login-instagram.mjs",
+    "scrape:ads": "node scrape-ads.mjs",
+    "scrape:cv": "node scrape-cv-actions.mjs",
+    "scrape:ig": "node scrape-instagram.mjs",
+    "scrape:all": "node scrape-all.mjs",
+    "install:browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

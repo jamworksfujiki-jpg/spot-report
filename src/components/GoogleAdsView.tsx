@@ -156,18 +156,21 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
         const thanksItems = data.cvActions?.items.filter((a) => isThanksAction(a.name)) || [];
         const thanksTotal = thanksItems.reduce((s, a) => s + a.allConversions, 0);
         const thanksCpa = thanksTotal > 0 ? Math.round(data.totals.cost / thanksTotal) : 0;
+        const hasThanksData = !!data.cvActions;
         return (
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             <MetricCard label="費用" value={fmt.yen(data.totals.cost)} sub={`${data.days}日間`} />
             <MetricCard label="クリック数" value={fmt.num(data.totals.clicks)} sub={`${data.days}日間`} />
-            <MetricCard label="コンバージョン" value={data.totals.conversions.toFixed(2)} sub={`${data.days}日間（全種別）`} />
             <MetricCard
-              label="実質CV"
-              value={thanksTotal.toFixed(2)}
-              sub={`サンクス到達のみ・${thanksItems.length}種類`}
+              label="CV（サンクス到達）"
+              value={hasThanksData ? thanksTotal.toFixed(2) : "—"}
+              sub={hasThanksData ? `${thanksItems.length}種類のサンクス到達` : "cvActions 未取得"}
             />
-            <MetricCard label="CPA" value={fmt.yen(data.totals.cpa)} sub="全CV基準" />
-            <MetricCard label="実質CPA" value={fmt.yen(thanksCpa)} sub="サンクス到達基準" />
+            <MetricCard
+              label="CPA（サンクス基準）"
+              value={hasThanksData && thanksTotal > 0 ? fmt.yen(thanksCpa) : "—"}
+              sub="サンクス到達 1件あたり費用"
+            />
             <MetricCard label="検索CTR" value={fmt.pct(data.totals.searchCtr, 2)} sub="検索キーワードのみ" />
           </div>
         );
