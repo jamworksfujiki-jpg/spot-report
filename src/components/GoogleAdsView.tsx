@@ -288,7 +288,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
       })()}
 
       <div className="card">
-        <SectionHeader title="日次トレンド" sub="クリック数・費用の推移（過去30日）" />
+        <SectionHeader title="日次トレンド" sub="クリック・CV・費用の推移" />
         <div className="h-80">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data.timeline}>
@@ -299,16 +299,60 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
               <Tooltip
                 contentStyle={{ borderRadius: 12, border: "1px solid #D2D2D7", fontSize: 12 }}
                 labelFormatter={(l: unknown) => fmt.shortDate(String(l))}
+                formatter={(value: unknown, name: unknown) => {
+                  const v = typeof value === "number" ? value : Number(value);
+                  return name === "CV" ? [v.toFixed(2), String(name)] : [v, String(name)];
+                }}
               />
               <Legend wrapperStyle={{ fontSize: 12 }} />
               <Line yAxisId="left" type="monotone" dataKey="clicks" stroke="#30D158" strokeWidth={2} name="クリック" dot={false} />
+              <Line yAxisId="left" type="monotone" dataKey="conversions" stroke="#FF9500" strokeWidth={2} name="CV" dot={{ r: 3 }} />
               <Line yAxisId="right" type="monotone" dataKey="cost" stroke="#0071E3" strokeWidth={2} name="費用(円)" dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>
         <p className="mt-3 text-[11px] text-[#6E6E73]">
-          ※ CVはキャンペーン別CSV（全CV種別合計）から集計しています。日次CSVは一部CV種別のみのため日次グラフには含めていません。
+          ※ 日次CVは「費用 ÷ コンバージョン単価」で逆算した目安値。総計はキャンペーン別CSVと一致します。
         </p>
+      </div>
+
+      <div className="card">
+        <SectionHeader title="日付別CV内訳" sub="CV発生日が一目で分かる表" />
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="text-left text-[#6E6E73] border-b border-[#D2D2D7]">
+                <th className="py-2 font-medium">日付</th>
+                <th className="py-2 font-medium text-right">CV</th>
+                <th className="py-2 font-medium text-right">クリック</th>
+                <th className="py-2 font-medium text-right">費用</th>
+                <th className="py-2 font-medium text-right">CPA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.timeline
+                .filter((d) => (d.conversions ?? 0) > 0)
+                .slice()
+                .reverse()
+                .map((d) => {
+                  const cv = d.conversions ?? 0;
+                  const cpa = cv > 0 ? Math.round(d.cost / cv) : 0;
+                  return (
+                    <tr key={d.date} className="border-b border-[#F0F0F0]">
+                      <td className="py-2 font-medium">{fmt.shortDate(d.date)}</td>
+                      <td className="py-2 text-right tabular-nums font-semibold text-[#FF9500]">{cv.toFixed(2)}</td>
+                      <td className="py-2 text-right tabular-nums">{fmt.num(d.clicks)}</td>
+                      <td className="py-2 text-right tabular-nums">{fmt.yen(d.cost)}</td>
+                      <td className="py-2 text-right tabular-nums">{fmt.yen(cpa)}</td>
+                    </tr>
+                  );
+                })}
+              {data.timeline.filter((d) => (d.conversions ?? 0) > 0).length === 0 && (
+                <tr><td colSpan={5} className="py-4 text-center text-[#6E6E73]">この期間にCVは発生していません</td></tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {data.network && data.network.length > 0 && (
