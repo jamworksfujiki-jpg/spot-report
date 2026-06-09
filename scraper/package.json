@@ -7,8 +7,10 @@
   "scripts": {
     "login:ads": "node login-ads.mjs",
     "login:ig": "node login-instagram.mjs",
+    "setup:ads-api": "node setup-ads-api.mjs",
     "scrape:ads": "node scrape-ads.mjs",
     "scrape:cv": "node scrape-cv-actions.mjs",
+    "scrape:cv-api": "node scrape-cv-actions-api.mjs",
     "scrape:ig": "node scrape-instagram.mjs",
     "scrape:all": "node scrape-all.mjs",
     "install:browsers": "playwright install chromium"

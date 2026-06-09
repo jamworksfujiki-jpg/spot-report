@@ -44,7 +44,13 @@ function runScript(name, file) {
 }
 
 const adsOk = runScript('Google Ads', 'scrape-ads.mjs');
-const cvOk = runScript('CV Actions', 'scrape-cv-actions.mjs');
+// CV Actions: API ベース（setup-ads-api.mjs 実行済）なら API、未設定なら Playwright
+const apiTokensExists = fs.existsSync(
+  path.resolve(__dirname, '../../.reporting-auth/google-ads-tokens.json')
+);
+const cvOk = apiTokensExists
+  ? runScript('CV Actions (API)', 'scrape-cv-actions-api.mjs')
+  : runScript('CV Actions (Playwright fallback)', 'scrape-cv-actions.mjs');
 const igOk = runScript('Instagram', 'scrape-instagram.mjs');
 
 // git に差分があれば commit + push
