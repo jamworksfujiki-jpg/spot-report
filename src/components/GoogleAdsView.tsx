@@ -238,15 +238,31 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
       })()}
 
       {data.cvActions && data.cvActions.items.length > 0 && (() => {
-        const allItems = data.cvActions!.items;
+        // daily から期間絞り込みでアクション別の合計を再計算（daily が無ければ items の固定値）
+        const fromDate = range?.from ?? data.period.from;
+        const toDate = range?.to ?? data.period.to;
+        const dailyInRange = (data.cvActions?.daily ?? [])
+          .filter((e) => e.date >= fromDate && e.date <= toDate);
+        const sumByAction = new Map<string, number>();
+        for (const e of dailyInRange) {
+          sumByAction.set(e.actionName, (sumByAction.get(e.actionName) ?? 0) + e.count);
+        }
+        // 既存の items メタ（category, source）を保ちつつ、allConversions だけ期間集計値に差替え
+        const itemsScaled = data.cvActions!.items
+          .map((a) => ({ ...a, allConversions: sumByAction.get(a.name) ?? 0 }))
+          .filter((a) => a.allConversions > 0)
+          .sort((x, y) => y.allConversions - x.allConversions);
+        const allItems = itemsScaled.length > 0 ? itemsScaled : data.cvActions!.items;
         const thanksItems = allItems.filter((a) => isThanksAction(a.name));
         const displayItems = thanksOnly ? thanksItems : allItems;
         const displayTotal = displayItems.reduce((s, a) => s + a.allConversions, 0);
+        const totalAll = allItems.reduce((s, a) => s + a.allConversions, 0);
+        const totalThanks = thanksItems.reduce((s, a) => s + a.allConversions, 0);
         return (
         <div className="card">
           <SectionHeader
             title="コンバージョン種類別 内訳"
-            sub={`${data.cvActions!.period || "過去30日"}・全${data.cvActions!.total}種類・合計 ${data.cvActions!.totalAllConversions.toFixed(2)} CV（すべてのコンバージョン）／ サンクス到達のみ合計 ${thanksItems.reduce((s, a) => s + a.allConversions, 0).toFixed(2)}`}
+            sub={`${fromDate} 〜 ${toDate}・全${allItems.length}種類・合計 ${totalAll.toFixed(2)} CV（すべてのコンバージョン）／ サンクス到達のみ合計 ${totalThanks.toFixed(2)}`}
           />
           <div className="flex items-center gap-2 mb-4 -mt-2">
             <button
@@ -421,7 +437,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
 
       {data.network && data.network.length > 0 && (
         <div className="card">
-          <SectionHeader title="ネットワーク別内訳" sub="費用・クリック配分の透明性" />
+          <SectionHeader title="ネットワーク別内訳" sub="費用・クリック配分の透明性（過去30日合計・期間絞り込み非対応）" />
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -450,7 +466,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
       )}
 
       <div className="card">
-        <SectionHeader title="キャンペーン別パフォーマンス" />
+        <SectionHeader title="キャンペーン別パフォーマンス" sub="過去30日合計（期間絞り込み非対応）" />
         <div className="h-72 mb-6">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data.campaigns} layout="vertical" margin={{ left: 20 }}>
@@ -492,7 +508,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
 
       <div className="grid lg:grid-cols-2 gap-6">
         <div className="card">
-          <SectionHeader title="デバイス別" />
+          <SectionHeader title="デバイス別" sub="過去30日合計（期間絞り込み非対応）" />
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -518,7 +534,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
         </div>
 
         <div className="card">
-          <SectionHeader title="ユーザーが検索したクエリ TOP15" sub={`全${data.searchTerms.length}件中・表示回数順`} />
+          <SectionHeader title="ユーザーが検索したクエリ TOP15" sub={`全${data.searchTerms.length}件中・表示回数順（過去30日合計・期間絞り込み非対応）`} />
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -549,7 +565,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
 
       {data.biddedKeywords && data.biddedKeywords.length > 0 && (
         <div className="card">
-          <SectionHeader title="出稿中キーワード TOP20" sub={`費用降順・全${data.biddedKeywords.length}キーワード`} />
+          <SectionHeader title="出稿中キーワード TOP20" sub={`費用降順・全${data.biddedKeywords.length}キーワード（過去30日合計・期間絞り込み非対応）`} />
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -585,7 +601,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
         <div className="card">
           <SectionHeader
             title="CVを生んだ検索クエリ"
-            sub={`CV発生: ${data.searchTermsCv.withCv}件 / 合計CV: ${data.searchTermsCv.totalCv.toFixed(2)}`}
+            sub={`CV発生: ${data.searchTermsCv.withCv}件 / 合計CV: ${data.searchTermsCv.totalCv.toFixed(2)}（過去30日合計・期間絞り込み非対応）`}
           />
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -618,7 +634,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
         <div className="grid lg:grid-cols-2 gap-6">
           {data.gender && data.gender.length > 0 && (
             <div className="card">
-              <SectionHeader title="性別構成" sub="広告表示の性別割合（既知データ）" />
+              <SectionHeader title="性別構成" sub="広告表示の性別割合（過去30日合計・期間絞り込み非対応）" />
               <div className="space-y-3">
                 {data.gender.map((g) => (
                   <div key={g.label}>
@@ -637,7 +653,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
 
           {data.age && data.age.length > 0 && (
             <div className="card">
-              <SectionHeader title="年齢別構成" sub="広告表示の年齢分布（既知データ）" />
+              <SectionHeader title="年齢別構成" sub="広告表示の年齢分布（過去30日合計・期間絞り込み非対応）" />
               <div className="space-y-2">
                 {data.age.map((a) => (
                   <div key={a.label}>
