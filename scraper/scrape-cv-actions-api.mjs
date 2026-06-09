@@ -20,7 +20,7 @@ console.log(`🎯 Google Ads API: cvActions (過去30日)`);
 
 // GAQL: conversion_action 別の集計
 // metrics.all_conversions = 全種別CV、 metrics.conversions = 主要CV
-// CONVERSION_ACTION リソースでは metrics.conversions が使えないため all_conversions のみ
+// (1) アクション別の30日合計
 const query = `
   SELECT
     conversion_action.name,
@@ -35,9 +35,22 @@ const query = `
   ORDER BY metrics.all_conversions DESC
 `;
 
-let results;
+// (2) 日付×アクション別の内訳（いつ発生したか）
+const dailyQuery = `
+  SELECT
+    segments.date,
+    segments.conversion_action_name,
+    metrics.all_conversions
+  FROM customer
+  WHERE segments.date DURING LAST_30_DAYS
+    AND metrics.all_conversions > 0
+  ORDER BY segments.date DESC
+`;
+
+let results, dailyResults;
 try {
   results = await callApi({ query });
+  dailyResults = await callApi({ query: dailyQuery });
 } catch (e) {
   console.error('❌ API 呼び出し失敗:', e.message);
   console.error('   1. refresh_token が有効か → setup-ads-api.mjs を再実行');
@@ -46,7 +59,7 @@ try {
   process.exit(1);
 }
 
-console.log(`  ✓ ${results.length} 行取得`);
+console.log(`  ✓ アクション別: ${results.length} 行, 日付別: ${dailyResults.length} 行`);
 
 // カテゴリ enum を日本語に
 function categoryLabel(cat) {
@@ -109,6 +122,15 @@ const items = results.map((r) => {
 const totalAll = items.reduce((s, i) => s + i.allConversions, 0);
 const totalPrim = items.reduce((s, i) => s + i.primaryConversions, 0);
 
+// 日付×アクション別の内訳（いつ発生したか）
+const daily = dailyResults.map((r) => ({
+  date: r.segments?.date || '',
+  actionName: r.segments?.conversionActionName || '',
+  count: Math.round((parseFloat(r.metrics?.allConversions) || 0) * 100) / 100,
+}))
+.filter((d) => d.date && d.actionName && d.count > 0)
+.sort((a, b) => b.date.localeCompare(a.date));
+
 const result = {
   customerId: config.customer_id,
   period: '過去30日',
@@ -119,6 +141,7 @@ const result = {
   hasAllConversionsColumn: true,
   source: 'google-ads-api',
   items,
+  daily, // 日付×アクション別の内訳
 };
 
 fs.writeFileSync(OUT_FILE, JSON.stringify(result, null, 2));

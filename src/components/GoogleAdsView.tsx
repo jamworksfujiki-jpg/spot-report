@@ -47,6 +47,7 @@ type AdsData = {
     totalAllConversions: number;
     totalPrimaryConversions: number;
     items: CvAction[];
+    daily?: { date: string; actionName: string; count: number }[];
     scrapedAt: string;
   } | null;
 };
@@ -172,6 +173,51 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
               sub="サンクス到達 1件あたり費用"
             />
             <MetricCard label="検索CTR" value={fmt.pct(data.totals.searchCtr, 2)} sub="検索キーワードのみ" />
+          </div>
+        );
+      })()}
+
+      {data.cvActions?.daily && data.cvActions.daily.length > 0 && (() => {
+        const sankuEvents = data.cvActions!.daily!
+          .filter((e) => isThanksAction(e.actionName))
+          .sort((a, b) => b.date.localeCompare(a.date));
+        if (sankuEvents.length === 0) return null;
+        const totalCv = sankuEvents.reduce((s, e) => s + e.count, 0);
+        return (
+          <div className="card">
+            <SectionHeader
+              title="🎯 サンクス到達CV 発生履歴"
+              sub={`過去30日に発生した サンクスCV ${totalCv.toFixed(0)}件・直近順`}
+            />
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-left text-[#6E6E73] border-b border-[#D2D2D7]">
+                    <th className="py-2 font-medium w-32">発生日</th>
+                    <th className="py-2 font-medium">アクション</th>
+                    <th className="py-2 font-medium text-right w-24">件数</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sankuEvents.map((e, idx) => (
+                    <tr key={`${e.date}-${e.actionName}-${idx}`} className="border-b border-[#F0F0F0] bg-[#F1F8E9]">
+                      <td className="py-2 font-medium text-[#1B5E20] tabular-nums">{fmt.shortDate(e.date)}</td>
+                      <td className="py-2 text-[#1D1D1F]">{e.actionName}</td>
+                      <td className="py-2 text-right tabular-nums font-semibold text-[#1B5E20]">{e.count.toFixed(0)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr className="border-t-2 border-[#1B5E20]">
+                    <td colSpan={2} className="py-2 text-right font-semibold text-[#1B5E20]">合計</td>
+                    <td className="py-2 text-right tabular-nums font-bold text-[#1B5E20]">{totalCv.toFixed(0)}</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <p className="mt-3 text-[11px] text-[#6E6E73]">
+              ※ Google Ads API から取得した日付別CVデータ（segments.date × segments.conversion_action_name）
+            </p>
           </div>
         );
       })()}
