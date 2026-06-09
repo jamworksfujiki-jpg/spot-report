@@ -154,18 +154,25 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
       </div>
 
       {(() => {
-        const thanksItems = data.cvActions?.items.filter((a) => isThanksAction(a.name)) || [];
-        const thanksTotal = thanksItems.reduce((s, a) => s + a.allConversions, 0);
+        // 期間絞り込みを cvActions の daily に適用（範囲内のサンクスCVだけ集計）
+        const fromDate = range?.from ?? data.period.from;
+        const toDate = range?.to ?? data.period.to;
+        const dailyInRange = (data.cvActions?.daily ?? []).filter(
+          (e) => e.date >= fromDate && e.date <= toDate
+        );
+        const sankuInRange = dailyInRange.filter((e) => isThanksAction(e.actionName));
+        const thanksTotal = sankuInRange.reduce((s, e) => s + e.count, 0);
+        const uniqueActions = new Set(sankuInRange.map((e) => e.actionName)).size;
         const thanksCpa = thanksTotal > 0 ? Math.round(data.totals.cost / thanksTotal) : 0;
-        const hasThanksData = !!data.cvActions;
+        const hasThanksData = !!data.cvActions?.daily;
         return (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             <MetricCard label="費用" value={fmt.yen(data.totals.cost)} sub={`${data.days}日間`} />
             <MetricCard label="クリック数" value={fmt.num(data.totals.clicks)} sub={`${data.days}日間`} />
             <MetricCard
               label="CV（サンクス到達）"
-              value={hasThanksData ? thanksTotal.toFixed(2) : "—"}
-              sub={hasThanksData ? `${thanksItems.length}種類のサンクス到達` : "cvActions 未取得"}
+              value={hasThanksData ? thanksTotal.toFixed(0) : "—"}
+              sub={hasThanksData ? `${uniqueActions}種類のサンクス到達` : "cvActions 未取得"}
             />
             <MetricCard
               label="CPA（サンクス基準）"
@@ -178,43 +185,51 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
       })()}
 
       {data.cvActions?.daily && data.cvActions.daily.length > 0 && (() => {
+        const fromDate = range?.from ?? data.period.from;
+        const toDate = range?.to ?? data.period.to;
         const sankuEvents = data.cvActions!.daily!
           .filter((e) => isThanksAction(e.actionName))
+          .filter((e) => e.date >= fromDate && e.date <= toDate)
           .sort((a, b) => b.date.localeCompare(a.date));
-        if (sankuEvents.length === 0) return null;
         const totalCv = sankuEvents.reduce((s, e) => s + e.count, 0);
         return (
           <div className="card">
             <SectionHeader
               title="🎯 サンクス到達CV 発生履歴"
-              sub={`過去30日に発生した サンクスCV ${totalCv.toFixed(0)}件・直近順`}
+              sub={`${fromDate} 〜 ${toDate} に発生した サンクスCV ${totalCv.toFixed(0)}件・直近順`}
             />
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="text-left text-[#6E6E73] border-b border-[#D2D2D7]">
-                    <th className="py-2 font-medium w-32">発生日</th>
-                    <th className="py-2 font-medium">アクション</th>
-                    <th className="py-2 font-medium text-right w-24">件数</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {sankuEvents.map((e, idx) => (
-                    <tr key={`${e.date}-${e.actionName}-${idx}`} className="border-b border-[#F0F0F0] bg-[#F1F8E9]">
-                      <td className="py-2 font-medium text-[#1B5E20] tabular-nums">{fmt.shortDate(e.date)}</td>
-                      <td className="py-2 text-[#1D1D1F]">{e.actionName}</td>
-                      <td className="py-2 text-right tabular-nums font-semibold text-[#1B5E20]">{e.count.toFixed(0)}</td>
+            {sankuEvents.length === 0 ? (
+              <div className="py-8 text-center text-[#6E6E73] text-sm">
+                この期間にサンクスCVは発生していません
+              </div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-left text-[#6E6E73] border-b border-[#D2D2D7]">
+                      <th className="py-2 font-medium w-32">発生日</th>
+                      <th className="py-2 font-medium">アクション</th>
+                      <th className="py-2 font-medium text-right w-24">件数</th>
                     </tr>
-                  ))}
-                </tbody>
-                <tfoot>
-                  <tr className="border-t-2 border-[#1B5E20]">
-                    <td colSpan={2} className="py-2 text-right font-semibold text-[#1B5E20]">合計</td>
-                    <td className="py-2 text-right tabular-nums font-bold text-[#1B5E20]">{totalCv.toFixed(0)}</td>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {sankuEvents.map((e, idx) => (
+                      <tr key={`${e.date}-${e.actionName}-${idx}`} className="border-b border-[#F0F0F0] bg-[#F1F8E9]">
+                        <td className="py-2 font-medium text-[#1B5E20] tabular-nums">{fmt.shortDate(e.date)}</td>
+                        <td className="py-2 text-[#1D1D1F]">{e.actionName}</td>
+                        <td className="py-2 text-right tabular-nums font-semibold text-[#1B5E20]">{e.count.toFixed(0)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                  <tfoot>
+                    <tr className="border-t-2 border-[#1B5E20]">
+                      <td colSpan={2} className="py-2 text-right font-semibold text-[#1B5E20]">合計</td>
+                      <td className="py-2 text-right tabular-nums font-bold text-[#1B5E20]">{totalCv.toFixed(0)}</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            )}
             <p className="mt-3 text-[11px] text-[#6E6E73]">
               ※ Google Ads API から取得した日付別CVデータ（segments.date × segments.conversion_action_name）
             </p>
