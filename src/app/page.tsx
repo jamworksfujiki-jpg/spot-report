@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tabs } from "@/components/Tabs";
 import { ExecutiveSummary } from "@/components/ExecutiveSummary";
 import { GoogleAdsView } from "@/components/GoogleAdsView";
@@ -19,7 +19,23 @@ export default function Home() {
   const [refreshKey, setRefreshKey] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
   const [range, setRange] = useState<DateRange>(() => lastNDaysRange(30));
+  const [adsMaxDate, setAdsMaxDate] = useState<string | undefined>(undefined);
   const today = new Date().toLocaleDateString("ja-JP", { year: "numeric", month: "long", day: "numeric", weekday: "short" });
+
+  // Google広告データの最終日を取得し、プリセット計算に使う + 初回ロード時に範囲をデータ窓に合わせる
+  useEffect(() => {
+    fetch("/api/ads")
+      .then((r) => r.json())
+      .then((j) => {
+        const periodTo: string | undefined = j?.data?.period?.to;
+        if (periodTo) {
+          setAdsMaxDate(periodTo);
+          // 初期は「スクレイプ済み窓の過去30日」に合わせる
+          setRange(lastNDaysRange(30, periodTo));
+        }
+      })
+      .catch(() => { /* ignore */ });
+  }, [refreshKey]);
 
   async function refresh() {
     setRefreshing(true);
@@ -66,7 +82,7 @@ export default function Home() {
           <Tabs tabs={TABS} active={active} onChange={setActive} />
         </div>
         <div className="mt-4">
-          <DateRangePicker value={range} onChange={setRange} />
+          <DateRangePicker value={range} onChange={setRange} dataMaxDate={adsMaxDate} />
         </div>
       </header>
 
