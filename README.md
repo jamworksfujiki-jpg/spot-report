@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# spot-report
 
-## Getting Started
+スポット社労士くん 統合レポート（Google広告・GA4・Instagram）
 
-First, run the development server:
+URL: https://spot-report.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ENV 設定の注意（重要・2026-06-10 復旧経験あり）
+
+### bcrypt ハッシュ等、`$` を含む値は base64 でラップして保存する
+
+**症状**: `vercel env add NAME --value '$2b$10$rsv...'` を実行すると、Vercel CLI が `$XX` を環境変数として展開してしまい、**値が黙って truncate される**（成功報告されるが11文字程度しか保存されない）。
+
+**対処**: `$` を含む値は base64 エンコードして別名で保存し、アプリ側でデコードする。
+
+#### 設定方法（PowerShell）
+
+```powershell
+$hash = '$2b$10$rsvgGtSNCGo2Kulc43N0UOvO5m8bigAZ5BWorXxh2W.4LygJR2clu'  # bcrypt hash
+$b64 = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($hash))
+vercel env add ADMIN_PASSWORD_HASH_B64 production --value $b64 --yes --scope=e-gov-spotportal
+vercel deploy --prod --force --scope=e-gov-spotportal
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### 新しいパスワードのハッシュ生成
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+cd c:\Users\fujik\vscode\spot-report
+node -e "const b=require('bcryptjs'); console.log(b.hashSync('NEW_PASSWORD', 10));"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 必須 env 変数
 
-## Learn More
+| 名前 | 値の例 | 用途 |
+|---|---|---|
+| `ADMIN_USERNAME` | `admin` | ログインID |
+| `ADMIN_PASSWORD_HASH_B64` | base64(bcrypt hash) | ログインパスワード。**生のbcryptを `ADMIN_PASSWORD_HASH` に入れてはいけない**（上記バグで壊れる）|
+| `JWT_SECRET` | 64文字以上のランダム文字列 | セッションJWT署名 |
+| `GOOGLE_SERVICE_ACCOUNT_JSON` | JSON文字列 | GA4 API認証 |
 
-To learn more about Next.js, take a look at the following resources:
+### env 設定が正しいか runtime で確認したいとき
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+一時デバッグエンドポイントを作って実値長を確認する：
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```ts
+// src/app/api/debug-env/route.ts
+import { NextResponse } from "next/server";
+export const runtime = "nodejs";
+export async function GET() {
+  const b = process.env.ADMIN_PASSWORD_HASH_B64;
+  const d = b ? Buffer.from(b, "base64").toString("utf-8") : "";
+  return NextResponse.json({
+    b64_length: b?.length ?? 0,
+    decoded_length: d.length,
+    looks_like_bcrypt: /^\$2[aby]?\$\d{2}\$/.test(d),
+  });
+}
+```
 
-## Deploy on Vercel
+middleware の `PUBLIC_PATHS` に `/api/debug-env` を一時追加し、確認後に **必ず削除** すること。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 開発
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm install
+npm run dev
+```
+
+http://localhost:3000
+
+## デプロイ
+
+```bash
+vercel deploy --prod --scope=e-gov-spotportal
+```

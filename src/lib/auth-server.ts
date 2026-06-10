@@ -48,14 +48,33 @@ export async function recordAttempt(
   }
 }
 
+// bcrypt ハッシュは "$" を含む。Vercel CLI に直接 --value で渡すと黙ってtruncateされる
+// 既知バグがあるため、必ず base64 でラップして ADMIN_PASSWORD_HASH_B64 として保存すること。
+// 詳細: ../../README.md の「ENV 設定の注意」参照
+function decodeExpectedHash(): string | undefined {
+  const b64 = process.env.ADMIN_PASSWORD_HASH_B64;
+  if (!b64) return undefined;
+  const decoded = Buffer.from(b64, "base64").toString("utf-8").trim();
+  // 形式チェック: 復号後が bcrypt 形式でなければ env 設定ミス
+  if (!/^\$2[aby]?\$\d{2}\$.{53}$/.test(decoded)) {
+    console.error(
+      "[auth] ADMIN_PASSWORD_HASH_B64 をデコードした結果が bcrypt 形式ではありません。" +
+        " base64 でラップして保存してください。"
+    );
+    return undefined;
+  }
+  return decoded;
+}
+
 export async function verifyCredentials(
   username: string,
   password: string
 ): Promise<boolean> {
   const expectedUser = process.env.ADMIN_USERNAME;
-  const expectedHash = process.env.ADMIN_PASSWORD_HASH;
+  const expectedHash = decodeExpectedHash();
   if (!expectedUser || !expectedHash) return false;
   if (username !== expectedUser) {
+    // 既知の正しい形式のダミーで timing-safe にする
     await bcrypt.compare(password, "$2b$10$" + "x".repeat(53));
     return false;
   }
