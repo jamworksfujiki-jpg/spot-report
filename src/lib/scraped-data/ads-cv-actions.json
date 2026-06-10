@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-06-09T01:10:45.650Z",
-  "total": 15,
-  "totalAllConversions": 333,
+  "scrapedAt": "2026-06-10T05:28:37.347Z",
+  "total": 16,
+  "totalAllConversions": 359,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,9 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 232,
+      "allConversions": 263,
       "primaryConversions": 0,
-      "allConversionsValue": 232,
+      "allConversionsValue": 263,
       "value": 0
     },
     {
@@ -25,9 +25,9 @@
       "type": "GOOGLE_HOSTED",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 39,
+      "allConversions": 27,
       "primaryConversions": 0,
-      "allConversionsValue": 39,
+      "allConversionsValue": 27,
       "value": 0
     },
     {
@@ -36,9 +36,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 20,
+      "allConversions": 24,
       "primaryConversions": 0,
-      "allConversionsValue": 2000,
+      "allConversionsValue": 2400,
       "value": 0
     },
     {
@@ -47,20 +47,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 10,
+      "allConversions": 11,
       "primaryConversions": 0,
-      "allConversionsValue": 1000,
-      "value": 0
-    },
-    {
-      "name": "【新規適用届】1フォーム入力開始",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 6,
-      "primaryConversions": 0,
-      "allConversionsValue": 600,
+      "allConversionsValue": 1100,
       "value": 0
     },
     {
@@ -72,6 +61,17 @@
       "allConversions": 6,
       "primaryConversions": 0,
       "allConversionsValue": 6,
+      "value": 0
+    },
+    {
+      "name": "【新規適用届】1フォーム入力開始",
+      "category": "リードフォーム送信",
+      "type": "WEBPAGE",
+      "status": "ENABLED",
+      "source": "ウェブサイト",
+      "allConversions": 5,
+      "primaryConversions": 0,
+      "allConversionsValue": 500,
       "value": 0
     },
     {
@@ -108,6 +108,17 @@
       "value": 0
     },
     {
+      "name": "【始めの社労士くん】1問い合わせページ遷移",
+      "category": "リードフォーム送信",
+      "type": "WEBPAGE",
+      "status": "ENABLED",
+      "source": "ウェブサイト",
+      "allConversions": 3,
+      "primaryConversions": 0,
+      "allConversionsValue": 30,
+      "value": 0
+    },
+    {
       "name": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
       "category": "リードフォーム送信",
       "type": "WEBPAGE",
@@ -119,14 +130,14 @@
       "value": 0
     },
     {
-      "name": "【始めの社労士くん】1問い合わせページ遷移",
+      "name": "【新規適用届】2サンクスページ到達",
       "category": "リードフォーム送信",
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
       "allConversions": 2,
       "primaryConversions": 0,
-      "allConversionsValue": 20,
+      "allConversionsValue": 2000,
       "value": 0
     },
     {
@@ -138,17 +149,6 @@
       "allConversions": 2,
       "primaryConversions": 0,
       "allConversionsValue": 200,
-      "value": 0
-    },
-    {
-      "name": "【新規適用届】2サンクスページ到達",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 1,
-      "primaryConversions": 0,
-      "allConversionsValue": 1000,
       "value": 0
     },
     {
@@ -172,9 +172,50 @@
       "primaryConversions": 0,
       "allConversionsValue": 100,
       "value": 0
+    },
+    {
+      "name": "【給与伴走くん】１フォーム入力開始",
+      "category": "リードフォーム送信",
+      "type": "WEBPAGE",
+      "status": "ENABLED",
+      "source": "ウェブサイト",
+      "allConversions": 1,
+      "primaryConversions": 0,
+      "allConversionsValue": 100,
+      "value": 0
     }
   ],
   "daily": [
+    {
+      "date": "2026-06-09",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 20.87
+    },
+    {
+      "date": "2026-06-09",
+      "actionName": "【共通】電話番号タップ",
+      "count": 1
+    },
+    {
+      "date": "2026-06-09",
+      "actionName": "【始めの社労士くん】1問い合わせページ遷移",
+      "count": 1
+    },
+    {
+      "date": "2026-06-09",
+      "actionName": "【始めの社労士くん】2フォーム入力開始",
+      "count": 4
+    },
+    {
+      "date": "2026-06-09",
+      "actionName": "【給与伴走くん】１フォーム入力開始",
+      "count": 1
+    },
+    {
+      "date": "2026-06-08",
+      "actionName": "Local actions - Website visits",
+      "count": 1
+    },
     {
       "date": "2026-06-08",
       "actionName": "【共通】全てのリンククリック",
@@ -213,7 +254,7 @@
     {
       "date": "2026-06-06",
       "actionName": "【共通】全てのリンククリック",
-      "count": 6
+      "count": 6.13
     },
     {
       "date": "2026-06-06",
@@ -223,7 +264,7 @@
     {
       "date": "2026-06-05",
       "actionName": "【共通】全てのリンククリック",
-      "count": 3
+      "count": 4
     },
     {
       "date": "2026-06-05",
@@ -268,7 +309,7 @@
     {
       "date": "2026-06-02",
       "actionName": "【共通】全てのリンククリック",
-      "count": 16.02
+      "count": 16.69
     },
     {
       "date": "2026-06-02",
@@ -293,7 +334,7 @@
     {
       "date": "2026-06-01",
       "actionName": "【共通】全てのリンククリック",
-      "count": 17.98
+      "count": 19.31
     },
     {
       "date": "2026-06-01",
@@ -318,7 +359,7 @@
     {
       "date": "2026-05-31",
       "actionName": "【共通】全てのリンククリック",
-      "count": 2.98
+      "count": 6.98
     },
     {
       "date": "2026-05-31",
@@ -329,6 +370,11 @@
       "date": "2026-05-31",
       "actionName": "【新規適用届】1フォーム入力開始",
       "count": 1
+    },
+    {
+      "date": "2026-05-31",
+      "actionName": "【新規適用届】2サンクスページ到達",
+      "count": 0.5
     },
     {
       "date": "2026-05-29",
@@ -508,7 +554,7 @@
     {
       "date": "2026-05-15",
       "actionName": "【共通】全てのリンククリック",
-      "count": 54
+      "count": 56
     },
     {
       "date": "2026-05-15",
@@ -563,7 +609,7 @@
     {
       "date": "2026-05-12",
       "actionName": "【共通】全てのリンククリック",
-      "count": 18.02
+      "count": 22.02
     },
     {
       "date": "2026-05-12",
@@ -581,6 +627,11 @@
       "count": 1
     },
     {
+      "date": "2026-05-12",
+      "actionName": "【新規適用届】2サンクスページ到達",
+      "count": 0.5
+    },
+    {
       "date": "2026-05-11",
       "actionName": "【共通】全てのリンククリック",
       "count": 5
@@ -588,26 +639,6 @@
     {
       "date": "2026-05-11",
       "actionName": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
-      "count": 1
-    },
-    {
-      "date": "2026-05-10",
-      "actionName": "Local actions - Other engagements",
-      "count": 12
-    },
-    {
-      "date": "2026-05-10",
-      "actionName": "Local actions - Website visits",
-      "count": 1
-    },
-    {
-      "date": "2026-05-10",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 3
-    },
-    {
-      "date": "2026-05-10",
-      "actionName": "【新規適用届】1フォーム入力開始",
       "count": 1
     }
   ]
