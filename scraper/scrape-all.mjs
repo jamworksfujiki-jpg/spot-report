@@ -67,7 +67,20 @@ try {
     const msg = `chore(data): auto-scrape ${new Date().toISOString().slice(0, 16).replace('T', ' ')} JST`;
     execSync(`git commit -m "${msg}"`, { cwd: REPO_DIR, stdio: 'inherit' });
     execSync('git push', { cwd: REPO_DIR, stdio: 'inherit' });
-    logLine('✓ git push 完了、Vercel が自動デプロイします');
+    logLine('✓ git push 完了');
+
+    // GitHub→Vercel 自動デプロイが不発のことがあるため、CLI で明示デプロイ
+    // 2026-06-10: 数日 silent fail していたため追加
+    try {
+      execSync('vercel deploy --prod --scope=e-gov-spotportal --yes', {
+        cwd: REPO_DIR,
+        stdio: 'inherit',
+        timeout: 180_000,
+      });
+      logLine('✓ Vercel 明示デプロイ完了');
+    } catch (deployErr) {
+      logLine(`⚠️  Vercel デプロイ失敗: ${deployErr.message}`);
+    }
   }
 } catch (e) {
   logLine(`⚠️  git 操作失敗: ${e.message}`);
