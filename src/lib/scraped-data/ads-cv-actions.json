@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-06-10T05:28:37.347Z",
-  "total": 16,
-  "totalAllConversions": 359,
+  "scrapedAt": "2026-06-11T23:44:33.745Z",
+  "total": 17,
+  "totalAllConversions": 369.48,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,20 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 263,
+      "allConversions": 278.98,
       "primaryConversions": 0,
-      "allConversionsValue": 263,
-      "value": 0
-    },
-    {
-      "name": "Local actions - Other engagements",
-      "category": "エンゲージメント",
-      "type": "GOOGLE_HOSTED",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 27,
-      "primaryConversions": 0,
-      "allConversionsValue": 27,
+      "allConversionsValue": 278.979884,
       "value": 0
     },
     {
@@ -36,9 +25,20 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 24,
+      "allConversions": 25,
       "primaryConversions": 0,
-      "allConversionsValue": 2400,
+      "allConversionsValue": 2500,
+      "value": 0
+    },
+    {
+      "name": "Local actions - Other engagements",
+      "category": "エンゲージメント",
+      "type": "GOOGLE_HOSTED",
+      "status": "ENABLED",
+      "source": "ウェブサイト",
+      "allConversions": 22,
+      "primaryConversions": 0,
+      "allConversionsValue": 22,
       "value": 0
     },
     {
@@ -47,9 +47,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 11,
+      "allConversions": 13,
       "primaryConversions": 0,
-      "allConversionsValue": 1100,
+      "allConversionsValue": 1300,
       "value": 0
     },
     {
@@ -75,17 +75,6 @@
       "value": 0
     },
     {
-      "name": "【freee365】3サンクスページ到達",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 4,
-      "primaryConversions": 0,
-      "allConversionsValue": 4000,
-      "value": 0
-    },
-    {
       "name": "Calls from ads",
       "category": "電話リード",
       "type": "AD_CALL",
@@ -94,17 +83,6 @@
       "allConversions": 3,
       "primaryConversions": 0,
       "allConversionsValue": 3,
-      "value": 0
-    },
-    {
-      "name": "【freee365】1問い合わせフォーム遷移",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 3,
-      "primaryConversions": 0,
-      "allConversionsValue": 30,
       "value": 0
     },
     {
@@ -119,14 +97,36 @@
       "value": 0
     },
     {
-      "name": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
+      "name": "【freee365】3サンクスページ到達",
       "category": "リードフォーム送信",
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
       "allConversions": 3,
       "primaryConversions": 0,
-      "allConversionsValue": 30,
+      "allConversionsValue": 3000,
+      "value": 0
+    },
+    {
+      "name": "【freee365】1問い合わせフォーム遷移",
+      "category": "リードフォーム送信",
+      "type": "WEBPAGE",
+      "status": "ENABLED",
+      "source": "ウェブサイト",
+      "allConversions": 2,
+      "primaryConversions": 0,
+      "allConversionsValue": 20,
+      "value": 0
+    },
+    {
+      "name": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
+      "category": "リードフォーム送信",
+      "type": "WEBPAGE",
+      "status": "ENABLED",
+      "source": "ウェブサイト",
+      "allConversions": 2,
+      "primaryConversions": 0,
+      "allConversionsValue": 20,
       "value": 0
     },
     {
@@ -135,20 +135,20 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 2,
+      "allConversions": 1.5,
       "primaryConversions": 0,
-      "allConversionsValue": 2000,
+      "allConversionsValue": 1500,
       "value": 0
     },
     {
-      "name": "【freee365】2フォーム入力開始",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
+      "name": "通話ボタンをクリック",
+      "category": "問い合わせ",
+      "type": "GOOGLE_HOSTED",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 2,
+      "allConversions": 1,
       "primaryConversions": 0,
-      "allConversionsValue": 200,
+      "allConversionsValue": 1,
       "value": 0
     },
     {
@@ -160,6 +160,17 @@
       "allConversions": 1,
       "primaryConversions": 0,
       "allConversionsValue": 1000,
+      "value": 0
+    },
+    {
+      "name": "【freee365】2フォーム入力開始",
+      "category": "リードフォーム送信",
+      "type": "WEBPAGE",
+      "status": "ENABLED",
+      "source": "ウェブサイト",
+      "allConversions": 1,
+      "primaryConversions": 0,
+      "allConversionsValue": 100,
       "value": 0
     },
     {
@@ -187,14 +198,49 @@
   ],
   "daily": [
     {
+      "date": "2026-06-11",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 6
+    },
+    {
+      "date": "2026-06-11",
+      "actionName": "【共通】電話番号タップ",
+      "count": 1
+    },
+    {
+      "date": "2026-06-10",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 18
+    },
+    {
+      "date": "2026-06-10",
+      "actionName": "【共通】電話番号タップ",
+      "count": 1
+    },
+    {
+      "date": "2026-06-10",
+      "actionName": "【始めの社労士くん】2フォーム入力開始",
+      "count": 2
+    },
+    {
+      "date": "2026-06-10",
+      "actionName": "【新規適用届】1フォーム入力開始",
+      "count": 1
+    },
+    {
+      "date": "2026-06-09",
+      "actionName": "Local actions - Other engagements",
+      "count": 1
+    },
+    {
       "date": "2026-06-09",
       "actionName": "【共通】全てのリンククリック",
-      "count": 20.87
+      "count": 22.87
     },
     {
       "date": "2026-06-09",
       "actionName": "【共通】電話番号タップ",
-      "count": 1
+      "count": 2
     },
     {
       "date": "2026-06-09",
@@ -209,6 +255,11 @@
     {
       "date": "2026-06-09",
       "actionName": "【給与伴走くん】１フォーム入力開始",
+      "count": 1
+    },
+    {
+      "date": "2026-06-09",
+      "actionName": "通話ボタンをクリック",
       "count": 1
     },
     {
@@ -254,7 +305,7 @@
     {
       "date": "2026-06-06",
       "actionName": "【共通】全てのリンククリック",
-      "count": 6.13
+      "count": 8.13
     },
     {
       "date": "2026-06-06",
@@ -294,7 +345,7 @@
     {
       "date": "2026-06-03",
       "actionName": "【共通】全てのリンククリック",
-      "count": 12
+      "count": 13
     },
     {
       "date": "2026-06-03",
@@ -549,12 +600,12 @@
     {
       "date": "2026-05-15",
       "actionName": "Local actions - Other engagements",
-      "count": 12
+      "count": 15
     },
     {
       "date": "2026-05-15",
       "actionName": "【共通】全てのリンククリック",
-      "count": 56
+      "count": 70
     },
     {
       "date": "2026-05-15",
@@ -564,7 +615,7 @@
     {
       "date": "2026-05-15",
       "actionName": "【始めの社労士くん】2フォーム入力開始",
-      "count": 2
+      "count": 3
     },
     {
       "date": "2026-05-14",
@@ -585,61 +636,6 @@
       "date": "2026-05-13",
       "actionName": "【共通】全てのリンククリック",
       "count": 3
-    },
-    {
-      "date": "2026-05-12",
-      "actionName": "Local actions - Other engagements",
-      "count": 9
-    },
-    {
-      "date": "2026-05-12",
-      "actionName": "【freee365】1問い合わせフォーム遷移",
-      "count": 1
-    },
-    {
-      "date": "2026-05-12",
-      "actionName": "【freee365】2フォーム入力開始",
-      "count": 1
-    },
-    {
-      "date": "2026-05-12",
-      "actionName": "【freee365】3サンクスページ到達",
-      "count": 1
-    },
-    {
-      "date": "2026-05-12",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 22.02
-    },
-    {
-      "date": "2026-05-12",
-      "actionName": "【共通】電話番号タップ",
-      "count": 1
-    },
-    {
-      "date": "2026-05-12",
-      "actionName": "【始めの社労士くん】2フォーム入力開始",
-      "count": 2
-    },
-    {
-      "date": "2026-05-12",
-      "actionName": "【新規適用届】1フォーム入力開始",
-      "count": 1
-    },
-    {
-      "date": "2026-05-12",
-      "actionName": "【新規適用届】2サンクスページ到達",
-      "count": 0.5
-    },
-    {
-      "date": "2026-05-11",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 5
-    },
-    {
-      "date": "2026-05-11",
-      "actionName": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
-      "count": 1
     }
   ]
 }
