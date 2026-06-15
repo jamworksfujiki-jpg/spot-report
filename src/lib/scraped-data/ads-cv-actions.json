@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-06-11T23:44:33.745Z",
+  "scrapedAt": "2026-06-15T23:27:56.167Z",
   "total": 17,
-  "totalAllConversions": 369.48,
+  "totalAllConversions": 337.48,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,9 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 278.98,
+      "allConversions": 240.98,
       "primaryConversions": 0,
-      "allConversionsValue": 278.979884,
+      "allConversionsValue": 240.979884,
       "value": 0
     },
     {
@@ -25,9 +25,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 25,
+      "allConversions": 26,
       "primaryConversions": 0,
-      "allConversionsValue": 2500,
+      "allConversionsValue": 2600,
       "value": 0
     },
     {
@@ -36,9 +36,9 @@
       "type": "GOOGLE_HOSTED",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 22,
+      "allConversions": 25,
       "primaryConversions": 0,
-      "allConversionsValue": 22,
+      "allConversionsValue": 25,
       "value": 0
     },
     {
@@ -47,9 +47,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 13,
+      "allConversions": 12,
       "primaryConversions": 0,
-      "allConversionsValue": 1300,
+      "allConversionsValue": 1200,
       "value": 0
     },
     {
@@ -75,14 +75,25 @@
       "value": 0
     },
     {
-      "name": "Calls from ads",
-      "category": "電話リード",
-      "type": "AD_CALL",
+      "name": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
+      "category": "リードフォーム送信",
+      "type": "WEBPAGE",
+      "status": "ENABLED",
+      "source": "ウェブサイト",
+      "allConversions": 4,
+      "primaryConversions": 0,
+      "allConversionsValue": 40,
+      "value": 0
+    },
+    {
+      "name": "【freee365】1問い合わせフォーム遷移",
+      "category": "リードフォーム送信",
+      "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
       "allConversions": 3,
       "primaryConversions": 0,
-      "allConversionsValue": 3,
+      "allConversionsValue": 30,
       "value": 0
     },
     {
@@ -108,25 +119,25 @@
       "value": 0
     },
     {
-      "name": "【freee365】1問い合わせフォーム遷移",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
+      "name": "ローカル アクション - 経路",
+      "category": "道順",
+      "type": "GOOGLE_HOSTED",
       "status": "ENABLED",
       "source": "ウェブサイト",
       "allConversions": 2,
       "primaryConversions": 0,
-      "allConversionsValue": 20,
+      "allConversionsValue": 2,
       "value": 0
     },
     {
-      "name": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
+      "name": "【freee365】2フォーム入力開始",
       "category": "リードフォーム送信",
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
       "allConversions": 2,
       "primaryConversions": 0,
-      "allConversionsValue": 20,
+      "allConversionsValue": 200,
       "value": 0
     },
     {
@@ -163,17 +174,6 @@
       "value": 0
     },
     {
-      "name": "【freee365】2フォーム入力開始",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 1,
-      "primaryConversions": 0,
-      "allConversionsValue": 100,
-      "value": 0
-    },
-    {
       "name": "【産休育休応援キャンペーン】2フォーム入力開始",
       "category": "リードフォーム送信",
       "type": "WEBPAGE",
@@ -198,9 +198,74 @@
   ],
   "daily": [
     {
+      "date": "2026-06-15",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 5
+    },
+    {
+      "date": "2026-06-15",
+      "actionName": "【共通】電話番号タップ",
+      "count": 2
+    },
+    {
+      "date": "2026-06-15",
+      "actionName": "【始めの社労士くん】2フォーム入力開始",
+      "count": 2
+    },
+    {
+      "date": "2026-06-14",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 2
+    },
+    {
+      "date": "2026-06-14",
+      "actionName": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
+      "count": 2
+    },
+    {
+      "date": "2026-06-13",
+      "actionName": "【freee365】1問い合わせフォーム遷移",
+      "count": 1
+    },
+    {
+      "date": "2026-06-13",
+      "actionName": "【freee365】2フォーム入力開始",
+      "count": 1
+    },
+    {
+      "date": "2026-06-13",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 5
+    },
+    {
+      "date": "2026-06-13",
+      "actionName": "【始めの社労士くん】2フォーム入力開始",
+      "count": 1
+    },
+    {
+      "date": "2026-06-12",
+      "actionName": "Local actions - Other engagements",
+      "count": 7
+    },
+    {
+      "date": "2026-06-12",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 4
+    },
+    {
+      "date": "2026-06-12",
+      "actionName": "【始めの社労士くん】2フォーム入力開始",
+      "count": 1
+    },
+    {
+      "date": "2026-06-11",
+      "actionName": "Local actions - Other engagements",
+      "count": 8
+    },
+    {
       "date": "2026-06-11",
       "actionName": "【共通】全てのリンククリック",
-      "count": 6
+      "count": 17
     },
     {
       "date": "2026-06-11",
@@ -209,8 +274,13 @@
     },
     {
       "date": "2026-06-10",
+      "actionName": "Local actions - Other engagements",
+      "count": 2
+    },
+    {
+      "date": "2026-06-10",
       "actionName": "【共通】全てのリンククリック",
-      "count": 18
+      "count": 25
     },
     {
       "date": "2026-06-10",
@@ -228,6 +298,11 @@
       "count": 1
     },
     {
+      "date": "2026-06-10",
+      "actionName": "ローカル アクション - 経路",
+      "count": 1
+    },
+    {
       "date": "2026-06-09",
       "actionName": "Local actions - Other engagements",
       "count": 1
@@ -235,7 +310,7 @@
     {
       "date": "2026-06-09",
       "actionName": "【共通】全てのリンククリック",
-      "count": 22.87
+      "count": 25.87
     },
     {
       "date": "2026-06-09",
@@ -270,7 +345,7 @@
     {
       "date": "2026-06-08",
       "actionName": "【共通】全てのリンククリック",
-      "count": 11
+      "count": 13
     },
     {
       "date": "2026-06-08",
@@ -409,8 +484,13 @@
     },
     {
       "date": "2026-05-31",
+      "actionName": "Local actions - Other engagements",
+      "count": 1
+    },
+    {
+      "date": "2026-05-31",
       "actionName": "【共通】全てのリンククリック",
-      "count": 6.98
+      "count": 8.98
     },
     {
       "date": "2026-05-31",
@@ -558,6 +638,11 @@
       "count": 1
     },
     {
+      "date": "2026-05-19",
+      "actionName": "ローカル アクション - 経路",
+      "count": 1
+    },
+    {
       "date": "2026-05-18",
       "actionName": "Local actions - Website visits",
       "count": 1
@@ -581,61 +666,6 @@
       "date": "2026-05-17",
       "actionName": "【共通】全てのリンククリック",
       "count": 1
-    },
-    {
-      "date": "2026-05-16",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 1
-    },
-    {
-      "date": "2026-05-16",
-      "actionName": "【共通】電話番号タップ",
-      "count": 1
-    },
-    {
-      "date": "2026-05-15",
-      "actionName": "Calls from ads",
-      "count": 1
-    },
-    {
-      "date": "2026-05-15",
-      "actionName": "Local actions - Other engagements",
-      "count": 15
-    },
-    {
-      "date": "2026-05-15",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 70
-    },
-    {
-      "date": "2026-05-15",
-      "actionName": "【共通】電話番号タップ",
-      "count": 2
-    },
-    {
-      "date": "2026-05-15",
-      "actionName": "【始めの社労士くん】2フォーム入力開始",
-      "count": 3
-    },
-    {
-      "date": "2026-05-14",
-      "actionName": "Calls from ads",
-      "count": 1
-    },
-    {
-      "date": "2026-05-14",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 5
-    },
-    {
-      "date": "2026-05-13",
-      "actionName": "Calls from ads",
-      "count": 1
-    },
-    {
-      "date": "2026-05-13",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 3
     }
   ]
 }
