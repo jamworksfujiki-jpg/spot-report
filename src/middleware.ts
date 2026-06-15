@@ -4,7 +4,7 @@ import { jwtVerify } from "jose";
 
 const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET!);
 
-const PUBLIC_PATHS = ["/login", "/api/login", "/api/logout"];
+const PUBLIC_PATHS = ["/login", "/api/login", "/api/logout", "/api/health"];
 
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some(
