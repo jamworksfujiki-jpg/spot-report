@@ -2,18 +2,18 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-05-20",
-    "to": "2026-06-18"
+    "from": "2026-05-22",
+    "to": "2026-06-20"
   },
   "days": 30,
   "totals": {
-    "cost": 82563,
-    "clicks": 499,
-    "conversions": 367.48,
+    "cost": 87683,
+    "clicks": 514,
+    "conversions": 376.48,
     "searchImpressions": 3707,
     "searchClicks": 335,
-    "cpc": 165,
-    "cpa": 225,
+    "cpc": 171,
+    "cpa": 233,
     "searchCtr": 9.04
   },
   "campaigns": [
@@ -21,52 +21,36 @@
       "name": "02.はじめの社労士くん",
       "group": "",
       "status": "有効",
-      "cost": 51160,
-      "conversions": 267,
-      "cpa": 192
+      "cost": 55592,
+      "conversions": 271,
+      "cpa": 205
     },
     {
       "name": "04. 産休育休応援キャンペーン",
       "group": "",
       "status": "有効",
-      "cost": 15284,
-      "conversions": 18,
-      "cpa": 849
+      "cost": 15491,
+      "conversions": 17,
+      "cpa": 911
     },
     {
       "name": "01.新規適用届",
       "group": "",
       "status": "有効",
-      "cost": 13043,
-      "conversions": 46.48,
-      "cpa": 281
+      "cost": 13502,
+      "conversions": 51.48,
+      "cpa": 262
     },
     {
       "name": "05. 伴走くんDisplay",
       "group": "",
       "status": "有効",
-      "cost": 3076,
-      "conversions": 36,
-      "cpa": 85
+      "cost": 3098,
+      "conversions": 37,
+      "cpa": 84
     }
   ],
   "timeline": [
-    {
-      "date": "2026-05-20",
-      "clicks": 13,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 4.99,
-      "cost": 1143
-    },
-    {
-      "date": "2026-05-21",
-      "clicks": 10,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 4.99,
-      "cost": 1198
-    },
     {
       "date": "2026-05-22",
       "clicks": 15,
@@ -144,7 +128,7 @@
       "clicks": 9,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 13.54,
+      "conversions": 14.47,
       "cost": 1259
     },
     {
@@ -224,7 +208,7 @@
       "clicks": 21,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 33,
+      "conversions": 33.88,
       "cost": 3828
     },
     {
@@ -232,7 +216,7 @@
       "clicks": 14,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 24.97,
+      "conversions": 28.05,
       "cost": 4993
     },
     {
@@ -288,8 +272,24 @@
       "clicks": 17,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 27.95,
+      "conversions": 29.91,
       "cost": 4277
+    },
+    {
+      "date": "2026-06-19",
+      "clicks": 19,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 6,
+      "cost": 4959
+    },
+    {
+      "date": "2026-06-20",
+      "clicks": 19,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 6,
+      "cost": 2500
     }
   ],
   "devices": [
@@ -1496,6 +1496,6 @@
     "tlClicks": 1259
   },
   "source": "playwright-overview-zip",
-  "scrapedAt": "2026-06-18T23:28:20.088Z",
+  "scrapedAt": "2026-06-20T23:54:33.727Z",
   "zipPath": "C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-1780899959445.zip"
 }
