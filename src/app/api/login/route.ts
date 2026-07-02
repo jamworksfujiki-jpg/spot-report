@@ -11,6 +11,18 @@ import {
 export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
+  try {
+    return await handleLogin(req);
+  } catch (e) {
+    console.error("[login] unhandled error:", e);
+    return NextResponse.json(
+      { error: "サーバーエラーが発生しました。時間を置いて再度お試しください。" },
+      { status: 500 }
+    );
+  }
+}
+
+async function handleLogin(req: NextRequest) {
   let body: { username?: string; password?: string };
   try {
     body = await req.json();

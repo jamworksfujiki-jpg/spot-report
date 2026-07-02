@@ -13,6 +13,9 @@ type Attempt = { fail: number; firstFailAt: number };
 const attempts = new Map<string, Attempt>();
 
 export async function signSessionToken(username: string) {
+  if (!process.env.JWT_SECRET) {
+    throw new Error("[auth] JWT_SECRET is not set");
+  }
   return await new SignJWT({ sub: username })
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
@@ -70,13 +73,24 @@ export async function verifyCredentials(
   username: string,
   password: string
 ): Promise<boolean> {
-  const expectedUser = process.env.ADMIN_USERNAME;
-  const expectedHash = decodeExpectedHash();
-  if (!expectedUser || !expectedHash) return false;
-  if (username !== expectedUser) {
-    // 既知の正しい形式のダミーで timing-safe にする
-    await bcrypt.compare(password, "$2b$10$" + "x".repeat(53));
+  try {
+    const expectedUser = process.env.ADMIN_USERNAME;
+    const expectedHash = decodeExpectedHash();
+    if (!expectedUser || !expectedHash) {
+      console.error("[auth] missing ADMIN_USERNAME or ADMIN_PASSWORD_HASH_B64");
+      return false;
+    }
+    if (username !== expectedUser) {
+      try {
+        await bcrypt.compare(password, "$2b$10$" + "x".repeat(53));
+      } catch {
+        /* timing-safe dummy, ignore */
+      }
+      return false;
+    }
+    return await bcrypt.compare(password, expectedHash);
+  } catch (e) {
+    console.error("[auth] verifyCredentials error:", e);
     return false;
   }
-  return bcrypt.compare(password, expectedHash);
 }
