@@ -2,8 +2,8 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-06-03",
-    "to": "2026-07-02"
+    "from": "2026-06-04",
+    "to": "2026-07-03"
   },
   "days": 30,
   "totals": {
@@ -1503,7 +1503,7 @@
     "cmpCv": 162.98,
     "tlClicks": 1259
   },
-  "source": "playwright-overview-zip",
-  "scrapedAt": "2026-07-02T22:13:15.394Z",
+  "source": "playwright-no-zip",
+  "scrapedAt": "2026-07-04T01:19:55.162Z",
   "zipPath": "C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-1780899959445.zip"
 }
