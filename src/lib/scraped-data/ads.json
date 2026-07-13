@@ -2,8 +2,8 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-06-12",
-    "to": "2026-07-11"
+    "from": "2026-06-14",
+    "to": "2026-07-13"
   },
   "days": 30,
   "totals": {
@@ -60,244 +60,244 @@
   ],
   "timeline": [
     {
-      "date": "2026-06-12",
-      "clicks": 19,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 6.01,
-      "cost": 2127
-    },
-    {
-      "date": "2026-06-13",
-      "clicks": 14,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 9.99,
-      "cost": 1609
-    },
-    {
       "date": "2026-06-14",
-      "clicks": 23,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 4,
-      "cost": 1173
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-15",
-      "clicks": 32,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 15,
-      "cost": 8417
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-16",
-      "clicks": 23,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 20.97,
-      "cost": 7089
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-17",
-      "clicks": 20,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 1,
-      "cost": 5153
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-18",
-      "clicks": 17,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 30.99,
-      "cost": 4277
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-19",
-      "clicks": 19,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 10,
-      "cost": 4959
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-20",
-      "clicks": 18,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 11,
-      "cost": 2485
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-21",
-      "clicks": 17,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 8,
-      "cost": 1688
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-22",
-      "clicks": 29,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 13,
-      "cost": 7278
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-23",
-      "clicks": 16,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 12,
-      "cost": 3816
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-24",
-      "clicks": 21,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 1,
-      "cost": 3979
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-25",
-      "clicks": 11,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 2,
-      "cost": 5210
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-26",
-      "clicks": 12,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 5,
-      "cost": 2086
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-27",
-      "clicks": 16,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 4,
-      "cost": 1577
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-28",
-      "clicks": 21,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 1,
-      "cost": 3584
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-29",
-      "clicks": 30,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 16.98,
-      "cost": 6963
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-06-30",
-      "clicks": 21,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 20.05,
-      "cost": 3388
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-01",
-      "clicks": 16,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 12.01,
-      "cost": 4394
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-02",
-      "clicks": 27,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 2,
-      "cost": 4260
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-03",
-      "clicks": 19,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 50.97,
-      "cost": 4383
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-04",
-      "clicks": 25,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 4,
-      "cost": 4082
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-05",
-      "clicks": 17,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 8,
-      "cost": 4886
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-06",
-      "clicks": 12,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 15,
-      "cost": 4666
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-07",
-      "clicks": 21,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 22.04,
-      "cost": 4960
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-08",
-      "clicks": 18,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 5,
-      "cost": 4480
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-09",
-      "clicks": 21,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 5,
-      "cost": 4164
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-10",
-      "clicks": 19,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 14.01,
-      "cost": 4064
+      "conversions": 0,
+      "cost": 0
     },
     {
       "date": "2026-07-11",
-      "clicks": 16,
+      "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
-      "conversions": 6,
-      "cost": 4431
+      "conversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-07-12",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-07-13",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 0
     }
   ],
   "devices": [
@@ -1504,6 +1504,6 @@
     "tlClicks": 1259
   },
   "source": "playwright-overview-zip",
-  "scrapedAt": "2026-07-12T01:32:27.389Z",
+  "scrapedAt": "2026-07-13T22:00:29.172Z",
   "zipPath": "C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-1780899959445.zip"
 }
