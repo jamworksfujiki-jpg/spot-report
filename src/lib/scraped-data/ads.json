@@ -2,8 +2,8 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-06-15",
-    "to": "2026-07-14"
+    "from": "2026-06-17",
+    "to": "2026-07-16"
   },
   "days": 30,
   "totals": {
@@ -59,22 +59,6 @@
     }
   ],
   "timeline": [
-    {
-      "date": "2026-06-15",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-06-16",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
     {
       "date": "2026-06-17",
       "clicks": 0,
@@ -293,6 +277,22 @@
     },
     {
       "date": "2026-07-14",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-07-15",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-07-16",
       "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
@@ -1504,6 +1504,6 @@
     "tlClicks": 1259
   },
   "source": "playwright-overview-zip",
-  "scrapedAt": "2026-07-14T23:24:40.526Z",
+  "scrapedAt": "2026-07-16T23:22:49.425Z",
   "zipPath": "C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-1780899959445.zip"
 }
