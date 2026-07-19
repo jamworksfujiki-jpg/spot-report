@@ -2,8 +2,8 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-06-17",
-    "to": "2026-07-16"
+    "from": "2026-06-20",
+    "to": "2026-07-19"
   },
   "days": 30,
   "totals": {
@@ -59,30 +59,6 @@
     }
   ],
   "timeline": [
-    {
-      "date": "2026-06-17",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-06-18",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-06-19",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
     {
       "date": "2026-06-20",
       "clicks": 0,
@@ -293,6 +269,30 @@
     },
     {
       "date": "2026-07-16",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-07-17",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-07-18",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-07-19",
       "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
@@ -1504,6 +1504,6 @@
     "tlClicks": 1259
   },
   "source": "playwright-overview-zip",
-  "scrapedAt": "2026-07-16T23:22:49.425Z",
+  "scrapedAt": "2026-07-19T22:00:24.585Z",
   "zipPath": "C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-1780899959445.zip"
 }
