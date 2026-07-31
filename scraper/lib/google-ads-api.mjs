@@ -13,7 +13,12 @@ const AUTH_DIR = path.resolve(__dirname, '../../../.reporting-auth');
 const TOKENS_FILE = path.join(AUTH_DIR, 'google-ads-tokens.json');
 const CONFIG_FILE = path.join(AUTH_DIR, 'google-ads-api-config.json');
 
-const API_VERSION = 'v20'; // Google Ads API REST バージョン
+// Google Ads API REST バージョン。
+// 【2026-07-31】v20 は廃止され UNSUPPORTED_VERSION で全リクエストが弾かれていた
+// （"Version v20 is deprecated. Requests to this version will be blocked."）。
+// 実測で v21 が利用可能。Googleは定期的に旧バージョンを打ち切るため、
+// UNSUPPORTED_VERSION が出たらここを上げること。
+const API_VERSION = 'v21';
 
 export function loadConfig() {
   if (!fs.existsSync(CONFIG_FILE)) {
@@ -163,8 +168,8 @@ export async function callApi({ query }) {
   // どちらで認可されても動くよう、設定値 → MCC → 無し の順で試す。
   const candidates = [];
   if (config.login_customer_id) candidates.push(config.login_customer_id);
-  candidates.push('830-262-1107'); // スポット社労士くん MCC
-  candidates.push(null);
+  candidates.push(null);            // 直接権限（2026-07-31 実測でこれが通る）
+  candidates.push('830-262-1107');  // スポット社労士くん MCC 経由
 
   const tried = [];
   let lastErr = null;
