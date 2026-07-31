@@ -293,7 +293,18 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
           .map((a) => ({ ...a, allConversions: sumByAction.get(a.name) ?? 0 }))
           .filter((a) => a.allConversions > 0)
           .sort((x, y) => y.allConversions - x.allConversions);
-        const allItems = itemsScaled.length > 0 ? itemsScaled : data.cvActions!.items;
+        // 【2026-07-31 修正】ここが最悪のサイレント失敗だった。
+        // 選択期間に該当する日別CVが1件も無いとき、旧実装は取得時点の固定値
+        // （2026-06-15 に取った6月のデータ）へ黙ってフォールバックし、
+        // それを選択期間（例 7/1〜7/30）のラベルで表示していた。
+        // = 6月の数字が「7月のコンバージョン」として出ていた。
+        // 期間内データが無いなら、期間の数字として出してはいけない。
+        const isStaleFallback = itemsScaled.length === 0;
+        const allItems = isStaleFallback ? data.cvActions!.items : itemsScaled;
+        const cvScrapedAt = data.cvActions!.scrapedAt;
+        const cvStaleDays = cvScrapedAt
+          ? Math.floor((Date.now() - new Date(cvScrapedAt).getTime()) / 86400000)
+          : null;
         const thanksItems = allItems.filter((a) => isThanksAction(a.name));
         const displayItems = thanksOnly ? thanksItems : allItems;
         const displayTotal = displayItems.reduce((s, a) => s + a.allConversions, 0);
@@ -303,8 +314,27 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
         <div className="card">
           <SectionHeader
             title="コンバージョン種類別 内訳"
-            sub={`${fromDate} 〜 ${toDate}・全${allItems.length}種類・合計 ${totalAll.toFixed(2)} CV（すべてのコンバージョン）／ サンクス到達のみ合計 ${totalThanks.toFixed(2)}`}
+            sub={
+              isStaleFallback
+                ? `⚠️ ${fromDate} 〜 ${toDate} のデータではありません（下記の注意書きを参照）`
+                : `${fromDate} 〜 ${toDate}・全${allItems.length}種類・合計 ${totalAll.toFixed(2)} CV（すべてのコンバージョン）／ サンクス到達のみ合計 ${totalThanks.toFixed(2)}`
+            }
           />
+          {isStaleFallback && (
+            <div className="mb-4 -mt-1 rounded-lg border border-[#FFB4A8] bg-[#FFF4F2] p-3 text-[13px] text-[#5A1A10]">
+              <p className="font-semibold text-[#8C2F1F]">
+                ⚠️ 以下は選択期間の実績ではなく、
+                {cvScrapedAt ? new Date(cvScrapedAt).toLocaleDateString("ja-JP") : "過去"}
+                に取得した時点の値です
+                {cvStaleDays !== null && `（${cvStaleDays}日前）`}
+              </p>
+              <p className="mt-1.5">
+                コンバージョンデータの取得はGoogle広告APIの認証（refresh_token）が失効したため
+                <strong>停止しています</strong>。選択期間内に発生したコンバージョンは取得できていません。
+                復旧にはGoogle広告APIの再認証（SMS二段階認証が必要）が要ります。
+              </p>
+            </div>
+          )}
           <div className="flex items-center gap-2 mb-4 -mt-2">
             <button
               type="button"
