@@ -27,6 +27,10 @@ function logLine(msg) {
   fs.appendFileSync(logFile(), line);
 }
 
+let pushFailed = null;
+let deployFailed = null;
+let gitFailed = null;
+
 logLine('===== scrape-all start =====');
 
 function runScript(name, file) {
@@ -67,8 +71,20 @@ try {
     execSync('git add src/lib/scraped-data/', { cwd: REPO_DIR, stdio: 'inherit' });
     const msg = `chore(data): auto-scrape ${new Date().toISOString().slice(0, 16).replace('T', ' ')} JST`;
     execSync(`git commit -m "${msg}"`, { cwd: REPO_DIR, stdio: 'inherit' });
-    execSync('git push', { cwd: REPO_DIR, stdio: 'inherit' });
-    logLine('✓ git push 完了');
+
+    // 【2026-07-31 修正】旧実装は git push を同じ try に入れていたため、
+    // push が失敗（認証プロンプト等）すると catch に飛んで
+    // **Vercel デプロイごとスキップ**され、取得できた新しい数字が
+    // 本番に反映されないまま終わっていた。
+    // push は「バックアップ」、deploy は「本番反映」で目的が違う。
+    // push の失敗で deploy を巻き添えにしない。
+    try {
+      execSync('git push', { cwd: REPO_DIR, stdio: 'inherit' });
+      logLine('✓ git push 完了');
+    } catch (pushErr) {
+      pushFailed = pushErr.message;
+      logLine(`⚠️  git push 失敗（デプロイは続行）: ${pushErr.message}`);
+    }
 
     // GitHub→Vercel 自動デプロイが不発のことがあるため、CLI で明示デプロイ
     // 2026-06-10: 数日 silent fail していたため追加
@@ -80,10 +96,12 @@ try {
       });
       logLine('✓ Vercel 明示デプロイ完了');
     } catch (deployErr) {
+      deployFailed = deployErr.message;
       logLine(`⚠️  Vercel デプロイ失敗: ${deployErr.message}`);
     }
   }
 } catch (e) {
+  gitFailed = e.message;
   logLine(`⚠️  git 操作失敗: ${e.message}`);
 }
 
@@ -94,6 +112,9 @@ const failed = [
   !adsOk && 'Google広告',
   !cvOk && 'CVアクション',
   !igOk && 'Instagram',
+  // 取得できたのに本番へ出ていない＝見えない事故なので、これも失敗として通知する
+  deployFailed && 'Vercelデプロイ',
+  gitFailed && 'git操作',
 ].filter(Boolean);
 
 if (failed.length) {
@@ -109,6 +130,7 @@ if (failed.length) {
       `失敗したデータ: ${failed.join(' / ')}\n` +
       `成功したデータ: ${[adsOk && 'Google広告', cvOk && 'CVアクション', igOk && 'Instagram'].filter(Boolean).join(' / ') || 'なし'}\n\n` +
       `該当データはダッシュボード上で更新されていません（古い数字が「最新」と表示されることはありません）。\n\n` +
+      (pushFailed ? `git push 失敗（バックアップのみ・本番反映には影響なし）:\n${pushFailed}\n\n` : '') +
       `--- ログ末尾 ---\n${tail}\n`,
   });
 }
