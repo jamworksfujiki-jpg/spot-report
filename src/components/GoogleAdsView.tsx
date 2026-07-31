@@ -31,8 +31,8 @@ type AdsData = {
   };
   campaigns: Campaign[];
   timeline: TimelineDay[];
-  devices: Device[];
-  searchTerms: SearchTerm[];
+  devices?: Device[];
+  searchTerms?: SearchTerm[];
   biddedKeywords?: BiddedKeyword[];
   network?: NetworkRow[];
   gender?: DemoRow[];
@@ -548,6 +548,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6">
+        {data.devices && data.devices.length > 0 && (
         <div className="card">
           <SectionHeader title="デバイス別" sub="過去30日合計（期間絞り込み非対応）" />
           <div className="overflow-x-auto">
@@ -573,7 +574,9 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
             </table>
           </div>
         </div>
+        )}
 
+        {data.searchTerms && data.searchTerms.length > 0 && (
         <div className="card">
           <SectionHeader title="ユーザーが検索したクエリ TOP15" sub={`全${data.searchTerms.length}件中・表示回数順（過去30日合計・期間絞り込み非対応）`} />
           <div className="overflow-x-auto">
@@ -602,6 +605,7 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
             ※ 概要CSVの検索クエリにはCVが紐付きません（Google広告UIの仕様）。CVは下記のキャンペーン別合計が正確です。
           </p>
         </div>
+        )}
       </div>
 
       {data.biddedKeywords && data.biddedKeywords.length > 0 && (
