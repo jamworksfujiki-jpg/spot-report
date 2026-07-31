@@ -59,28 +59,31 @@ if (/Sign in|ログイン|accounts\.google\.com/i.test(page.url())) {
 }
 console.log('✓ ログイン状態OK');
 
-// 左サイドバーの「設定」をクリックしてアクション一覧へ遷移
-async function gotoSettings() {
+// 【2026-07-31 修正】旧実装は左サイドバーの「設定」をクリックしていたが、
+// そこはコンバージョンの各種オプション画面であってアクション一覧ではない。
+// （通話コンバージョン/顧客ラプスウィンドウ等が並ぶ画面に飛び、抽出0件になっていた）
+// アクション一覧は コンバージョン > 概要（サマリー）にある。
+async function gotoConversionSummary() {
   const candidates = [
-    page.locator('a:has-text("設定"), button:has-text("設定")').filter({ hasNotText: /管理/ }),
-    page.locator('[aria-label="設定"]'),
-    page.locator('nav a').filter({ hasText: '設定' }),
+    page.locator('nav a:has-text("概要"), a:has-text("概要")').filter({ hasNotText: /キャンペーン|最適化/ }),
+    page.locator('[aria-label="概要"]'),
+    page.locator('a:has-text("サマリー")'),
   ];
   for (const c of candidates) {
     try {
       const el = c.first();
       if (await el.isVisible({ timeout: 3000 })) {
-        console.log('  ➡️  「設定」リンクをクリック');
+        console.log('  ➡️  コンバージョン「概要」をクリック');
         await el.click();
-        await page.waitForTimeout(5000);
+        await page.waitForTimeout(6000);
         return true;
       }
     } catch { /* ignore */ }
   }
-  console.warn('  ⚠️  「設定」リンクが見つからない');
+  console.warn('  ⚠️  コンバージョン「概要」リンクが見つかりません');
   return false;
 }
-await gotoSettings();
+await gotoConversionSummary();
 
 // 期間を「過去30日間」にセット
 async function setDateRangeLast30() {

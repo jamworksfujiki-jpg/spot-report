@@ -133,7 +133,15 @@ server.listen(PORT, () => {
   console.log(authUrl);
   console.log('');
   // Windows のデフォルトブラウザで開く
-  spawn('cmd', ['/c', 'start', '', authUrl], { detached: true, stdio: 'ignore' }).unref();
+  // 【2026-07-31 修正】cmd は URL 中の & をコマンド区切りとして解釈するため、
+  // 生の authUrl を渡すと client_id 以降が切り捨てられ
+  // 「Required parameter is missing: response_type」で認証が失敗していた。
+  // PowerShell の Start-Process にシングルクォートで渡して & を無害化する。
+  spawn(
+    'powershell',
+    ['-NoProfile', '-Command', `Start-Process '${authUrl.replace(/'/g, "''")}'`],
+    { detached: true, stdio: 'ignore' }
+  ).unref();
 });
 
 server.on('error', (e) => {

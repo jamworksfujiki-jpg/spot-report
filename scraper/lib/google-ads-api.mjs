@@ -157,11 +157,36 @@ export async function callApi({ query }) {
     saveTokens(tokens);
   }
 
-  return await searchStream({
-    accessToken: tokens.access_token,
-    developerToken: config.developer_token,
-    loginCustomerId: config.login_customer_id,
-    customerId: config.customer_id,
-    query,
-  });
+  // 【2026-07-31 追加】認可したアカウントによって login-customer-id の要否が変わる。
+  //  - spot.sr.intern@gmail.com … 989-421-6094 に直接権限があるため不要
+  //  - jamworksfujiki@gmail.com  … MCC(830-262-1107) 経由のため必要
+  // どちらで認可されても動くよう、設定値 → MCC → 無し の順で試す。
+  const candidates = [];
+  if (config.login_customer_id) candidates.push(config.login_customer_id);
+  candidates.push('830-262-1107'); // スポット社労士くん MCC
+  candidates.push(null);
+
+  const tried = [];
+  let lastErr = null;
+  for (const loginCustomerId of candidates) {
+    if (tried.includes(String(loginCustomerId))) continue;
+    tried.push(String(loginCustomerId));
+    try {
+      return await searchStream({
+        accessToken: tokens.access_token,
+        developerToken: config.developer_token,
+        loginCustomerId,
+        customerId: config.customer_id,
+        query,
+      });
+    } catch (e) {
+      lastErr = e;
+      // 権限・認証まわりのエラーだけ次の候補を試す。それ以外（クエリ不正等）は即座に投げる
+      if (!/PERMISSION|AUTHENTICATION|AUTHORIZATION|USER_PERMISSION|HTTP 40[13]/i.test(e.message)) {
+        throw e;
+      }
+      console.log(`  ↩︎ login-customer-id=${loginCustomerId ?? 'なし'} で失敗、次の候補を試します`);
+    }
+  }
+  throw lastErr;
 }
