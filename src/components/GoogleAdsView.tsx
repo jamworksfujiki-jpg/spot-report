@@ -23,11 +23,11 @@ type AdsData = {
     cost: number;
     clicks: number;
     conversions: number;
-    searchImpressions: number;
-    searchClicks: number;
+    searchImpressions?: number;
+    searchClicks?: number;
     cpc: number;
     cpa: number;
-    searchCtr: number;
+    searchCtr?: number;
   };
   campaigns: Campaign[];
   timeline: TimelineDay[];
