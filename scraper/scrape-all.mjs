@@ -8,6 +8,7 @@ import { execSync, spawnSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+import { alertFailure } from './lib/fail-loud.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_DIR = path.resolve(__dirname, '..');
@@ -86,5 +87,31 @@ try {
   logLine(`⚠️  git 操作失敗: ${e.message}`);
 }
 
+// 【2026-07-31 追加】失敗が起きた日は必ず人に届ける。
+// これまでは個別ステップが落ちてもログに ⚠️ が残るだけで、
+// タスクスケジューラ経由の実行では誰の目にも触れなかった。
+const failed = [
+  !adsOk && 'Google広告',
+  !cvOk && 'CVアクション',
+  !igOk && 'Instagram',
+].filter(Boolean);
+
+if (failed.length) {
+  const logPath = logFile();
+  const tail = (() => {
+    try { return fs.readFileSync(logPath, 'utf8').split('\n').slice(-40).join('\n'); }
+    catch { return '(ログ読み取り不可)'; }
+  })();
+  await alertFailure({
+    subject: `[spot-report] 日次データ取得が失敗しました (${failed.join(' / ')})`,
+    body:
+      `spot-report の日次スクレイプで失敗が発生しました。\n\n` +
+      `失敗したデータ: ${failed.join(' / ')}\n` +
+      `成功したデータ: ${[adsOk && 'Google広告', cvOk && 'CVアクション', igOk && 'Instagram'].filter(Boolean).join(' / ') || 'なし'}\n\n` +
+      `該当データはダッシュボード上で更新されていません（古い数字が「最新」と表示されることはありません）。\n\n` +
+      `--- ログ末尾 ---\n${tail}\n`,
+  });
+}
+
 logLine(`===== scrape-all end (ads=${adsOk ? 'OK' : 'NG'}, cv=${cvOk ? 'OK' : 'NG'}, ig=${igOk ? 'OK' : 'NG'}) =====`);
-process.exit(adsOk && cvOk && igOk ? 0 : 1);
+process.exit(failed.length ? 1 : 0);

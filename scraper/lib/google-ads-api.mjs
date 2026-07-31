@@ -98,27 +98,35 @@ export async function searchStream({
   });
   if (!res.ok) {
     const text = await res.text();
-    // JSONなら主要なエラーメッセージを抽出して見やすく
+    // JSONなら主要なエラーメッセージを抽出して見やすくする。
+    // 【2026-07-31 修正】旧実装は循環参照ガードも深さ制限も無い再帰で、
+    // エラー応答の形によってはスタックを食い潰してプロセスごと異常終了していた
+    // (Windows exit code 3221226505 = 0xC0000409)。そのため「APIが何を返したか」が
+    // 一切わからないまま CV アクション取得が毎日死んでいた。
+    let detail = text.slice(0, 2000);
     try {
       const json = JSON.parse(text);
       const errs = [];
-      const collect = (obj) => {
-        if (obj && typeof obj === 'object') {
-          if (obj.message) errs.push(`message: ${obj.message}`);
-          if (obj.errorCode) errs.push(`errorCode: ${JSON.stringify(obj.errorCode)}`);
-          if (obj.status) errs.push(`status: ${obj.status}`);
-          for (const v of Object.values(obj)) collect(v);
-        } else if (Array.isArray(obj)) {
-          for (const v of obj) collect(v);
-        }
+      const seenObjects = new WeakSet();
+      const collect = (obj, depth) => {
+        if (depth > 12 || errs.length > 50) return;
+        if (!obj || typeof obj !== 'object') return;
+        if (seenObjects.has(obj)) return; // 循環参照ガード
+        seenObjects.add(obj);
+        if (typeof obj.message === 'string') errs.push(`message: ${obj.message}`);
+        if (obj.errorCode) errs.push(`errorCode: ${JSON.stringify(obj.errorCode)}`);
+        if (typeof obj.status === 'string') errs.push(`status: ${obj.status}`);
+        for (const v of Object.values(obj)) collect(v, depth + 1);
       };
-      collect(json);
-      const seen = new Set();
-      const uniq = errs.filter(e => !seen.has(e) && seen.add(e)).slice(0, 10);
-      throw new Error(`API call failed: HTTP ${res.status}\n${uniq.join('\n')}`);
-    } catch (parseErr) {
-      throw new Error(`API call failed: HTTP ${res.status}\n${text.slice(0, 2000)}`);
+      collect(json, 0);
+      if (errs.length) {
+        const seen = new Set();
+        detail = errs.filter((e) => !seen.has(e) && seen.add(e)).slice(0, 10).join('\n');
+      }
+    } catch {
+      // JSONでなければ生テキストをそのまま使う（ここで throw しない）
     }
+    throw new Error(`API call failed: HTTP ${res.status}\n${detail}`);
   }
   // searchStream はストリーミングだが、まとめて配列で返ってくる
   const data = await res.json();

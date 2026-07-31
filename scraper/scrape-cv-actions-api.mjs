@@ -7,6 +7,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { callApi, loadConfig } from './lib/google-ads-api.mjs';
+import { failLoud } from './lib/fail-loud.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.resolve(__dirname, '../src/lib/scraped-data');
@@ -130,6 +131,18 @@ const daily = dailyResults.map((r) => ({
 }))
 .filter((d) => d.date && d.actionName && d.count > 0)
 .sort((a, b) => b.date.localeCompare(a.date));
+
+// 【2026-07-31 追加】0件ガード。
+// APIが空配列を返しても旧実装は total:0 / 全CV:0 を新しい scrapedAt 付きで書き込み、
+// 「CVが0件になった」のか「取得に失敗した」のか区別できなくなっていた。
+// Playwright版(scrape-cv-actions.mjs)には元から入っていたガードをAPI版にも入れる。
+if (!items.length) {
+  await failLoud({
+    name: 'Google広告 CVアクション',
+    reason: 'APIがコンバージョンアクションを1件も返しませんでした（認証失効・権限・クエリ条件のいずれか）',
+    outFile: OUT_FILE,
+  });
+}
 
 const result = {
   customerId: config.customer_id,

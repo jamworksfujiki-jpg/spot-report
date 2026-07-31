@@ -601,7 +601,19 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
         <div className="card">
           <SectionHeader
             title="CVを生んだ検索クエリ"
-            sub={`CV発生: ${data.searchTermsCv.withCv}件 / 合計CV: ${data.searchTermsCv.totalCv.toFixed(2)}（過去30日合計・期間絞り込み非対応）`}
+            // 【2026-07-31 修正】以前は取得日に関係なく「過去30日合計」と表示していたため、
+            // 4月に取得したまま止まっているデータが「過去30日」として見えていた。
+            // 実際の取得日を必ず併記し、古ければ警告する。
+            sub={(() => {
+              const at = data.searchTermsCv?.scrapedAt;
+              const days = at ? Math.floor((Date.now() - new Date(at).getTime()) / 86400000) : null;
+              const base = `CV発生: ${data.searchTermsCv!.withCv}件 / 合計CV: ${data.searchTermsCv!.totalCv.toFixed(2)}`;
+              if (!at) return `${base}（取得日不明・期間絞り込み非対応）`;
+              const d = new Date(at).toLocaleDateString("ja-JP");
+              return days !== null && days > 7
+                ? `${base} ⚠️ ${d} 取得のまま更新されていません（${days}日前）`
+                : `${base}（${d} 取得時点の過去30日合計・期間絞り込み非対応）`;
+            })()}
           />
           <div className="overflow-x-auto">
             <table className="w-full text-sm">

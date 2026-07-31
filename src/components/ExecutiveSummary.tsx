@@ -100,8 +100,12 @@ export function ExecutiveSummary({ range }: ExecutiveSummaryProps = {}) {
   const costDelta = adsPrev && adsCurr ? pctDelta(adsCurr.cost, adsPrev.cost) : null;
   const cvDelta = adsPrev && adsCurr ? pctDelta(adsCurr.cv, adsPrev.cv) : null;
 
-  const newestScrape = [adsRaw?.scrapedAt, ig?.scrapedAt].filter(Boolean).sort().pop();
-  const scrapedLabel = newestScrape ? new Date(newestScrape).toLocaleString("ja-JP", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }) : "—";
+  // 【2026-07-31 修正】以前は最新の scrapedAt を表示していたため、
+  // 片方のデータが1ヶ月止まっていても「さっき更新した」ように見えていた。
+  // 鮮度は必ず「一番古いデータ」で名乗る。
+  const oldestScrape = [adsRaw?.scrapedAt, ig?.scrapedAt].filter(Boolean).sort().shift();
+  const scrapedLabel = oldestScrape ? new Date(oldestScrape).toLocaleString("ja-JP", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" }) : "—";
+  const staleDays = oldestScrape ? Math.floor((Date.now() - new Date(oldestScrape).getTime()) / 86400000) : 0;
 
   return (
     <div className="space-y-8">
@@ -113,8 +117,15 @@ export function ExecutiveSummary({ range }: ExecutiveSummaryProps = {}) {
               {ads ? `${ads.period.from} 〜 ${ads.period.to}` : "過去30日間"} ・ 全チャネル横断 ・ 実データ
             </p>
           </div>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[12px] font-medium rounded-full bg-white/15 text-white border border-white/25">
-            🕒 最終取得 {scrapedLabel}
+          <span
+            className={`inline-flex items-center gap-1.5 px-3 py-1 text-[12px] font-medium rounded-full border ${
+              staleDays >= 3
+                ? "bg-[#FFB4A8] text-[#5A1A10] border-[#FFB4A8]"
+                : "bg-white/15 text-white border-white/25"
+            }`}
+          >
+            {staleDays >= 3 ? "⚠️" : "🕒"} 最終取得 {scrapedLabel}
+            {staleDays >= 3 && `（${staleDays}日前・要確認）`}
           </span>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">

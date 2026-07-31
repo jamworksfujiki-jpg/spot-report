@@ -6,6 +6,7 @@ import { chromium } from 'playwright';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { failLoud } from './lib/fail-loud.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const AUTH_DIR = path.resolve(__dirname, '../../.reporting-auth');
@@ -89,14 +90,25 @@ try {
 
 await context.close();
 
+// 【2026-07-31 修正】旧実装は followers 等が取れなくても existing の値を書き戻し、
+// scrapedAt だけ「今」に更新して成功終了していた（サイレント失敗）。
+// フォロワー数が取れていない = 取得失敗。前回値で塗り固めず、書かずに落とす。
+if (followers === null || followers === undefined) {
+  await failLoud({
+    name: 'Instagram',
+    reason: 'プロフィールからフォロワー数を取得できませんでした（ログイン切れ、またはInstagramのUI変更の可能性）',
+    outFile: OUT_FILE,
+  });
+}
+
 const existing = fs.existsSync(OUT_FILE) ? JSON.parse(fs.readFileSync(OUT_FILE, 'utf8')) : {};
 
 const result = {
   ...existing,
   username: IG_USERNAME,
-  posts: posts ?? existing.posts ?? null,
-  followers: followers ?? existing.followers ?? null,
-  following: following ?? existing.following ?? null,
+  posts: posts ?? null,
+  followers,
+  following: following ?? null,
   source: 'playwright-profile',
   scrapedAt: new Date().toISOString(),
 };
