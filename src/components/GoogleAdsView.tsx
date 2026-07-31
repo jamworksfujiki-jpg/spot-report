@@ -38,6 +38,14 @@ type AdsData = {
   gender?: DemoRow[];
   age?: DemoRow[];
   consistency?: { clicksMatch: boolean; costMatch: boolean };
+  // 取得できなかったものを 0 と偽らないための品質フラグ（scrape-ads.mjs が付与）
+  dataQuality?: {
+    timelineAvailable: boolean;
+    timelineNote: string | null;
+    campaignRowsAvailable: boolean;
+    noActiveCampaigns: boolean;
+    source: string;
+  };
   source: string;
   scrapedAt: string;
   searchTermsCv?: { items: SearchTermCv[]; withCv: number; totalCv: number; scrapedAt: string } | null;
@@ -136,8 +144,41 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
     year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit",
   });
 
+  const dq = data.dataQuality;
+
   return (
     <div className="space-y-8">
+      {dq && (dq.noActiveCampaigns || !dq.timelineAvailable || !dq.campaignRowsAvailable) && (
+        <div className="card border-[#FFB4A8] bg-[#FFF4F2]">
+          <p className="text-[15px] font-semibold text-[#8C2F1F]">
+            ⚠️ このアカウントは現在、広告の配信が停止しています
+          </p>
+          <div className="mt-2 text-[13px] text-[#5A1A10] space-y-1.5">
+            {dq.noActiveCampaigns && (
+              <p>
+                Google広告の管理画面に「どの広告も掲載されていません（キャンペーンおよび広告グループは停止中であるか削除されています）」と表示されています。
+                上の合計値（費用・クリック・CV）は<strong>停止前に発生した実績</strong>です。
+              </p>
+            )}
+            {!dq.timelineAvailable && (
+              <p>
+                <strong>日別の推移グラフと期間の絞り込みは表示できません。</strong>
+                配信が停止しているとGoogle広告の概要画面が日別データを全てゼロで返すため、
+                ゼロを本物として取り込まないよう、あえて空にしています（¥0 と誤表示しないため）。
+              </p>
+            )}
+            {!dq.campaignRowsAvailable && (
+              <p>
+                <strong>キャンペーン別の内訳も取得できません。</strong>
+                停止中のキャンペーンは管理画面の一覧に行として表示されないためです。
+              </p>
+            )}
+            <p className="pt-1">
+              キャンペーンを再開すれば、日別・キャンペーン別ともに自動で復旧します。
+            </p>
+          </div>
+        </div>
+      )}
       <div className="flex items-baseline justify-between flex-wrap gap-2">
         <div>
           <SectionHeader
