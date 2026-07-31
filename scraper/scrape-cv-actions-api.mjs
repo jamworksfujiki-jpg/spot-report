@@ -53,11 +53,16 @@ try {
   results = await callApi({ query });
   dailyResults = await callApi({ query: dailyQuery });
 } catch (e) {
-  console.error('❌ API 呼び出し失敗:', e.message);
   console.error('   1. refresh_token が有効か → setup-ads-api.mjs を再実行');
   console.error('   2. Developer Token が Basic access か → ads.google.com で確認');
   console.error('   3. customer_id / login_customer_id が正しいか確認');
-  process.exit(1);
+  // 【2026-07-31 追加】API失敗を人に届ける。
+  // これまでは exit 1 するだけで、タスクスケジューラ経由の実行では誰も気づかなかった。
+  await failLoud({
+    name: 'Google広告 CVアクション',
+    reason: `Google Ads API 呼び出しに失敗: ${e.message}`,
+    outFile: OUT_FILE,
+  });
 }
 
 console.log(`  ✓ アクション別: ${results.length} 行, 日付別: ${dailyResults.length} 行`);
