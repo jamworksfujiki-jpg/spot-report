@@ -2,17 +2,17 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-07-01",
-    "to": "2026-07-30"
+    "from": "2026-07-03",
+    "to": "2026-08-01"
   },
   "days": 30,
   "totals": {
-    "cost": 57017,
-    "clicks": 246,
-    "conversions": 261,
-    "impressions": 8875,
-    "cpc": 232,
-    "cpa": 218
+    "cost": 48363,
+    "clicks": 203,
+    "conversions": 206,
+    "impressions": 7815,
+    "cpc": 238,
+    "cpa": 235
   },
   "campaigns": [],
   "timeline": [],
@@ -24,5 +24,5 @@
     "source": "playwright-campaigns-table"
   },
   "source": "playwright-campaigns-table",
-  "scrapedAt": "2026-07-31T04:49:25.259Z"
+  "scrapedAt": "2026-08-01T21:40:05.250Z"
 }
