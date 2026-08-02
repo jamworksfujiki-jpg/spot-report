@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-08-01T21:40:08.397Z",
-  "total": 11,
-  "totalAllConversions": 235,
+  "scrapedAt": "2026-08-02T22:00:56.107Z",
+  "total": 10,
+  "totalAllConversions": 148,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,9 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 184,
+      "allConversions": 101,
       "primaryConversions": 0,
-      "allConversionsValue": 184,
+      "allConversionsValue": 101,
       "value": 0
     },
     {
@@ -36,9 +36,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 11,
+      "allConversions": 9,
       "primaryConversions": 0,
-      "allConversionsValue": 1100,
+      "allConversionsValue": 900,
       "value": 0
     },
     {
@@ -47,9 +47,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 10,
+      "allConversions": 9,
       "primaryConversions": 0,
-      "allConversionsValue": 1000,
+      "allConversionsValue": 900,
       "value": 0
     },
     {
@@ -94,17 +94,6 @@
       "allConversions": 1,
       "primaryConversions": 0,
       "allConversionsValue": 100,
-      "value": 0
-    },
-    {
-      "name": "Calls from ads",
-      "category": "電話リード",
-      "type": "AD_CALL",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 1,
-      "primaryConversions": 0,
-      "allConversionsValue": 1,
       "value": 0
     },
     {
@@ -305,26 +294,6 @@
       "date": "2026-07-04",
       "actionName": "【共通】全てのリンククリック",
       "count": 4
-    },
-    {
-      "date": "2026-07-03",
-      "actionName": "Calls from ads",
-      "count": 1
-    },
-    {
-      "date": "2026-07-03",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 83
-    },
-    {
-      "date": "2026-07-03",
-      "actionName": "【共通】電話番号タップ",
-      "count": 2
-    },
-    {
-      "date": "2026-07-03",
-      "actionName": "【始めの社労士くん】2フォーム入力開始",
-      "count": 1
     }
   ]
 }
