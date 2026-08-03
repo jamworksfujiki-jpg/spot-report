@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-08-02T22:00:56.107Z",
+  "scrapedAt": "2026-08-03T23:26:17.671Z",
   "total": 10,
-  "totalAllConversions": 148,
+  "totalAllConversions": 142,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,9 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 101,
+      "allConversions": 100,
       "primaryConversions": 0,
-      "allConversionsValue": 101,
+      "allConversionsValue": 100,
       "value": 0
     },
     {
@@ -25,9 +25,9 @@
       "type": "GOOGLE_HOSTED",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 17,
+      "allConversions": 12,
       "primaryConversions": 0,
-      "allConversionsValue": 17,
+      "allConversionsValue": 12,
       "value": 0
     },
     {
@@ -120,6 +120,11 @@
     }
   ],
   "daily": [
+    {
+      "date": "2026-08-03",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 3
+    },
     {
       "date": "2026-07-13",
       "actionName": "【共通】全てのリンククリック",
@@ -284,16 +289,6 @@
       "date": "2026-07-05",
       "actionName": "【始めの社労士くん】2フォーム入力開始",
       "count": 2
-    },
-    {
-      "date": "2026-07-04",
-      "actionName": "Local actions - Other engagements",
-      "count": 5
-    },
-    {
-      "date": "2026-07-04",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 4
     }
   ]
 }
