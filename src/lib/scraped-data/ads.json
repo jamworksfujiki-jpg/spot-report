@@ -2,26 +2,26 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-07-05",
-    "to": "2026-08-03"
+    "from": "2026-07-06",
+    "to": "2026-08-04"
   },
   "days": 30,
   "totals": {
-    "cost": 41113,
-    "clicks": 161,
-    "conversions": 119,
-    "impressions": 5770,
-    "cpc": 255,
-    "cpa": 345
+    "cost": 37349,
+    "clicks": 147,
+    "conversions": 112,
+    "impressions": 5206,
+    "cpc": 254,
+    "cpa": 333
   },
   "campaigns": [
     {
       "name": "04.税理士提携 settings",
       "group": "",
       "status": "すべての広告がポリシーの制約を受けています",
-      "cost": 1214,
+      "cost": 2336,
       "conversions": 3,
-      "cpa": 405
+      "cpa": 779
     }
   ],
   "timeline": [],
@@ -33,5 +33,5 @@
     "source": "playwright-campaigns-table"
   },
   "source": "playwright-campaigns-table",
-  "scrapedAt": "2026-08-03T23:26:15.372Z"
+  "scrapedAt": "2026-08-04T23:31:43.087Z"
 }
