@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-08-06T22:01:01.431Z",
-  "total": 9,
-  "totalAllConversions": 93,
+  "scrapedAt": "2026-08-09T23:09:27.151Z",
+  "total": 6,
+  "totalAllConversions": 45,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,20 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 61,
+      "allConversions": 34,
       "primaryConversions": 0,
-      "allConversionsValue": 61,
-      "value": 0
-    },
-    {
-      "name": "Local actions - Other engagements",
-      "category": "エンゲージメント",
-      "type": "GOOGLE_HOSTED",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 12,
-      "primaryConversions": 0,
-      "allConversionsValue": 12,
+      "allConversionsValue": 34,
       "value": 0
     },
     {
@@ -36,25 +25,25 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 7,
+      "allConversions": 4,
       "primaryConversions": 0,
-      "allConversionsValue": 700,
-      "value": 0
-    },
-    {
-      "name": "Local actions - Website visits",
-      "category": "ページビュー",
-      "type": "GOOGLE_HOSTED",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 6,
-      "primaryConversions": 0,
-      "allConversionsValue": 6,
+      "allConversionsValue": 400,
       "value": 0
     },
     {
       "name": "ローカル アクション - 経路",
       "category": "道順",
+      "type": "GOOGLE_HOSTED",
+      "status": "ENABLED",
+      "source": "ウェブサイト",
+      "allConversions": 2,
+      "primaryConversions": 0,
+      "allConversionsValue": 2,
+      "value": 0
+    },
+    {
+      "name": "Local actions - Website visits",
+      "category": "ページビュー",
       "type": "GOOGLE_HOSTED",
       "status": "ENABLED",
       "source": "ウェブサイト",
@@ -75,8 +64,8 @@
       "value": 0
     },
     {
-      "name": "通話ボタンをクリック",
-      "category": "問い合わせ",
+      "name": "Local actions - Other engagements",
+      "category": "エンゲージメント",
       "type": "GOOGLE_HOSTED",
       "status": "ENABLED",
       "source": "ウェブサイト",
@@ -84,31 +73,29 @@
       "primaryConversions": 0,
       "allConversionsValue": 1,
       "value": 0
-    },
-    {
-      "name": "【新規適用届】1フォーム入力開始",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 1,
-      "primaryConversions": 0,
-      "allConversionsValue": 100,
-      "value": 0
-    },
-    {
-      "name": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 1,
-      "primaryConversions": 0,
-      "allConversionsValue": 10,
-      "value": 0
     }
   ],
   "daily": [
+    {
+      "date": "2026-08-09",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 1
+    },
+    {
+      "date": "2026-08-08",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 1
+    },
+    {
+      "date": "2026-08-08",
+      "actionName": "ローカル アクション - 経路",
+      "count": 1
+    },
+    {
+      "date": "2026-08-07",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 2
+    },
     {
       "date": "2026-08-06",
       "actionName": "【共通】全てのリンククリック",
@@ -172,76 +159,6 @@
     {
       "date": "2026-07-11",
       "actionName": "【始めの社労士くん】2フォーム入力開始",
-      "count": 1
-    },
-    {
-      "date": "2026-07-10",
-      "actionName": "Local actions - Other engagements",
-      "count": 10
-    },
-    {
-      "date": "2026-07-10",
-      "actionName": "Local actions - Website visits",
-      "count": 2
-    },
-    {
-      "date": "2026-07-10",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 21
-    },
-    {
-      "date": "2026-07-10",
-      "actionName": "【共通】電話番号タップ",
-      "count": 1
-    },
-    {
-      "date": "2026-07-10",
-      "actionName": "【産休育休応援キャンペーン】1キャンペーン申込フォーム遷移",
-      "count": 1
-    },
-    {
-      "date": "2026-07-10",
-      "actionName": "ローカル アクション - 経路",
-      "count": 1
-    },
-    {
-      "date": "2026-07-10",
-      "actionName": "通話ボタンをクリック",
-      "count": 1
-    },
-    {
-      "date": "2026-07-09",
-      "actionName": "Local actions - Other engagements",
-      "count": 1
-    },
-    {
-      "date": "2026-07-09",
-      "actionName": "Local actions - Website visits",
-      "count": 2
-    },
-    {
-      "date": "2026-07-09",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 7
-    },
-    {
-      "date": "2026-07-09",
-      "actionName": "【共通】電話番号タップ",
-      "count": 1
-    },
-    {
-      "date": "2026-07-08",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 3
-    },
-    {
-      "date": "2026-07-08",
-      "actionName": "【共通】電話番号タップ",
-      "count": 1
-    },
-    {
-      "date": "2026-07-08",
-      "actionName": "【新規適用届】1フォーム入力開始",
       "count": 1
     }
   ]
