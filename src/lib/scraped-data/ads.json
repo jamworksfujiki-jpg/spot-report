@@ -2,37 +2,29 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-07-14",
-    "to": "2026-08-12"
+    "from": "2026-07-15",
+    "to": "2026-08-13"
   },
   "days": 30,
   "totals": {
-    "cost": 11100,
-    "clicks": 32,
+    "cost": 12179,
+    "clicks": 35,
     "conversions": 3,
-    "impressions": 418,
-    "cpc": 347,
-    "cpa": 3700
+    "impressions": 436,
+    "cpc": 348,
+    "cpa": 4060
   },
   "campaigns": [
     {
       "name": "04.税理士提携 settings",
       "group": "",
       "status": "有効（制限付き） すべての広告がポリシーの制約を受けています 予算による制限",
-      "cost": 11100,
+      "cost": 12179,
       "conversions": 3,
-      "cpa": 3700
+      "cpa": 4060
     }
   ],
   "timeline": [
-    {
-      "date": "2026-07-14",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
     {
       "date": "2026-07-15",
       "clicks": 0,
@@ -264,6 +256,14 @@
       "conversionsSecondary": 0,
       "conversions": 0,
       "cost": 937
+    },
+    {
+      "date": "2026-08-13",
+      "clicks": 3,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 0
     }
   ],
   "dataQuality": {
@@ -274,5 +274,5 @@
     "source": "playwright-campaigns-table"
   },
   "source": "playwright-campaigns-table",
-  "scrapedAt": "2026-08-12T22:00:57.057Z"
+  "scrapedAt": "2026-08-13T22:41:40.926Z"
 }
