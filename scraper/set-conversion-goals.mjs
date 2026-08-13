@@ -19,7 +19,7 @@
  */
 import { loadConfig, loadTokens, refreshAccessToken, saveTokens, normalizeCustomerId } from './lib/google-ads-api.mjs';
 
-const API_VERSION = 'v21';
+const API_VERSION = 'v22';
 const APPLY = process.argv.includes('--apply');
 
 // 主要目標から外す（＝入札の最適化対象から外す）アクション
