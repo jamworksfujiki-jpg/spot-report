@@ -2,53 +2,29 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-07-15",
-    "to": "2026-08-13"
+    "from": "2026-07-18",
+    "to": "2026-08-16"
   },
   "days": 30,
   "totals": {
-    "cost": 12179,
-    "clicks": 35,
+    "cost": 14994,
+    "clicks": 42,
     "conversions": 3,
-    "impressions": 436,
-    "cpc": 348,
-    "cpa": 4060
+    "impressions": 515,
+    "cpc": 357,
+    "cpa": 4998
   },
   "campaigns": [
     {
       "name": "04.税理士提携 settings",
       "group": "",
       "status": "有効（制限付き） すべての広告がポリシーの制約を受けています 予算による制限",
-      "cost": 12179,
+      "cost": 14994,
       "conversions": 3,
-      "cpa": 4060
+      "cpa": 4998
     }
   ],
   "timeline": [
-    {
-      "date": "2026-07-15",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-07-16",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-07-17",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
     {
       "date": "2026-07-18",
       "clicks": 0,
@@ -264,6 +240,30 @@
       "conversionsSecondary": 0,
       "conversions": 0,
       "cost": 0
+    },
+    {
+      "date": "2026-08-14",
+      "clicks": 2,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 903
+    },
+    {
+      "date": "2026-08-15",
+      "clicks": 2,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-08-16",
+      "clicks": 3,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 808
     }
   ],
   "dataQuality": {
@@ -274,5 +274,5 @@
     "source": "playwright-campaigns-table"
   },
   "source": "playwright-campaigns-table",
-  "scrapedAt": "2026-08-13T22:41:40.926Z"
+  "scrapedAt": "2026-08-16T23:32:18.018Z"
 }
