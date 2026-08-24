@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-08-23T01:41:25.223Z",
+  "scrapedAt": "2026-08-24T23:03:20.756Z",
   "total": 7,
-  "totalAllConversions": 66,
+  "totalAllConversions": 79,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,25 +14,25 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 58,
+      "allConversions": 67,
       "primaryConversions": 0,
-      "allConversionsValue": 58,
-      "value": 0
-    },
-    {
-      "name": "ローカル アクション - 経路",
-      "category": "道順",
-      "type": "GOOGLE_HOSTED",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 2,
-      "primaryConversions": 0,
-      "allConversionsValue": 2,
+      "allConversionsValue": 67,
       "value": 0
     },
     {
       "name": "Local actions - Other engagements",
       "category": "エンゲージメント",
+      "type": "GOOGLE_HOSTED",
+      "status": "ENABLED",
+      "source": "ウェブサイト",
+      "allConversions": 6,
+      "primaryConversions": 0,
+      "allConversionsValue": 6,
+      "value": 0
+    },
+    {
+      "name": "ローカル アクション - 経路",
+      "category": "道順",
       "type": "GOOGLE_HOSTED",
       "status": "ENABLED",
       "source": "ウェブサイト",
@@ -88,6 +88,21 @@
   ],
   "daily": [
     {
+      "date": "2026-08-24",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 1
+    },
+    {
+      "date": "2026-08-23",
+      "actionName": "【共通】全てのリンククリック",
+      "count": 5
+    },
+    {
+      "date": "2026-08-22",
+      "actionName": "Local actions - Other engagements",
+      "count": 4
+    },
+    {
       "date": "2026-08-22",
       "actionName": "【共通】全てのリンククリック",
       "count": 5
@@ -115,7 +130,7 @@
     {
       "date": "2026-08-17",
       "actionName": "【共通】全てのリンククリック",
-      "count": 4
+      "count": 7
     },
     {
       "date": "2026-08-16",
