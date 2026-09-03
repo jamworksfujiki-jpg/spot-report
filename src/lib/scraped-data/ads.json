@@ -2,37 +2,29 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-08-04",
-    "to": "2026-09-02"
+    "from": "2026-08-05",
+    "to": "2026-09-03"
   },
   "days": 30,
   "totals": {
-    "cost": 21975,
-    "clicks": 57,
+    "cost": 20853,
+    "clicks": 54,
     "conversions": 1,
-    "impressions": 662,
+    "impressions": 633,
     "cpc": 386,
-    "cpa": 21975
+    "cpa": 20853
   },
   "campaigns": [
     {
       "name": "04.税理士提携 settings",
       "group": "",
       "status": "無効 すべての広告が不承認となっています",
-      "cost": 21975,
+      "cost": 20853,
       "conversions": 1,
-      "cpa": 21975
+      "cpa": 20853
     }
   ],
   "timeline": [
-    {
-      "date": "2026-08-04",
-      "clicks": 3,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
     {
       "date": "2026-08-05",
       "clicks": 4,
@@ -264,6 +256,14 @@
       "conversionsSecondary": 0,
       "conversions": 0,
       "cost": 0
+    },
+    {
+      "date": "2026-09-03",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "cost": 0
     }
   ],
   "dataQuality": {
@@ -274,5 +274,5 @@
     "source": "playwright-campaigns-table"
   },
   "source": "playwright-campaigns-table",
-  "scrapedAt": "2026-09-02T23:17:06.330Z"
+  "scrapedAt": "2026-09-03T23:30:00.731Z"
 }
