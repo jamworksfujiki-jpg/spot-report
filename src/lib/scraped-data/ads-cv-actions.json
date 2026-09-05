@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-09-03T23:30:03.296Z",
-  "total": 7,
-  "totalAllConversions": 87,
+  "scrapedAt": "2026-09-05T04:07:53.872Z",
+  "total": 5,
+  "totalAllConversions": 66,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,9 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 72,
+      "allConversions": 54,
       "primaryConversions": 0,
-      "allConversionsValue": 72,
+      "allConversionsValue": 54,
       "value": 0
     },
     {
@@ -42,17 +42,6 @@
       "value": 0
     },
     {
-      "name": "【始めの社労士くん】2フォーム入力開始",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 2,
-      "primaryConversions": 0,
-      "allConversionsValue": 200,
-      "value": 0
-    },
-    {
       "name": "Local actions - Website visits",
       "category": "ページビュー",
       "type": "GOOGLE_HOSTED",
@@ -64,25 +53,14 @@
       "value": 0
     },
     {
-      "name": "【始めの社労士くん】1問い合わせページ遷移",
+      "name": "【始めの社労士くん】2フォーム入力開始",
       "category": "リードフォーム送信",
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
       "allConversions": 1,
       "primaryConversions": 0,
-      "allConversionsValue": 10,
-      "value": 0
-    },
-    {
-      "name": "【始めの社労士くん】3サンクスページ到達",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 1,
-      "primaryConversions": 0,
-      "allConversionsValue": 1000,
+      "allConversionsValue": 100,
       "value": 0
     }
   ],
@@ -110,7 +88,7 @@
     {
       "date": "2026-08-21",
       "actionName": "【共通】全てのリンククリック",
-      "count": 4
+      "count": 5
     },
     {
       "date": "2026-08-20",
@@ -210,26 +188,6 @@
     {
       "date": "2026-08-06",
       "actionName": "【共通】全てのリンククリック",
-      "count": 1
-    },
-    {
-      "date": "2026-08-05",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 19
-    },
-    {
-      "date": "2026-08-05",
-      "actionName": "【始めの社労士くん】1問い合わせページ遷移",
-      "count": 1
-    },
-    {
-      "date": "2026-08-05",
-      "actionName": "【始めの社労士くん】2フォーム入力開始",
-      "count": 1
-    },
-    {
-      "date": "2026-08-05",
-      "actionName": "【始めの社労士くん】3サンクスページ到達",
       "count": 1
     }
   ]
