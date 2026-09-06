@@ -1,7 +1,7 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-09-05T04:07:53.872Z",
+  "scrapedAt": "2026-09-06T04:43:19.464Z",
   "total": 5,
   "totalAllConversions": 66,
   "totalPrimaryConversions": 0,
@@ -83,7 +83,7 @@
     {
       "date": "2026-08-22",
       "actionName": "【共通】全てのリンククリック",
-      "count": 5
+      "count": 6
     },
     {
       "date": "2026-08-21",
@@ -184,11 +184,6 @@
       "date": "2026-08-07",
       "actionName": "【共通】全てのリンククリック",
       "count": 2
-    },
-    {
-      "date": "2026-08-06",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 1
     }
   ]
 }
