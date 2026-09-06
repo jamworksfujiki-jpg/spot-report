@@ -2,16 +2,16 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-08-07",
-    "to": "2026-09-05"
+    "from": "2026-08-08",
+    "to": "2026-09-06"
   },
   "days": 30,
   "totals": {
-    "cost": 18472,
-    "clicks": 48,
+    "cost": 17350,
+    "clicks": 46,
     "conversions": 0,
-    "impressions": 583,
-    "cpc": 385,
+    "impressions": 498,
+    "cpc": 377,
     "cpa": 0
   },
   "campaigns": [
@@ -19,260 +19,19 @@
       "name": "04.税理士提携 settings",
       "group": "",
       "status": "無効 すべての広告が不承認となっています",
-      "cost": 18472,
+      "cost": 17350,
       "conversions": 0,
       "cpa": 0
     }
   ],
-  "timeline": [
-    {
-      "date": "2026-08-07",
-      "clicks": 2,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-08",
-      "clicks": 5,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-09",
-      "clicks": 4,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-10",
-      "clicks": 4,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 975
-    },
-    {
-      "date": "2026-08-11",
-      "clicks": 4,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-12",
-      "clicks": 2,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 937
-    },
-    {
-      "date": "2026-08-13",
-      "clicks": 3,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-14",
-      "clicks": 2,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 903
-    },
-    {
-      "date": "2026-08-15",
-      "clicks": 2,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-16",
-      "clicks": 3,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 808
-    },
-    {
-      "date": "2026-08-17",
-      "clicks": 2,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-18",
-      "clicks": 1,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-19",
-      "clicks": 2,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 965
-    },
-    {
-      "date": "2026-08-20",
-      "clicks": 3,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-21",
-      "clicks": 1,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 987
-    },
-    {
-      "date": "2026-08-22",
-      "clicks": 3,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-23",
-      "clicks": 2,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 964
-    },
-    {
-      "date": "2026-08-24",
-      "clicks": 3,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-25",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-26",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-27",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-28",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-29",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-30",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-08-31",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-09-01",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-09-02",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-09-03",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-09-04",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    },
-    {
-      "date": "2026-09-05",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "cost": 0
-    }
-  ],
+  "timeline": [],
   "dataQuality": {
-    "timelineAvailable": true,
-    "timelineNote": null,
+    "timelineAvailable": false,
+    "timelineNote": "日別データ取得で例外: Command failed: powershell -NoProfile -Command \"Expand-Archive -Path 'C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-1788737508457.zip' -DestinationPath 'C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-extract-1788737513181' -Force\"\nExpand-Archive : �p�X 'C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-1788737508457.zip' �����݂��Ȃ����A�܂��͗L���ȃt�@�C�� �V\r\n�X�e�� �p�X�ł͂���܂���B\r\n�����ꏊ �s:1 ����:1\r\n+ Expand-Archive -Path 'C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-178873750 ...\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidArgument: (C:\\Users\\fujik\\...88737508457.zip:String) [Expand-Archive]�AInvalidOper\r\n    ationException\r\n    + FullyQualifiedErrorId : ArchiveCmdletPathNotFound,Expand-Archive\r\n \r\n",
     "campaignRowsAvailable": true,
     "noActiveCampaigns": false,
     "source": "playwright-campaigns-table"
   },
   "source": "playwright-campaigns-table",
-  "scrapedAt": "2026-09-06T04:43:13.993Z"
+  "scrapedAt": "2026-09-06T23:31:56.135Z"
 }

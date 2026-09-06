@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-09-06T04:43:19.464Z",
+  "scrapedAt": "2026-09-06T23:31:59.004Z",
   "total": 5,
-  "totalAllConversions": 66,
+  "totalAllConversions": 65,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,9 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 54,
+      "allConversions": 53,
       "primaryConversions": 0,
-      "allConversionsValue": 54,
+      "allConversionsValue": 53,
       "value": 0
     },
     {
@@ -113,7 +113,7 @@
     {
       "date": "2026-08-17",
       "actionName": "【共通】全てのリンククリック",
-      "count": 7
+      "count": 8
     },
     {
       "date": "2026-08-16",
@@ -178,11 +178,6 @@
     {
       "date": "2026-08-08",
       "actionName": "ローカル アクション - 経路",
-      "count": 2
-    },
-    {
-      "date": "2026-08-07",
-      "actionName": "【共通】全てのリンククリック",
       "count": 2
     }
   ]
