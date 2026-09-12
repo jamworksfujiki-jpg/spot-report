@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-09-11T00:13:31.582Z",
+  "scrapedAt": "2026-09-12T05:36:41.287Z",
   "total": 4,
-  "totalAllConversions": 62,
+  "totalAllConversions": 59,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,9 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 54,
+      "allConversions": 51,
       "primaryConversions": 0,
-      "allConversionsValue": 54,
+      "allConversionsValue": 51,
       "value": 0
     },
     {
@@ -128,11 +128,6 @@
       "date": "2026-08-13",
       "actionName": "【共通】全てのリンククリック",
       "count": 8
-    },
-    {
-      "date": "2026-08-12",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 3
     }
   ]
 }
