@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-09-13T23:07:55.990Z",
-  "total": 4,
-  "totalAllConversions": 50,
+  "scrapedAt": "2026-09-14T23:22:16.194Z",
+  "total": 3,
+  "totalAllConversions": 46,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,9 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 43,
+      "allConversions": 41,
       "primaryConversions": 0,
-      "allConversionsValue": 43,
+      "allConversionsValue": 41,
       "value": 0
     },
     {
@@ -28,17 +28,6 @@
       "allConversions": 4,
       "primaryConversions": 0,
       "allConversionsValue": 4,
-      "value": 0
-    },
-    {
-      "name": "ローカル アクション - 経路",
-      "category": "道順",
-      "type": "GOOGLE_HOSTED",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 2,
-      "primaryConversions": 0,
-      "allConversionsValue": 2,
       "value": 0
     },
     {
@@ -108,16 +97,6 @@
       "date": "2026-08-16",
       "actionName": "【共通】全てのリンククリック",
       "count": 1
-    },
-    {
-      "date": "2026-08-15",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 2
-    },
-    {
-      "date": "2026-08-15",
-      "actionName": "ローカル アクション - 経路",
-      "count": 2
     }
   ]
 }
