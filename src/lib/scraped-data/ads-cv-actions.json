@@ -1,9 +1,9 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-09-16T23:50:28.143Z",
-  "total": 3,
-  "totalAllConversions": 36,
+  "scrapedAt": "2026-09-20T11:58:07.318Z",
+  "total": 2,
+  "totalAllConversions": 26,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
@@ -14,9 +14,9 @@
       "type": "WEBPAGE",
       "status": "ENABLED",
       "source": "ウェブサイト",
-      "allConversions": 31,
+      "allConversions": 22,
       "primaryConversions": 0,
-      "allConversionsValue": 31,
+      "allConversionsValue": 22,
       "value": 0
     },
     {
@@ -28,17 +28,6 @@
       "allConversions": 4,
       "primaryConversions": 0,
       "allConversionsValue": 4,
-      "value": 0
-    },
-    {
-      "name": "【始めの社労士くん】2フォーム入力開始",
-      "category": "リードフォーム送信",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 1,
-      "primaryConversions": 0,
-      "allConversionsValue": 100,
       "value": 0
     }
   ],
@@ -67,26 +56,6 @@
       "date": "2026-08-21",
       "actionName": "【共通】全てのリンククリック",
       "count": 6
-    },
-    {
-      "date": "2026-08-20",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 6
-    },
-    {
-      "date": "2026-08-20",
-      "actionName": "【始めの社労士くん】2フォーム入力開始",
-      "count": 1
-    },
-    {
-      "date": "2026-08-19",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 1
-    },
-    {
-      "date": "2026-08-18",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 2
     }
   ]
 }
