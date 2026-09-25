@@ -2,36 +2,1928 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-08-08",
-    "to": "2026-09-06"
+    "from": "2026-08-26",
+    "to": "2026-09-24"
   },
   "days": 30,
   "totals": {
-    "cost": 17350,
-    "clicks": 46,
+    "cost": 0,
+    "clicks": 0,
     "conversions": 0,
-    "impressions": 498,
-    "cpc": 377,
-    "cpa": 0
+    "allConversions": 0,
+    "impressions": 0,
+    "searchImpressions": 0,
+    "searchClicks": 0,
+    "cpc": 0,
+    "cpa": 0,
+    "searchCtr": 0
   },
-  "campaigns": [
+  "campaigns": [],
+  "timeline": [
     {
-      "name": "04.税理士提携 settings",
-      "group": "",
-      "status": "無効 すべての広告が不承認となっています",
-      "cost": 17350,
+      "date": "2026-08-26",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
       "conversions": 0,
-      "cpa": 0
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-08-27",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-08-28",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-08-29",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-08-30",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-08-31",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-01",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-02",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-03",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-04",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-05",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-06",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-07",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-08",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-09",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-10",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-11",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-12",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-13",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-14",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-15",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-16",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-17",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-18",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-19",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-20",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-21",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-22",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-23",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-09-24",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
     }
   ],
-  "timeline": [],
+  "devices": [],
+  "searchTerms": [],
+  "biddedKeywords": [
+    {
+      "keyword": "障害年金",
+      "matchType": "完全一致",
+      "status": "有効",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社会 保険 加入 条件",
+      "matchType": "完全一致",
+      "status": "有効",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "年度更新",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "算定基礎届",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "障害者 年金",
+      "matchType": "フレーズ一致",
+      "status": "有効",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "算定基礎",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "名古屋 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 料金 相場",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労働保険料 申告",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "福岡 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "算定基礎届 代行",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "tsc 東京",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "川崎市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "横浜市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "西村 社会 保険 労務 士 事務 所",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "tsc 労働 保険",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労働 保険 料 と は",
+      "matchType": "完全一致",
+      "status": "有効",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労働 保険 概算 保険 料 申告 書",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労働 保険 申告 書",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 顧問料 相場",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "算定 基礎 届",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "仙台 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "姫路 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "札幌 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "横浜 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "熊本 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "中央区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "千代田区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "港区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "大津市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "大田区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "大阪 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "大阪府 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "宇都宮市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "広島 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "文京区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "新宿区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "札幌市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "杉並区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "松山市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "松江市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "板橋区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "水戸市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "江戸川区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "江東区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "津市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "渋谷区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "甲府市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "盛岡市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "目黒区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "神戸市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "練馬区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "荒川区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "葛飾区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "豊島区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "足立区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "那覇市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "金沢市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "高松市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "さいたま市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "世田谷区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "中野区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "仙台市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "前橋市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "北区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "台東区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "名古屋市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "品川区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "墨田区 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "京都市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "大阪市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 報酬 相場",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社会保険労務士 報酬 相場",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 顧問 契約",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "月額 算定 基礎 届",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社会保険労務士 スポット 相場",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社会保険労務士 顧問料 スポット",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 スポット 相場",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 顧問料 スポット",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 スポット",
+      "matchType": "完全一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 大阪 契約",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 格安 契約",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労働 保険 年度 更新",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社会保険労務士 顧問 安い",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 顧問 安い",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 報酬 基準",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "四万十市 社労士 安い",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "四万十市 社労士 格安",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労災保険 個人事業主",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社会保険労務士 顧問料 安い",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "雇用調整助成金 条件",
+      "matchType": "フレーズ一致",
+      "status": "有効",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "一宮市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "下関市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "久留米市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "佐賀市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "倉敷市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "八戸市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "北九州市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "千葉市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "呉市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "和歌山市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "堺市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "大分市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "大垣市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "太田市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "奈良市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "宮崎市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "富士市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "富山市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "山形市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "岐阜市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "岡山市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "川口市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "川越市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "市川市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "広島市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "徳島市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "新潟市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "東大阪市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "松戸市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "松本市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "柏市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "栃木市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "浜松市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "熊本市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "相模原市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "福井市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "福山市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "福岡市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "福島市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "秋田市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "船橋市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "豊田市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "郡山市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "長崎市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "長野市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "青森市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "静岡市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "高崎市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "高知市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "鳥取市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "鹿児島市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "出雲市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 顧問料 安い",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "八代市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "橿原市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 料金表",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "新居浜市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "浜田市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "石巻市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "いわき市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "うるま市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "今治 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "今治市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "那覇市 社労士 おすすめ",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "酒田市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "長岡市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "霧島市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "鶴岡市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "鹿屋市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "沖縄市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "倉吉市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "四万十市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "坂井市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "大崎市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 スポット料金",
+      "matchType": "完全一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "年度更新 申請",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 顧問 報酬",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 大阪 安い",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社会保険労務士 顧問 契約",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労働保険 申告",
+      "matchType": "インテント マッチ",
+      "status": "有効",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "年度更新 手続き",
+      "matchType": "インテント マッチ",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "山口市 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社会保険労務士 顧問料 相場",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 報酬 スポット",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労災保険 社労士",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 単発",
+      "matchType": "フレーズ一致",
+      "status": "有効",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 顧問 相場",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 千葉県 おすすめ",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 兵庫県 おすすめ",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 宮城県 おすすめ",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 長崎県 おすすめ",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "社労士 岐阜県 おすすめ",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 スポット スポット",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 スポット 報酬",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 スポット 契約",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 スポット 安い",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 スポット 対応",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 スポット 相場",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 三重 スポット",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 三重 報酬",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 三重 契約",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 三重 安い",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 三重 対応",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 三重 相場",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 京都府 スポット",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 京都府 報酬",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 京都府 契約",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 京都府 安い",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    },
+    {
+      "keyword": "労基署 京都府 対応",
+      "matchType": "フレーズ一致",
+      "status": "一時停止",
+      "cost": 0,
+      "clicks": 0,
+      "ctr": 0
+    }
+  ],
+  "network": [],
+  "gender": [],
+  "age": [],
   "dataQuality": {
-    "timelineAvailable": false,
-    "timelineNote": "日別データ取得で例外: Command failed: powershell -NoProfile -Command \"Expand-Archive -Path 'C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-1788737508457.zip' -DestinationPath 'C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-extract-1788737513181' -Force\"\nExpand-Archive : �p�X 'C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-1788737508457.zip' �����݂��Ȃ����A�܂��͗L���ȃt�@�C�� �V\r\n�X�e�� �p�X�ł͂���܂���B\r\n�����ꏊ �s:1 ����:1\r\n+ Expand-Archive -Path 'C:\\Users\\fujik\\AppData\\Local\\Temp\\ads-178873750 ...\r\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : InvalidArgument: (C:\\Users\\fujik\\...88737508457.zip:String) [Expand-Archive]�AInvalidOper\r\n    ationException\r\n    + FullyQualifiedErrorId : ArchiveCmdletPathNotFound,Expand-Archive\r\n \r\n",
+    "timelineAvailable": true,
+    "timelineNote": null,
     "campaignRowsAvailable": true,
-    "noActiveCampaigns": false,
-    "source": "playwright-campaigns-table"
+    "noActiveCampaigns": true,
+    "noDelivery": true,
+    "deliveryBlock": {
+      "enabledCampaigns": [
+        "04.税理士提携"
+      ],
+      "servableAds": 1,
+      "disapprovedAds": [
+        {
+          "campaign": "04.税理士提携",
+          "approvalStatus": "DISAPPROVED",
+          "reviewStatus": "REVIEWED",
+          "policies": [
+            "GOVERNMENT_DOCUMENTS_AND_OFFICIAL_SERVICES (FULLY_LIMITED)"
+          ]
+        }
+      ],
+      "reason": "有効キャンペーンの広告が不承認です: GOVERNMENT_DOCUMENTS_AND_OFFICIAL_SERVICES"
+    },
+    "degraded": [],
+    "source": "google-ads-api"
   },
-  "source": "playwright-campaigns-table",
-  "scrapedAt": "2026-09-06T23:31:56.135Z"
+  "source": "google-ads-api",
+  "scrapedAt": "2026-09-25T11:35:53.312Z"
 }
