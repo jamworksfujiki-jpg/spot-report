@@ -1,30 +1,12 @@
 {
   "customerId": "989-421-6094",
   "period": "過去30日",
-  "scrapedAt": "2026-09-23T01:44:02.839Z",
-  "total": 1,
-  "totalAllConversions": 1,
+  "scrapedAt": "2026-09-25T11:37:41.902Z",
+  "total": 0,
+  "totalAllConversions": 0,
   "totalPrimaryConversions": 0,
   "hasAllConversionsColumn": true,
   "source": "google-ads-api",
-  "items": [
-    {
-      "name": "【共通】全てのリンククリック",
-      "category": "デフォルト",
-      "type": "WEBPAGE",
-      "status": "ENABLED",
-      "source": "ウェブサイト",
-      "allConversions": 1,
-      "primaryConversions": 0,
-      "allConversionsValue": 1,
-      "value": 0
-    }
-  ],
-  "daily": [
-    {
-      "date": "2026-08-24",
-      "actionName": "【共通】全てのリンククリック",
-      "count": 1
-    }
-  ]
+  "items": [],
+  "daily": []
 }
