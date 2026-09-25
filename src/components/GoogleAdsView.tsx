@@ -44,6 +44,15 @@ type AdsData = {
     timelineNote: string | null;
     campaignRowsAvailable: boolean;
     noActiveCampaigns: boolean;
+    // 期間中の表示回数も費用もゼロ＝出稿が止まっている（取得失敗とは別物）
+    noDelivery?: boolean;
+    deliveryBlock?: {
+      enabledCampaigns: string[];
+      servableAds: number;
+      disapprovedAds: { campaign: string; approvalStatus: string; reviewStatus: string; policies: string[] }[];
+      reason: string;
+    } | null;
+    degraded?: string[];
     source: string;
   };
   source: string;
@@ -148,13 +157,32 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
 
   return (
     <div className="space-y-8">
-      {dq && (dq.noActiveCampaigns || !dq.timelineAvailable || !dq.campaignRowsAvailable) && (
+      {dq && (dq.noDelivery || dq.noActiveCampaigns || !dq.timelineAvailable || !dq.campaignRowsAvailable) && (
         <div className="card border-[#FFB4A8] bg-[#FFF4F2]">
           <p className="text-[15px] font-semibold text-[#8C2F1F]">
             ⚠️ このアカウントは現在、広告の配信が停止しています
           </p>
           <div className="mt-2 text-[13px] text-[#5A1A10] space-y-1.5">
-            {dq.noActiveCampaigns && (
+            {/* 「¥0」だけを出すと「使わなかっただけ」に見えるため、止まっている理由まで画面に運ぶ */}
+            {dq.noDelivery && (
+              <p>
+                <strong>
+                  {data.period.from} 〜 {data.period.to} の30日間、表示回数も費用もゼロでした。
+                </strong>
+                <br />
+                理由: {dq.deliveryBlock?.reason ?? "（特定できませんでした）"}
+              </p>
+            )}
+            {!!dq.deliveryBlock?.disapprovedAds?.length && (
+              <ul className="list-disc pl-5">
+                {dq.deliveryBlock.disapprovedAds.map((a, i) => (
+                  <li key={i}>
+                    <strong>{a.campaign}</strong>：{a.policies.join(" / ") || "ポリシー違反"}（審査 {a.reviewStatus}）
+                  </li>
+                ))}
+              </ul>
+            )}
+            {dq.noActiveCampaigns && !dq.noDelivery && (
               <p>
                 Google広告の管理画面に「どの広告も掲載されていません（キャンペーンおよび広告グループは停止中であるか削除されています）」と表示されています。
                 上の合計値（費用・クリック・CV）は<strong>停止前に発生した実績</strong>です。
@@ -174,7 +202,17 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
               </p>
             )}
             <p className="pt-1">
-              キャンペーンを再開すれば、日別・キャンペーン別ともに自動で復旧します。
+              配信が再開すれば、日別・キャンペーン別ともに自動で復旧します。
+              不承認の内容は{" "}
+              <a
+                className="underline font-medium"
+                href="https://ads.google.com/aw/policymanager"
+                target="_blank"
+                rel="noreferrer"
+              >
+                ポリシー マネージャー
+              </a>{" "}
+              で確認できます。
             </p>
           </div>
         </div>
@@ -188,7 +226,8 @@ export function GoogleAdsView({ range }: GoogleAdsViewProps = {}) {
         </div>
         <div className="flex flex-col items-end gap-1">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[12px] font-medium rounded-full bg-[#E8F5E9] text-[#1B5E20] border border-[#A5D6A7]">
-            ✓ 実データ（Playwright CSV）
+            {/* 取得元を決め打ちしない。API に切り替えたのに「Playwright CSV」と名乗っていた */}
+            ✓ 実データ（{data.source === "google-ads-api" ? "Google Ads API" : data.source}）
           </span>
           <span className="text-[11px] text-[#6E6E73]">取得: {scrapedDate}</span>
         </div>

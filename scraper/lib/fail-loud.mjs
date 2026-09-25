@@ -114,7 +114,24 @@ export async function failLoud({ name, reason, outFile }) {
       `  3. node scrape-ads.mjs で再実行し、上記理由が解消したか確認\n`,
   });
 
-  process.exit(3);
+  await hardExit(3);
+}
+
+/**
+ * fetch 直後の process.exit() を避けて終了する。
+ *
+ * 【2026-09-25 修正】Windows + Node の fetch(undici) は、キープアライブ接続の
+ * 後始末が終わる前に process.exit() すると libuv のアサーションで異常終了する:
+ *   Assertion failed: !(handle->flags & UV_HANDLE_CLOSING), file src\win\async.c, line 76
+ *   → 終了コード 0xC0000409 (= 3221226505)
+ * 毎日ログに出ていた「exit code 3221226505」の正体はこれで、
+ * 「取得に失敗した本当の理由」がこのクラッシュで塗りつぶされ、原因追跡を19日間妨げていた。
+ * 接続が閉じ切るのを少し待ってから終了する。
+ */
+export async function hardExit(code) {
+  process.exitCode = code;
+  await new Promise((r) => setTimeout(r, 300));
+  process.exit(code);
 }
 
 /**

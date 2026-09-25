@@ -141,12 +141,36 @@ const daily = dailyResults.map((r) => ({
 // APIが空配列を返しても旧実装は total:0 / 全CV:0 を新しい scrapedAt 付きで書き込み、
 // 「CVが0件になった」のか「取得に失敗した」のか区別できなくなっていた。
 // Playwright版(scrape-cv-actions.mjs)には元から入っていたガードをAPI版にも入れる。
+// 【2026-09-25 修正】0件を無条件に「失敗」と決めつけていたため、
+// 広告の配信が実際に止まった 2026-08-25 以降、毎日この誤報で exit 3 していた。
+// 「取得に失敗して0件」と「本当にCVが0件」は別物なので、アカウント合計と突き合わせて判定する。
+// ここで両者を取り違えると、本物の失敗のときに狼少年になって気づけなくなる。
 if (!items.length) {
-  await failLoud({
-    name: 'Google広告 CVアクション',
-    reason: 'APIがコンバージョンアクションを1件も返しませんでした（認証失効・権限・クエリ条件のいずれか）',
-    outFile: OUT_FILE,
-  });
+  let accountAllConversions = null;
+  try {
+    const totals = await callApi({
+      query: `
+        SELECT metrics.all_conversions, metrics.impressions
+        FROM customer
+        WHERE segments.date DURING LAST_30_DAYS
+      `,
+    });
+    accountAllConversions = parseFloat(totals[0]?.metrics?.allConversions) || 0;
+  } catch (e) {
+    accountAllConversions = null; // 裏取りできない＝失敗として扱う
+  }
+
+  if (accountAllConversions === null || accountAllConversions > 0) {
+    await failLoud({
+      name: 'Google広告 CVアクション',
+      reason:
+        accountAllConversions === null
+          ? 'アクション別も裏取り用のアカウント合計も取得できませんでした（認証失効・権限・クエリ条件のいずれか）'
+          : `アカウント合計では ${accountAllConversions} 件のCVがあるのに、アクション別が0件で返りました（取得漏れの疑い）`,
+      outFile: OUT_FILE,
+    });
+  }
+  console.log('  ℹ️ アカウント合計でもCVは0件でした → 「本当に0件」として記録します');
 }
 
 const result = {
