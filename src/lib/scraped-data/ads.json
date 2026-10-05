@@ -2,8 +2,8 @@
   "customerId": "989-421-6094",
   "accountName": "スポット社労士くん",
   "period": {
-    "from": "2026-09-05",
-    "to": "2026-10-04"
+    "from": "2026-09-06",
+    "to": "2026-10-05"
   },
   "days": 30,
   "totals": {
@@ -20,15 +20,6 @@
   },
   "campaigns": [],
   "timeline": [
-    {
-      "date": "2026-09-05",
-      "clicks": 0,
-      "conversionsPrimary": 0,
-      "conversionsSecondary": 0,
-      "conversions": 0,
-      "allConversions": 0,
-      "cost": 0
-    },
     {
       "date": "2026-09-06",
       "clicks": 0,
@@ -283,6 +274,15 @@
     },
     {
       "date": "2026-10-04",
+      "clicks": 0,
+      "conversionsPrimary": 0,
+      "conversionsSecondary": 0,
+      "conversions": 0,
+      "allConversions": 0,
+      "cost": 0
+    },
+    {
+      "date": "2026-10-05",
       "clicks": 0,
       "conversionsPrimary": 0,
       "conversionsSecondary": 0,
@@ -1925,5 +1925,5 @@
     "source": "google-ads-api"
   },
   "source": "google-ads-api",
-  "scrapedAt": "2026-10-04T23:22:27.005Z"
+  "scrapedAt": "2026-10-05T23:39:33.994Z"
 }
